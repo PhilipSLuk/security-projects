@@ -91,7 +91,7 @@ Weeeeeeee! Looks like we found a valid password.
 Trying the password we found on the form gives us a `Ooops! Too slow` response
 on this page: `http://88.198.233.174:33971/noooooooope.html`..
 
-.. but if we sue burpsuite to analyze the response from the server, we find
+.. but if we use burpsuite to analyze the response from the server, we find
 some hidden info..
 
 ```
