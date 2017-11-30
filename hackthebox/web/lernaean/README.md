@@ -50,7 +50,7 @@ Invalid password!
 
 Okay.. that tells us that `password` is the variable being passed to the server.
 
-##WIRESHARK
+## WIRESHARK
 Let's use wireshark just to confirm what is happening..
 
 ```
@@ -66,7 +66,7 @@ HTML Form URL Encoded: application/x-www-form-urlencoded
     Value: test
 ```
 
-##HYDRA
+## HYDRA
 Okay.. now let's try using `hydra` to mimic these requests and brute force our
 way through a dictionary attack..
 
@@ -87,7 +87,7 @@ Hydra (http://www.thc.org/thc-hydra) finished at 2017-11-30 17:13:41
 
 Weeeeeeee! Looks like we found a valid password.
 
-##LOOKING FOR THE FLAG
+## LOOKING FOR THE FLAG
 Trying the password we found on the form gives us a `Ooops! Too slow` response
 on this page: `http://88.198.233.174:33971/noooooooope.html`..
 
