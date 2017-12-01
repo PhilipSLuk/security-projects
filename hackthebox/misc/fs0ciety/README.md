@@ -29,7 +29,7 @@ $ fcrackzip -u -D -p /usr/share/wordlists/rockyou.txt fsociety.zip
 PASSWORD FOUND!!!!: pw == justdoit
 ```
 
-## DECODING
+### DECODING
 
 Hm.. so now what to do with what we found inside this file.. decode? decrypt?
 De-obfuscate?

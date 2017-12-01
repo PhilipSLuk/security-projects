@@ -33,7 +33,7 @@ Average Speed: 45505.8 w/s. Current Word: 'lacry1990'
 found user-password: 'jumanji69'
 ```
 
-## MORSE CODE
+### MORSE CODE
 
 After view the PDF file, we see a portrait of Samuel Morse, but looking
 carefully at the bottom of the file we see something in fine print..

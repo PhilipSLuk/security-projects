@@ -7,7 +7,7 @@ Can you bring all the boys to the yard?
 Milkshake.mp3
 ```
 
-## MP3 ID3 INFO TAGS
+### MP3 ID3 INFO TAGS
 
 Not sure where to start, so let's see if we find anything interesting in the MP3
 metadata..
@@ -37,7 +37,7 @@ Tag 2: ID3v2.4.0
 Found potentially interesting information as the `comment` that could be
 HEXADECIMAL, but that doesn't didn't convert to meaningful ASCII.
 
-## SPECTRUM ANALYSIS
+### SPECTRUM ANALYSIS
 
 A Google search of MP3 analysis techniques led me to look into 'spectrum analysis'.
 
