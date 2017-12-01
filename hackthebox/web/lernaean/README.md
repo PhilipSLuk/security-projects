@@ -9,22 +9,22 @@ host: 88.198.233.174 port:33971
 ```
 
 ```
-    <html>\n
-    <head>\n
-        <title>Login - Lernaean</title>\n
-    </head>\n
-    <body style="background-color: #cd4e7b;">\n
-        <center>\n
-            <br><br><br>\n
-            <h1><u>Administrator Login</u></h1>\n
-            <h2>--- CONFIDENTIAL ---</h2>\n
-            <h2>Please do not try to guess my password!</h2>\n
-            <form method="POST">\n
-                <input type="password" name="password"><br><br>\n
-                <input type="submit" value="Submit">\n
-            </form>\n
-        </center>\n
-    </body>\n
+    <html>
+    <head>
+        <title>Login - Lernaean</title>
+    </head>
+    <body style="background-color: #cd4e7b;">
+        <center>
+            <br><br><br>
+            <h1><u>Administrator Login</u></h1>
+            <h2>--- CONFIDENTIAL ---</h2>
+            <h2>Please do not try to guess my password!</h2>
+            <form method="POST">
+                <input type="password" name="password"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </center>
+    </body>
     </html>
 ```
 
