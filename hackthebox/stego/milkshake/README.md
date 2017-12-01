@@ -35,7 +35,7 @@ Tag 2: ID3v2.4.0
 ```
 
 Found potentially interesting information as the `comment` that could be
-HEXADECIMAL, but that doesn't didn't convert to meaningful ASCII.
+HEXADECIMAL, but that doesn't appear to convert to meaningful ASCII.
 
 ### SPECTRUM ANALYSIS
 
