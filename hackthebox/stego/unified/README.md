@@ -19,7 +19,7 @@ The cover media may appear unremarkable at first glance and will require close i
 <<-----UTF-8 MESSAGE BOD_30079 ENDS----->>
 ```
 
-## UTF8 ENCODING
+### UTF8 ENCODING
 
 The `replacement character` is what stands out the most in that file.
 
@@ -46,7 +46,7 @@ $ xxd interesting.txt
 000000c0: bfbd efbf bd0a                           ......
 ```
 
-## TAG LATIN?
+### TAG LATIN?
 
 Searching `http://www.fileformat.info/info/unicode/char/search.htm` allows
 us to make the following mapping..
