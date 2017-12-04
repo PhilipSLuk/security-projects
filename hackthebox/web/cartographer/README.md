@@ -265,7 +265,7 @@ promise..
 http://88.198.233.174:35130/panel.php?info=foo
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/cartographer/login-notfound.jpg" width=200px/>
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/cartographer/login-nofound.jpg" width=200px/>
 
 By shear dumb ass luck, I tried a few different values and eventually tried
 `info=flag` and got something..
