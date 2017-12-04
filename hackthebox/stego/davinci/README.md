@@ -5,10 +5,20 @@ Try to find out the secret which is hiding inside of these pictures and learn
 the truth about Mona Lisa!
 
 ```
-Plans.jpg
-Thepassword_is_the_small_name_of_the_actor_named_Hanks.jpg
 monalisa.jpg
 ```
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/davinci/monalisa.jpg" width=200px/>
+
+```
+Plans.jpg
+```
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/davinci/Plans.jpg" width=200px/>
+
+```
+Thepassword_is_the_small_name_of_the_actor_named_Hanks.jpg
+```
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/davinci/Thepassword_is_the_small_name_of_the_actor_named_Hanks.jpg" width=200px;/>
+
 
 ### STRING ANALYSIS
 
@@ -113,6 +123,9 @@ PASSWORD FOUND!!!!: pw == leonardo
 ```
 
 Great.. now let's see what we got here. Looks like Mona Lisa with an iPhone...
+
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/davinci/Mona.jpg" width=200px/>
+
 
 ### STEGHIDE
 
