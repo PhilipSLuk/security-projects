@@ -38,6 +38,8 @@ found user-password: 'jumanji69'
 After view the PDF file, we see a portrait of Samuel Morse, but looking
 carefully at the bottom of the file we see something in fine print..
 
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/misc/0ld-is-g0ld/0ld_is_g0ld.cracked.jpg" width=200px/>
+
 ```
 .-. .---- .--. ... .- -- ..- ...-- .-.. -- ----- .-. ... ...--
 ```
