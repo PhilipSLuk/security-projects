@@ -161,7 +161,7 @@ base64 decode #2: SFRCe00wbkBfTDF6QF8hc19EM0BEfQ==
 base64 decode #3: HTB{M0n@_L1z@_!s_D3@D}
 ```
 
-### DECODING RESOURCES
+### DECODING RESOURCES I TRIED
 
 ```
 https://ringzer0team.com/tool
