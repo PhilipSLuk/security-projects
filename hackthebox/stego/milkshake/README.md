@@ -46,4 +46,5 @@ https://academo.org/demos/spectrum-analyzer/
 ```
 
 Performing spectrum analysis against the MP3 file reveals hidden text! Amazing!
-(screen captures of the spectrum analysis saved as PDF file).
+
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/milkshake/milkshake-academo.org-spectrum.analyzer.jpg" width=200px/>
