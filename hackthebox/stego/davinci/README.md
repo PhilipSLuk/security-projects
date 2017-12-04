@@ -155,10 +155,8 @@ But what the heck do we do with this string? Feeding it through a BASE64
 decoding several times yields the answer!
 
 ```
-original string:  VTBaU1EyVXdNSGRpYTBKbVZFUkdObEZHT0doak1UbEZUVEJDUldaUlBUMD0=
-base64 decode #1: U0ZSQ2UwMHdia0JmVERGNlFGOGhjMTlFTTBCRWZRPT0=
-base64 decode #2: SFRCe00wbkBfTDF6QF8hc19EM0BEfQ==
-base64 decode #3: HTB{M0n@_L1z@_!s_D3@D}
+$ base64 --d key | base64 --d | base64 --d
+HTB{M0n@_L1z@_!s_D3@D}
 ```
 
 ### DECODING RESOURCES I TRIED
