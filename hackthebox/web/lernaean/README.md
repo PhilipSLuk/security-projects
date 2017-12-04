@@ -8,25 +8,7 @@ see if they may be hiding anything!
 host: 88.198.233.174 port:33971
 ```
 
-```
-    <html>
-    <head>
-        <title>Login - Lernaean</title>
-    </head>
-    <body style="background-color: #cd4e7b;">
-        <center>
-            <br><br><br>
-            <h1><u>Administrator Login</u></h1>
-            <h2>--- CONFIDENTIAL ---</h2>
-            <h2>Please do not try to guess my password!</h2>
-            <form method="POST">
-                <input type="password" name="password"><br><br>
-                <input type="submit" value="Submit">
-            </form>
-        </center>
-    </body>
-    </html>
-```
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/lernaean/login.jpg" width=200px/>
 
 ### SQLMAP
 Let's try SQLMAP to see if SQL injection might work (turns out it doesn't)..
@@ -34,6 +16,10 @@ Let's try SQLMAP to see if SQL injection might work (turns out it doesn't)..
 ```
 $ sqlmap -u http://88.198.233.174:33971/ --data="password=' or '1=1" --tamper=space2comment
 ```
+
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/lernaean/login-failed.jpg" width=200px/>
+
+
 ### BURPSUITE
 Let's see if we can examine the HTTP traffic between us and the server by using
 burpsuite as our browser proxy to understand what is being passed around..
@@ -110,6 +96,8 @@ Weeeeeeee! Looks like we found a valid password.
 ### LOOKING FOR THE FLAG
 Trying the password we found on the form gives us a `Ooops! Too slow` response
 on this page: `http://88.198.233.174:33971/noooooooope.html`..
+
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/lernaean/login-success.jpg" width=200px/>
 
 .. but if we use burpsuite to analyze the response from the server, we find
 some hidden info..
