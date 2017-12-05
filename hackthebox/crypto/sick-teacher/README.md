@@ -27,7 +27,7 @@ https://quipqiup.com/
 
 Using the `statistics` mode yielded the following:
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/crypto/sick-teacher/cipher-quipquip.com.jpg" width=200px/>
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/crypto/sick-teacher/cipher-quipquip.com.jpg" width=500px/>
 
 ```
 HISTORY OF HACKTHEBOX HACKTHEBOX WENT LIVE SOME TIME IN MAY OF 2017. SINCE THEN,
