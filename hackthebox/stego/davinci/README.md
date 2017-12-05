@@ -137,8 +137,7 @@ password (since those were pieces of information given from the other so far
 unused files) and....
 
 ```
-$ steghide extract -sf Mona.jpg 
-Enter passphrase: 
+$ steghide extract -sf Mona.jpg -p Guernica
 wrote extracted data to "key".
 ```
 

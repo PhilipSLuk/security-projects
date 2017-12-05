@@ -47,8 +47,7 @@ https://hashkiller.co.uk/md5-decrypter.aspx
 Let's see if `almost` might be the password used with `steghide`..
 
 ```
-$ steghide extract -sf hackerman.jpg 
-Enter passphrase: 
+$ steghide extract -sf hackerman.jpg -p almost
 wrote extracted data to "hackerman.txt".
 ```
 Awesome! We found `hackerman.txt` hidden inside the JPG..
