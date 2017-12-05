@@ -165,7 +165,7 @@ So we found out that:
 2. Backend DBMS is `MySQL`
 3. Web Server OS is Linux Ubuntu 16.04 (xenial)
 4. Web Server is Apache 2.4.18 
-5. 5 DBs found: cartographer, information_schema, mysql, performance_schema, sys
+5. 5 DBs found: a. cartographer, b. information_schema, c. mysql, d. performance_schema, e. sys
 ```
 
 ### SQLMAP - DATABASE MINING
@@ -310,7 +310,7 @@ Requests/sec.: 60.48961
 ```
 
 So fuzzing yields two valid values for the `info=` parameter, 1. `home` (which
-we already know of) and `flag`!!
+we already know of) and 2. `flag`!!
 
 ```
 http://88.198.233.174:35130/panel.php?info=flag
