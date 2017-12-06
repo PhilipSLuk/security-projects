@@ -6,6 +6,7 @@ Explore the forest and capture the flag!
 ```
 forest.jpg
 ```
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/forest/forest.jpg" width=200px/>
 
 ### FILTERS
 
