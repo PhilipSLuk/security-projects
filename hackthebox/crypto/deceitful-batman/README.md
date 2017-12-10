@@ -67,6 +67,7 @@ https://en.wikipedia.org/wiki/Bacon%27s_cipher
 
 If we assume A=A and N=B of the Baconian alphabet..
 
+```
 NAANA	T
 AANNN	H
 AANAA	E
@@ -82,3 +83,4 @@ ANNNA	P
 ANAAA	I,J
 AANAA	E
 NAAAA	R
+```
