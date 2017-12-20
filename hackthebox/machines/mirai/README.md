@@ -210,7 +210,7 @@ know it, it worked! `(user: pi defaultpasswd: raspberry)`
 https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md
 ```
 
-````
+```
 $ ssh pi@10.10.10.48
 pi@10.10.10.48's password: raspberry
 
