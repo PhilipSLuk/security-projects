@@ -112,9 +112,14 @@ http://10.10.10.48/admin (Status: 301)
 http://10.10.10.48/versions (Status: 200)
 ```
 
-Found something called "Pi-hole Admin Console" running at
-`10.10.10.48:80/admin`. Pi-hole claims to be a "black hole for Internet
-advertisements"?
+Found something called "Pi-hole Admin Console" running at `10.10.10.48:80/admin`.
+Pi-hole claims to be a "black hole for Internet advertisements"?
+
+```
+http://10.10.10.48/admin
+```
+
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/machines/mirai/pi-hole-admin.jpg" width=200px/>
 
 ```
 *Pi-hole can protect your network from malware*
@@ -128,6 +133,8 @@ no username.
 ```
 http://10.10.10.48/admin/index.php?login
 ```
+
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/machines/mirai/pi-hole-login.jpg" width=200px/>
 
 Under "forgot password", I see that you can `ssh` into the machine and run the
 following command to reset your password (apparently no way to recover the
