@@ -1,0 +1,45 @@
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2017-12-16 13:25 EST
+Nmap scan report for 10.10.10.48
+Host is up (0.36s latency).
+Not shown: 996 closed ports
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 6.7p1 Debian 5+deb8u3 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 aa:ef:5c:e0:8e:86:97:82:47:ff:4a:e5:40:18:90:c5 (DSA)
+|   2048 e8:c1:9d:c5:43:ab:fe:61:23:3b:d7:e4:af:9b:74:18 (RSA)
+|   256 b6:a0:78:38:d0:c8:10:94:8b:44:b2:ea:a0:17:42:2b (ECDSA)
+|_  256 4d:68:40:f7:20:c4:e5:52:80:7a:44:38:b8:a2:a7:52 (EdDSA)
+53/tcp   open  domain  dnsmasq 2.76
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.76
+80/tcp   open  http    lighttpd 1.4.35
+|_http-server-header: lighttpd/1.4.35
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+8000/tcp open  http    SimpleHTTPServer 0.6 (Python 2.7.9)
+|_http-server-header: SimpleHTTP/0.6 Python/2.7.9
+|_http-title: Directory listing for /
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.60%E=4%D=12/16%OT=22%CT=1%CU=43221%PV=Y%DS=2%DC=T%G=Y%TM=5A3565
+OS:51%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=10E%TI=Z%CI=I%TS=8)SEQ(SP=
+OS:105%GCD=1%ISR=10E%TI=Z%CI=I%II=I%TS=8)SEQ(SP=105%GCD=1%ISR=10E%TI=Z%II=I
+OS:%TS=8)OPS(O1=M54BST11NW6%O2=M54BST11NW6%O3=M54BNNT11NW6%O4=M54BST11NW6%O
+OS:5=M54BST11NW6%O6=M54BST11)WIN(W1=7120%W2=7120%W3=7120%W4=7120%W5=7120%W6
+OS:=7120)ECN(R=Y%DF=Y%T=40%W=7210%O=M54BNNSNW6%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O
+OS:%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=
+OS:0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%
+OS:S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(
+OS:R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=
+OS:N%T=40%CD=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 1723/tcp)
+HOP RTT       ADDRESS
+1   396.05 ms 10.10.16.1
+2   192.08 ms 10.10.10.48
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 51.88 seconds
