@@ -1,0 +1,19 @@
+
+Gobuster v1.2                OJ Reeves (@TheColonial)
+=====================================================
+[+] Mode         : dir
+[+] Url/Domain   : http://10.10.10.68/
+[+] Threads      : 10
+[+] Wordlist     : /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Status codes : 204,301,302,307,200
+[+] Expanded     : true
+=====================================================
+http://10.10.10.68/images (Status: 301)
+http://10.10.10.68/uploads (Status: 301)
+http://10.10.10.68/php (Status: 301)
+http://10.10.10.68/css (Status: 301)
+http://10.10.10.68/dev (Status: 301)
+http://10.10.10.68/js (Status: 301)
+http://10.10.10.68/fonts (Status: 301)
+[!] Keyboard interrupt detected, terminating.
+=====================================================

