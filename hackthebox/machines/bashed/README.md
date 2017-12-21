@@ -142,8 +142,6 @@ www-data@bashed :/home/arrexel# cat user.txt
 
 ### OWN MACHINE
 
-u dont need reverse shell... man u just copy the root.txt into tmp create a simple python script. :)
-
 On the machine, there is a directory called `/scripts` which stands out as an
 area of interest as it has a `test.py` script owned by user `scriptmanager`
 and a `test.txt` file owned by `root`. Wonder if we can some how use this
@@ -159,14 +157,17 @@ drwxr-xr-x 23 root root 4096 Dec 4 13:02 ..
 -rw-r--r-- 1 scriptmanager scriptmanager 58 Dec 4 17:03 test.py
 -rw-r--r-- 1 root root 12 Dec 19 21:32 test.txt
 www-data@bashed :/# sudo -u scriptmanager cat /scripts/test.py
-# cat test.py
-import os
-os.system('cat /root/root.txt.txt >> test.txt')
-www-data@bashed
-:/tmp# sudo -u scriptmanager python /scripts/test.py
+f = open("test.txt", "w")
+f.write("testing 123!")
+f.close
+www-data@bashed :/# sudo -u scriptmanager python /scripts/test.py
 cat: /root/root.txt.txt: Permission denied
 ```
 
 Hm.. so I'm stuck.  What I don't know is how to:
 1. edit the `test.py` to have the commands I want (e.g. cat /root/root.txt)
+```
+  import os
+  os.system('cat /root/root.txt.txt >> test.txt')
+```
 2. execute the script with root priviledges
