@@ -59,7 +59,7 @@ Running the MP3 through a spectrum analyzer to see if anything is there..
 https://academo.org/demos/spectrum-analyzer/
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/raining-blood/spectrum.analyzer.jpg" width=500px/>
+<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/raining-blood/spectrum.analysis.jpg" width=500px/>
 
 Nothing appears to jump out.
 
