@@ -34,9 +34,6 @@ f<SFRCe2gxZGQxbmdfZDR0NF9iM3R3MzNuX21wM19mcjRtM3NfaXNfbm90X2Z1bm55ISF9Cg==
 ~_/n
 ```
 
-HTB{h1dd1ng_d4t4_b3tw33n_mp3_fr4m3s_is_not_funny!!}
-
-
 ### MP3 ID3 INFO TAGS
 
 Let's see if we find anything interesting in the MP3 metadata..
