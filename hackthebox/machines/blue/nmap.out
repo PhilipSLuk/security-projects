@@ -1,0 +1,39 @@
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2017-12-21 18:06 EST
+Nmap scan report for 10.10.10.40
+Host is up (0.44s latency).
+Not shown: 991 closed ports
+PORT      STATE SERVICE      VERSION
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)
+49152/tcp open  unknown
+49153/tcp open  unknown
+49154/tcp open  unknown
+49155/tcp open  unknown
+49156/tcp open  unknown
+49157/tcp open  unknown
+Device type: firewall
+Running (JUST GUESSING): Fortinet embedded (87%)
+OS CPE: cpe:/h:fortinet:fortigate_100d
+Aggressive OS guesses: Fortinet FortiGate 100D firewall (87%)
+No exact OS matches for host (test conditions non-ideal).
+Service Info: Host: HARIS-PC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_smb2-time: Protocol negotiation failed (SMB2)
+
+TRACEROUTE (using port 587/tcp)
+HOP RTT        ADDRESS
+1   248.81 ms  10.10.16.1
+2   2155.62 ms 10.10.16.1
+3   2360.86 ms 10.10.16.1
+4   2360.88 ms 10.10.16.1
+5   ... 17
+18  2260.80 ms 10.10.16.1
+19  2260.78 ms 10.10.16.1
+20  2124.08 ms 10.10.16.1
+21  ... 30
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 115.89 seconds
