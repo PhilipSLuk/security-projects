@@ -6,7 +6,7 @@ There should be something hidden inside this photo.. Can you find out?
 ```
 hackerman.jpg
 ```
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/hackerman/hackerman.jpg" width=200px/>
+<img src="hackerman.jpg" width=500px/>
 
 ### FILTERS
 

@@ -51,7 +51,7 @@ Visiting the webpage we are greeted with "Don't Bug Me!"..
 http://10.10.10.56
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/machines/shocker/index.html.jpg" width=500px/>
+<img src="index.html.jpg" width=500px/>
 
 ##### GOBUSTER
 

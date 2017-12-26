@@ -9,7 +9,7 @@ Note: The flag is not an e-mail address.
 host: 88.198.233.174 port:41124
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/thiseas/login.jpg" width=500px/>
+<img src="login.jpg" width=500px/>
 
 ### BURPSUITE
 
@@ -152,7 +152,7 @@ Content-Type: text/html; charset=UTF-8
 </RESPONSE>
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/thiseas/login-failed.jpg" width=500px/>
+<img src="login-failed.jpg" width=500px/>
 
 ### NMAP
 
@@ -299,9 +299,9 @@ function doProcess() {
 Using the values we find in this function for `name1` and `name2`, we are able
 to login successfully! (no wonder my dictionary attack never worked..)
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/thiseas/login-success.jpg" width=500px/>
+<img src="login-success.jpg" width=500px/>
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/thiseas/console.jpg" width=500px/>
+<img src="console.jpg" width=500px/>
 
 ### MAILS.PHP
 
@@ -415,8 +415,4 @@ Going through the list and trying each email one-by-one in the "Send EMail"
 form from the console, eventually we find that `fishroesalad@mail.com` is
 the magic email we are looking for as it yields:
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/thiseas/email.jpg" width=500px/>
-
-```
-HTB{FuckTheB3stAndPlayWithTheRest!!}
-```
+<img src="email.jpg" width=500px/>

@@ -7,17 +7,17 @@ the truth about Mona Lisa!
 ```
 monalisa.jpg
 ```
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/davinci/monalisa.jpg" width=200px/>
+<img src="monalisa.jpg" width=500px/>
 
 ```
 Plans.jpg
 ```
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/davinci/Plans.jpg" width=200px/>
+<img src="Plans.jpg" width=500px/>
 
 ```
 Thepassword_is_the_small_name_of_the_actor_named_Hanks.jpg
 ```
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/davinci/Thepassword_is_the_small_name_of_the_actor_named_Hanks.jpg" width=200px;/>
+<img src="Thepassword_is_the_small_name_of_the_actor_named_Hanks.jpg" width=500px;/>
 
 
 ### STRING ANALYSIS
@@ -124,7 +124,7 @@ PASSWORD FOUND!!!!: pw == leonardo
 
 Great.. now let's see what we got here. Looks like Mona Lisa with an iPhone...
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/davinci/Mona.jpg" width=200px/>
+<img src="Mona.jpg" width=500px/>
 
 
 ### STEGHIDE

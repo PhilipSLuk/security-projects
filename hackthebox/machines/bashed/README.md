@@ -50,7 +50,7 @@ Visiting the webpage we see something called 'Arrexel's Development Site':
 http://10.10.10.68
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/machines/bashed/index.html.jpg" width=500px/>
+<img src="index.html.jpg" width=500px/>
 
 ##### GOBUSTER
 
@@ -122,7 +122,7 @@ Loading this script appears to give us a session on the machine????
 http://10.10.10.68/dev/phpbash.php
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/machines/bashed/phpbash.php.jpg" width=500px/>
+<img src="phpbash.php.jpg" width=500px/>
 
 ### OWN USER
 

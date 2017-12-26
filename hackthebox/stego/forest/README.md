@@ -6,7 +6,7 @@ Explore the forest and capture the flag!
 ```
 forest.jpg
 ```
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/forest/forest.jpg" width=200px/>
+<img src="forest.jpg" width=500px/>
 
 ### FILTERS
 
@@ -16,11 +16,11 @@ https://29a.ch/photo-forensics/
 
 Error analysis filters show some text in the left side.
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/forest/forest-29a.ch-photo.forensics-error.level.analysis.png" width=200px/>
+<img src="forest-29a.ch-photo.forensics-error.level.analysis.png" width=500px/>
 
 Turning up the contrast allows us to see the text better..
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/forest/forest-phixr.com-exposure.jpg" width=200px/>
+<img src="forest-phixr.com-exposure.jpg" width=500px/>
 
 I can see the text `IsJuS1Af0r3sTbR0`, but that doesn't seem to be the flag.
 What else am I missing?
@@ -48,7 +48,7 @@ Looking at the text, we can make a guess that `UGO{NzNm1aTfXvyYmMOe0}` is the
 cryptogram solver `https://quipquip.com` using `statistics` model yields the
 following..
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/forest/cryptogram-quipquip.com.jpg" width=500px/>
+<img src="cryptogram-quipquip.com.jpg" width=500px/>
 
 ```
 The forest is a complex ecosystem consisting mainly of trees that buffer the earth and support a myriad of life forms. The trees help create a special environment which, in turn, affects the kinds of animals and plants that can exist in the forest. Trees are an important component of the environment. They clean the air, cool it on hot days, conserve heat at night, and act as excellent sound absorbers. HTB{AmAz1nGsKilLzZBr0}

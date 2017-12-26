@@ -89,7 +89,7 @@ PASSWORD FOUND!!!!: pw == pass
 Great.. it's a four character passphrase just like John said. Now let's see
 what `BAND.JPG` is..
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/beatles/BAND.JPG" width=200px/>
+<img src="BAND.JPG" width=500px/>
 
 ### STRING ANALYSIS
 

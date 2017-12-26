@@ -8,7 +8,7 @@ you break in and see what they are up to?
 host: 88.198.233.174 port:35067
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/cartographer/login.jpg" width=200px/>
+<img src="login.jpg" width=500px/>
 
 ### BURPSUITE
 Let's see if we can examine the HTTP traffic between us and the server by using
@@ -241,7 +241,7 @@ presented with a `Cartographer Is Still Under Construction!` page.
 ```
 http://88.198.233.174:35130/panel.php?info=home
 ```
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/cartographer/login-success.jpg" width=200px/>
+<img src="login-success.jpg" width=500px/>
 
 Analyzing the server communication with Burpsuite, we see a cookie gets set
 with `PHPSESSID=goa9r4gatjedo6df8uktgpclp7`.
@@ -273,7 +273,7 @@ to see what happens.
 http://88.198.233.174:35130/panel.php?info=foo
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/cartographer/login-nofound.jpg" width=200px/>
+<img src="login-nofound.jpg" width=500px/>
 
 Interesting, we get a `Not Found` page.. perhaps we can try to find some value
 which results in a valid page?
@@ -316,7 +316,7 @@ we already know of) and 2. `flag`!!
 http://88.198.233.174:35130/panel.php?info=flag
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/cartographer/login-flag.jpg" width=200px/>
+<img src="login-flag.jpg" width=500px/>
 
 Would be interesting to try and brute force other POST request challenges in
 the future with something like this..

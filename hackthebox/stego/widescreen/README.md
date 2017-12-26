@@ -7,7 +7,7 @@ Someone has leaked pictures of our unreleased movie. Can you help identify him?
 widescreen.png
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/widescreen/widescreen.png" width=200px/>
+<img src="widescreen.png" width=500px/>
 
 ### ERROR LEVEL ANALYSIS (ELA)
 
@@ -25,7 +25,7 @@ at the bottom of the image.
 widescreen-fotoforensics.com-error.level.analysis.png
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/widescreen/widescreen-fotoforensics.com-error.level.analysis.png" width=200px/>
+<img src="widescreen-fotoforensics.com-error.level.analysis.png" width=500px/>
 
 ### INCREASING EXPOSURE
 
@@ -35,4 +35,4 @@ the black banner!
 ```
 widescreen-phixr.com-exposure.jpg
 ```
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/stego/widescreen/widescreen-phixr.com-exposure.jpg" width=200px/>
+<img src="widescreen-phixr.com-exposure.jpg" width=500px/>

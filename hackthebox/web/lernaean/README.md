@@ -8,7 +8,7 @@ see if they may be hiding anything!
 host: 88.198.233.174 port:33971
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/lernaean/login.jpg" width=200px/>
+<img src="lernaean/login.jpg" width=500px/>
 
 ### SQLMAP
 Let's try SQLMAP to see if SQL injection might work (turns out it doesn't)..
@@ -17,7 +17,7 @@ Let's try SQLMAP to see if SQL injection might work (turns out it doesn't)..
 $ sqlmap -u http://88.198.233.174:33971/ --data="password=' or '1=1" --tamper=space2comment
 ```
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/lernaean/login-failed.jpg" width=200px/>
+<img src="login-failed.jpg" width=500px/>
 
 
 ### BURPSUITE
@@ -97,7 +97,7 @@ Weeeeeeee! Looks like we found a valid password.
 Trying the password we found on the form gives us a `Ooops! Too slow` response
 on this page: `http://88.198.233.174:33971/noooooooope.html`..
 
-<img src="https://github.com/fortyfunbobby/security-projects/blob/master/hackthebox/web/lernaean/login-success.jpg" width=200px/>
+<img src="login-success.jpg" width=500px/>
 
 .. but if we use burpsuite to analyze the response from the server, we find
 some hidden info..
