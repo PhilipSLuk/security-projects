@@ -1,0 +1,40 @@
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2017-12-25 17:27 EST
+Nmap scan report for docker.hackthebox.eu (88.198.233.174)
+Host is up (0.0087s latency).
+Not shown: 961 filtered ports, 36 closed ports
+PORT    STATE SERVICE     VERSION
+53/tcp  open  domain      dnsmasq 2.45
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.45
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: HIRON)
+445/tcp open  netbios-ssn Samba smbd 3.0.37 (workgroup: HIRON)
+Device type: general purpose|bridge|switch
+Running (JUST GUESSING): QEMU (98%), Oracle Virtualbox (96%), Bay Networks embedded (88%)
+OS CPE: cpe:/a:qemu:qemu cpe:/o:oracle:virtualbox cpe:/h:baynetworks:baystack_450
+Aggressive OS guesses: QEMU user mode network gateway (98%), Oracle Virtualbox (96%), Bay Networks BayStack 450 switch (software version 3.1.0.22) (88%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+
+Host script results:
+|_clock-skew: mean: 7s, deviation: 0s, median: 7s
+|_nbstat: NetBIOS name: INTEL_CE_LINUX, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+| smb-os-discovery: 
+|   OS: Unix (Samba 3.0.37)
+|   NetBIOS computer name: 
+|   Workgroup: HIRON\x00
+|_  System time: 2017-12-25T22:29:02+00:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: share (dangerous)
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_smb2-time: Protocol negotiation failed (SMB2)
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   3.02 ms 10.0.2.2
+2   3.06 ms docker.hackthebox.eu (88.198.233.174)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 81.94 seconds
