@@ -775,7 +775,7 @@ iknowmag1k=LDRCU61StZbYrdIXPROTGIprI45i7IsYMAovrw2IGp8AAAAAAAAAAA%3D%3D
 
 Forwarding this request onto the server gets us in!
 
-<img src="iknowmagik-profile.jpg" width=500px/>
+<img src="iknowmagik-profile-admin.jpg" width=500px/>
 
 ```
 HTB{Padd1NG_Or4cl3z_AR3_WaY_T0o_6en3r0ys_ArenT_tHey???}
