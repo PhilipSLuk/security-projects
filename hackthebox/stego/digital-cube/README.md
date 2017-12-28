@@ -51,11 +51,11 @@ a hint, we can have a 50x50 cube (possible combinations are: 1x2500, 2x1250,
 
 At 50x50 layout.. it looks like a QRCode??
 
-<img src="digitalcode-50x50.jpg" width=500px/>
+<img src="digitalcube-50x50.jpg" width=500px/>
 
 Using an editor to clean up the lines and contrast and scanning with a QRCode
 reader.. we get..
 
-<img src="digitalcode-qrcode.jpg" width=500px/>
+<img src="digitalcube-qrcode.jpg" width=500px/>
 
-<img src="qrcode-reader.jpg" width=500px/>
+<img src="qrcode-reader.jpg" width=200px/>
