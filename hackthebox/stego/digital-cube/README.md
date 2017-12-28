@@ -53,9 +53,10 @@ At 50x50 layout.. it looks like a QRCode??
 
 <img src="digitalcube-50x50.jpg" width=500px/>
 
-Using an editor to clean up the lines and contrast and scanning with a QRCode
-reader.. we get..
+Using an editor to clean up the lines and contrast..
 
 <img src="digitalcube-qrcode.jpg" width=500px/>
+
+and scanning with a QRCode reader on my mobile phone.. we get..
 
 <img src="qrcode-reader.jpg" width=200px/>
