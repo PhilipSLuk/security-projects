@@ -115,7 +115,6 @@ Doh.. but of course not. Misdirection. Sneaky bastards.
 
 Let's resort to cracking the zip file using `fcrackzip`.
 
-
 ```
 $ fcrackzip -u -D -p /usr/share/wordlists/rockyou.txt famous.zip 
 
@@ -158,8 +157,43 @@ $ base64 --d key | base64 --d | base64 --d
 HTB{M0n@_L1z@_!s_D3@D}
 ```
 
-### DECODING RESOURCES I TRIED
+### APPENDIX
 
+##### ALTERNATE WAY TO GET ZIP PASSPHRASE
+
+While `fcrackzip` worked to get the `leonardo` passphrase, going back to the
+unused "tom hanks" file shows we actually skipped past some of this challenge..
+
+```
+$ steghide extract -sf Thepassword_is_the_small_name_of_the_actor_named_Hanks.jpg -p TOM
+wrote extracted data to "S3cr3t_m3ss@g3.txt".
+
+$ cat S3cr3t_m3ss@g3.txt 
+Hey Filippos,
+This is my secret key for our folder.... (key:020e60c6a84db8c5d4c2d56a4e4fe082)
+I used an encryption with 32 characters. hehehehehe! No one will find it! ;)
+Decrypt it... It's easy for you right?
+Don't share it with anyone...plz!
+
+
+if you are reading that, call me!
+I need your advice for my new CTF challenge!
+
+Kisses,
+-Luc1f3r
+```
+
+Searching around, we find that `020e60c6a84db8c5d4c2d56a4e4fe082` is the MD5
+hash for `leonardo`.. which is what we figured out was the passphrase using
+`fcrackzip` :-)
+
+```
+https://hashtoolkit.com/decrypt-md5-hash/020e60c6a84db8c5d4c2d56a4e4fe082
+```
+
+<img src="md5-hash-leonardo.jpg" width=500px/>
+
+##### OTHER DECODING RESOURCES I TRIED
 ```
 https://ringzer0team.com/tool
 https://tech.pookey.co.uk/non-wp/encoder-decoder.php
