@@ -171,3 +171,14 @@ Hm.. so I'm stuck.  What I don't know is how to:
   os.system('cat /root/root.txt.txt >> test.txt')
 ```
 2. execute the script with root priviledges
+
+### RETIRED
+
+```
+https://medium.com/pentestsec/bashed-bd7804081ae5
+```
+
+Seems like the final steps was to:
+
+1. Realize that there is a cronjob that runs any Python script in /scripts
+2. Upload a Python script to trigger a reverse shell and wait for it to be run
