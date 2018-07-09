@@ -499,3 +499,13 @@ writing custom interactive Python GDB commands.
 Unfortunately I wasn't able to progress to get the root.txt before the machine
 was retired. Would be interesting to read up on other people's write ups to
 see what would have been the next steps for priviledge escalation.
+
+```
+https://reboare.github.io/hackthebox/calamity.html
+```
+
+Seems like I lucked out by getting the user.txt as I only dumped the contents
+of the file without actually discovering the user password was in the audio
+files in the user's home directory and logging in. The remaining work to get
+root.txt seems quite involved and required a buffer overflow attack against an
+executable within the user's home directory.
