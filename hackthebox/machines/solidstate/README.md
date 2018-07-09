@@ -497,7 +497,7 @@ https://speakerdeck.com/knaps/escape-from-shellcatraz-breaking-out-of-restricted
 .. but didn't get around to trying this before the machine was retired :-(
 
 
-### TIME'S UP
+### RETIRED
 
 ```
 https://reboare.github.io/hackthebox/solidstate.html
