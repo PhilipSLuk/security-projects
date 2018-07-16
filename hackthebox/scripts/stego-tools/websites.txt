@@ -1,0 +1,4 @@
+http://fotoforensics.com/
+https://29a.ch/photo-forensics/
+
+https://github.com/DominicBreuker/stego-toolkit

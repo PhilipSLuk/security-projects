@@ -1,0 +1,7 @@
+ROT-13: http://www.decode.org/
+BASE64: https://www.base64decode.org/
+URL: https://www.urldecoder.org/
+HEX: http://www.convertstring.com/EncodeDecode/HexDecode
+MD5: https://www.md5online.org/
+
+https://ringzer0team.com/tool
