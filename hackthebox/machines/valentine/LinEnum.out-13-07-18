@@ -1,0 +1,626 @@
+
+[00;31m#########################################################[00m
+[00;31m#[00m [00;33mLocal Linux Enumeration & Privilege Escalation Script[00m [00;31m#[00m
+[00;31m#########################################################[00m
+[00;33m# www.rebootuser.com[00m
+[00;33m# [00m
+
+Debug Info
+report name = output.txt-13-07-18
+thorough tests = disabled
+
+
+Fri Jul 13 08:27:04 PDT 2018
+[00m
+
+[00;33m### SYSTEM ##############################################[00m
+[00;31mKernel information:[00m
+Linux Valentine 3.2.0-23-generic #36-Ubuntu SMP Tue Apr 10 20:39:51 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
+
+
+[00;31mKernel information (continued):[00m
+Linux version 3.2.0-23-generic (buildd@crested) (gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu4) ) #36-Ubuntu SMP Tue Apr 10 20:39:51 UTC 2012
+
+
+[00;31mSpecific release information:[00m
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=12.04
+DISTRIB_CODENAME=precise
+DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
+
+
+[00;31mHostname:[00m
+Valentine
+
+
+[00;33m### USER/GROUP ##########################################[00m
+[00;31mCurrent user/group info:[00m
+uid=1000(hype) gid=1000(hype) groups=1000(hype),24(cdrom),30(dip),46(plugdev),124(sambashare)
+
+
+[00;31mUsers that have previously logged onto the system:[00m
+Username         Port     From             Latest
+root             tty1                      Fri Feb 16 14:38:30 -0800 2018
+hype             pts/2    10.10.16.53      Fri Jul 13 08:18:02 -0700 2018
+
+
+[00;31mAll users and uid/gid info:[00m
+root:x:0:0
+daemon:x:1:1
+bin:x:2:2
+sys:x:3:3
+sync:x:4:65534
+games:x:5:60
+man:x:6:12
+lp:x:7:7
+mail:x:8:8
+news:x:9:9
+uucp:x:10:10
+proxy:x:13:13
+www-data:x:33:33
+backup:x:34:34
+list:x:38:38
+irc:x:39:39
+gnats:x:41:41
+nobody:x:65534:65534
+libuuid:x:100:101
+syslog:x:101:103
+messagebus:x:102:105
+colord:x:103:108
+lightdm:x:104:111
+whoopsie:x:105:114
+avahi-autoipd:x:106:117
+avahi:x:107:118
+usbmux:x:108:46
+kernoops:x:109:65534
+pulse:x:110:119
+rtkit:x:111:122
+speech-dispatcher:x:112:29
+hplip:x:113:7
+saned:x:114:123
+hype:x:1000:1000
+sshd:x:115:65534
+
+
+[00;31mGroup memberships:[00m
+uid=0(root) gid=0(root) groups=0(root)
+uid=1(daemon) gid=1(daemon) groups=1(daemon)
+uid=2(bin) gid=2(bin) groups=2(bin)
+uid=3(sys) gid=3(sys) groups=3(sys)
+uid=4(sync) gid=65534(nogroup) groups=65534(nogroup)
+uid=5(games) gid=60(games) groups=60(games)
+uid=6(man) gid=12(man) groups=12(man)
+uid=7(lp) gid=7(lp) groups=7(lp)
+uid=8(mail) gid=8(mail) groups=8(mail)
+uid=9(news) gid=9(news) groups=9(news)
+uid=10(uucp) gid=10(uucp) groups=10(uucp)
+uid=13(proxy) gid=13(proxy) groups=13(proxy)
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+uid=34(backup) gid=34(backup) groups=34(backup)
+uid=38(list) gid=38(list) groups=38(list)
+uid=39(irc) gid=39(irc) groups=39(irc)
+uid=41(gnats) gid=41(gnats) groups=41(gnats)
+uid=65534(nobody) gid=65534(nogroup) groups=65534(nogroup)
+uid=100(libuuid) gid=101(libuuid) groups=101(libuuid)
+uid=101(syslog) gid=103(syslog) groups=103(syslog)
+uid=102(messagebus) gid=105(messagebus) groups=105(messagebus)
+uid=103(colord) gid=108(colord) groups=108(colord)
+uid=104(lightdm) gid=111(lightdm) groups=111(lightdm)
+uid=105(whoopsie) gid=114(whoopsie) groups=114(whoopsie)
+uid=106(avahi-autoipd) gid=117(avahi-autoipd) groups=117(avahi-autoipd)
+uid=107(avahi) gid=118(avahi) groups=118(avahi)
+uid=108(usbmux) gid=46(plugdev) groups=46(plugdev)
+uid=109(kernoops) gid=65534(nogroup) groups=65534(nogroup)
+uid=110(pulse) gid=119(pulse) groups=119(pulse),29(audio)
+uid=111(rtkit) gid=122(rtkit) groups=122(rtkit)
+uid=112(speech-dispatcher) gid=29(audio) groups=29(audio)
+uid=113(hplip) gid=7(lp) groups=7(lp)
+uid=114(saned) gid=123(saned) groups=123(saned)
+uid=1000(hype) gid=1000(hype) groups=1000(hype),24(cdrom),30(dip),46(plugdev),124(sambashare)
+uid=115(sshd) gid=65534(nogroup) groups=65534(nogroup)
+
+
+[00;31mSample entires from /etc/passwd (searching for uid values 0, 500, 501, 502, 1000, 1001, 1002, 2000, 2001, 2002):[00m
+root:x:0:0:root:/root:/bin/bash
+hype:x:1000:1000:Hemorrhage,,,:/home/hype:/bin/bash
+
+
+[00;31mSuper user account(s):[00m
+root
+
+
+[00;31mAre permissions on /home directories lax:[00m
+total 12K
+drwxr-xr-x  3 root root 4.0K Dec 11  2017 .
+drwxr-xr-x 26 root root 4.0K Feb  6 11:56 ..
+drwxr-xr-x 21 hype hype 4.0K Jul 13 08:20 hype
+
+
+[00;31mRoot is allowed to login via SSH:[00m
+PermitRootLogin yes
+
+
+[00;33m### ENVIRONMENTAL #######################################[00m
+[00;31mPath information:[00m
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+
+[00;31mAvailable shells:[00m
+# /etc/shells: valid login shells
+/bin/sh
+/bin/dash
+/bin/bash
+/bin/rbash
+/usr/bin/tmux
+
+
+[00;31mCurrent umask value:[00m
+0002
+u=rwx,g=rwx,o=rx
+
+
+[00;31mumask value as specified in /etc/login.defs:[00m
+UMASK		022
+
+
+[00;31mPassword and storage information:[00m
+PASS_MAX_DAYS	99999
+PASS_MIN_DAYS	0
+PASS_WARN_AGE	7
+ENCRYPT_METHOD SHA512
+
+
+[00;33m### JOBS/TASKS ##########################################[00m
+[00;31mCron jobs:[00m
+-rw-r--r-- 1 root root  722 Apr  2  2012 /etc/crontab
+
+/etc/cron.d:
+total 28
+drwxr-xr-x   2 root root  4096 Dec 11  2017 .
+drwxr-xr-x 132 root root 12288 Jul 13 08:07 ..
+-rw-r--r--   1 root root   288 Jun 20  2010 anacron
+-rw-r--r--   1 root root   544 Feb 13  2017 php5
+-rw-r--r--   1 root root   102 Apr  2  2012 .placeholder
+
+/etc/cron.daily:
+total 84
+drwxr-xr-x   2 root root  4096 Dec 11  2017 .
+drwxr-xr-x 132 root root 12288 Jul 13 08:07 ..
+-rwxr-xr-x   1 root root   311 Jun 20  2010 0anacron
+-rwxr-xr-x   1 root root   633 Jul 15  2016 apache2
+-rwxr-xr-x   1 root root   219 Apr 10  2012 apport
+-rwxr-xr-x   1 root root 15399 Apr 20  2012 apt
+-rwxr-xr-x   1 root root   502 Mar 31  2012 bsdmainutils
+-rwxr-xr-x   1 root root   256 Apr 12  2012 dpkg
+-rwxr-xr-x   1 root root   372 Oct  4  2011 logrotate
+-rwxr-xr-x   1 root root  1365 Mar 31  2012 man-db
+-rwxr-xr-x   1 root root   606 Aug 17  2011 mlocate
+-rwxr-xr-x   1 root root   249 Apr  8  2012 passwd
+-rw-r--r--   1 root root   102 Apr  2  2012 .placeholder
+-rwxr-xr-x   1 root root  2417 Jul  1  2011 popularity-contest
+-rwxr-xr-x   1 root root  2947 Apr  2  2012 standard
+-rwxr-xr-x   1 root root   214 Apr 19  2012 update-notifier-common
+
+/etc/cron.hourly:
+total 20
+drwxr-xr-x   2 root root  4096 Apr 25  2012 .
+drwxr-xr-x 132 root root 12288 Jul 13 08:07 ..
+-rw-r--r--   1 root root   102 Apr  2  2012 .placeholder
+
+/etc/cron.monthly:
+total 24
+drwxr-xr-x   2 root root  4096 Apr 25  2012 .
+drwxr-xr-x 132 root root 12288 Jul 13 08:07 ..
+-rwxr-xr-x   1 root root   313 Jun 20  2010 0anacron
+-rw-r--r--   1 root root   102 Apr  2  2012 .placeholder
+
+/etc/cron.weekly:
+total 32
+drwxr-xr-x   2 root root  4096 Apr 25  2012 .
+drwxr-xr-x 132 root root 12288 Jul 13 08:07 ..
+-rwxr-xr-x   1 root root   312 Jun 20  2010 0anacron
+-rwxr-xr-x   1 root root   730 Dec 30  2011 apt-xapian-index
+-rwxr-xr-x   1 root root   907 Mar 31  2012 man-db
+-rw-r--r--   1 root root   102 Apr  2  2012 .placeholder
+
+
+[00;31mCrontab contents:[00m
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m h dom mon dow user	command
+17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#
+
+
+[00;31mAnacron jobs and associated file permissions:[00m
+-rw-r--r-- 1 root root 395 Jun 20  2010 /etc/anacrontab
+# /etc/anacrontab: configuration file for anacron
+
+# See anacron(8) and anacrontab(5) for details.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# These replace cron's entries
+1	5	cron.daily	 nice run-parts --report /etc/cron.daily
+7	10	cron.weekly	 nice run-parts --report /etc/cron.weekly
+@monthly	15	cron.monthly nice run-parts --report /etc/cron.monthly
+
+
+[00;31mWhen were jobs last executed (/var/spool/anacron contents):[00m
+total 20
+drwxr-xr-x 2 root root 4096 Dec 11  2017 .
+drwxr-xr-x 8 root root 4096 Apr 25  2012 ..
+-rw------- 1 root root    9 Jul 13 08:12 cron.daily
+-rw------- 1 root root    9 Feb  5 16:50 cron.monthly
+-rw------- 1 root root    9 Feb 12 07:47 cron.weekly
+
+
+[00;33m### NETWORKING  ##########################################[00m
+[00;31mNetwork & IP info:[00m
+eth0      Link encap:Ethernet  HWaddr 00:50:56:b9:12:e8  
+          inet addr:10.10.10.79  Bcast:10.10.10.255  Mask:255.255.255.0
+          inet6 addr: dead:beef::443a:c424:2db4:9b94/64 Scope:Global
+          inet6 addr: dead:beef::250:56ff:feb9:12e8/64 Scope:Global
+          inet6 addr: fe80::250:56ff:feb9:12e8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:101753 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:101158 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:7532411 (7.5 MB)  TX bytes:21029429 (21.0 MB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:190 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:190 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:41864 (41.8 KB)  TX bytes:41864 (41.8 KB)
+
+
+[00;31mNameserver(s):[00m
+nameserver 8.8.8.8
+
+
+[00;31mDefault route:[00m
+default         10.10.10.2      0.0.0.0         UG    100    0        0 eth0
+
+
+[00;31mListening TCP:[00m
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -               
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      -               
+tcp        0      0 10.10.10.79:22          10.10.15.114:50086      ESTABLISHED -               
+tcp        0      0 10.10.10.79:22          10.10.14.238:49164      ESTABLISHED -               
+tcp        0    320 10.10.10.79:22          10.10.16.53:34074       ESTABLISHED -               
+tcp6       0      0 :::80                   :::*                    LISTEN      -               
+tcp6       0      0 :::22                   :::*                    LISTEN      -               
+tcp6       0      0 ::1:631                 :::*                    LISTEN      -               
+tcp6       0      0 :::443                  :::*                    LISTEN      -               
+tcp6       0   1306 10.10.10.79:443         10.10.15.151:57386      ESTABLISHED -               
+tcp6       0      0 10.10.10.79:80          10.10.15.63:57270       TIME_WAIT   -               
+tcp6       0    517 10.10.10.79:80          10.10.15.63:57274       ESTABLISHED -               
+tcp6       0      0 10.10.10.79:80          10.10.15.63:57272       TIME_WAIT   -               
+
+
+[00;31mListening UDP:[00m
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+udp        0      0 0.0.0.0:43092           0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           -               
+udp6       0      0 :::54857                :::*                                -               
+udp6       0      0 :::5353                 :::*                                -               
+
+
+[00;33m### SERVICES #############################################[00m
+[00;31mRunning processes:[00m
+USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          1  0.1  0.2  24432  2412 ?        Ss   08:07   0:01 /sbin/init
+root          2  0.0  0.0      0     0 ?        S    08:07   0:00 [kthreadd]
+root          3  0.0  0.0      0     0 ?        S    08:07   0:00 [ksoftirqd/0]
+root          4  0.0  0.0      0     0 ?        S    08:07   0:01 [kworker/0:0]
+root          6  0.0  0.0      0     0 ?        S    08:07   0:00 [migration/0]
+root          7  0.0  0.0      0     0 ?        S    08:07   0:00 [watchdog/0]
+root          8  0.0  0.0      0     0 ?        S<   08:07   0:00 [cpuset]
+root          9  0.0  0.0      0     0 ?        S<   08:07   0:00 [khelper]
+root         10  0.0  0.0      0     0 ?        S    08:07   0:00 [kdevtmpfs]
+root         11  0.0  0.0      0     0 ?        S<   08:07   0:00 [netns]
+root         12  0.0  0.0      0     0 ?        S    08:07   0:00 [sync_supers]
+root         13  0.0  0.0      0     0 ?        S    08:07   0:00 [bdi-default]
+root         14  0.0  0.0      0     0 ?        S<   08:07   0:00 [kintegrityd]
+root         15  0.0  0.0      0     0 ?        S<   08:07   0:00 [kblockd]
+root         16  0.0  0.0      0     0 ?        S<   08:07   0:00 [ata_sff]
+root         17  0.0  0.0      0     0 ?        S    08:07   0:00 [khubd]
+root         18  0.0  0.0      0     0 ?        S<   08:07   0:00 [md]
+root         19  0.0  0.0      0     0 ?        S    08:07   0:00 [kworker/u:1]
+root         21  0.0  0.0      0     0 ?        S    08:07   0:00 [khungtaskd]
+root         22  0.0  0.0      0     0 ?        S    08:07   0:00 [kswapd0]
+root         23  0.0  0.0      0     0 ?        SN   08:07   0:00 [ksmd]
+root         24  0.0  0.0      0     0 ?        SN   08:07   0:00 [khugepaged]
+root         25  0.0  0.0      0     0 ?        S    08:07   0:00 [fsnotify_mark]
+root         26  0.0  0.0      0     0 ?        S    08:07   0:00 [ecryptfs-kthrea]
+root         27  0.0  0.0      0     0 ?        S<   08:07   0:00 [crypto]
+root         35  0.0  0.0      0     0 ?        S<   08:07   0:00 [kthrotld]
+root         37  0.0  0.0      0     0 ?        S    08:07   0:00 [scsi_eh_0]
+root         38  0.0  0.0      0     0 ?        S    08:07   0:00 [scsi_eh_1]
+root         39  0.0  0.0      0     0 ?        S    08:07   0:00 [kworker/u:2]
+root         59  0.0  0.0      0     0 ?        S<   08:07   0:00 [devfreq_wq]
+root        132  0.0  0.0      0     0 ?        S    08:07   0:00 [scsi_eh_2]
+root        136  0.0  0.0      0     0 ?        S<   08:07   0:00 [vmw_pvscsi_wq_2]
+root        230  0.0  0.0      0     0 ?        S    08:07   0:00 [jbd2/sda1-8]
+root        231  0.0  0.0      0     0 ?        S<   08:07   0:00 [ext4-dio-unwrit]
+root        329  0.0  0.0  17224   636 ?        S    08:07   0:00 upstart-udev-bridge --daemon
+root        333  0.0  0.1  22008  1780 ?        Ss   08:07   0:00 /sbin/udevd --daemon
+root        504  0.0  0.1  21964  1336 ?        S    08:07   0:00 /sbin/udevd --daemon
+root        505  0.0  0.1  21992  1260 ?        S    08:07   0:00 /sbin/udevd --daemon
+102         554  0.0  0.1  24076  1252 ?        Ss   08:07   0:00 dbus-daemon --system --fork --activation=upstart
+syslog      562  0.0  0.1 249464  1516 ?        Sl   08:07   0:00 rsyslogd -c5
+root        574  0.0  0.3  79036  3208 ?        Ss   08:07   0:00 /usr/sbin/modem-manager
+root        602  0.0  0.0      0     0 ?        S<   08:07   0:00 [kpsmoused]
+root        620  0.0  0.1  21180  1716 ?        Ss   08:07   0:00 /usr/sbin/bluetoothd
+avahi       622  0.0  0.1  32300  1756 ?        S    08:07   0:00 avahi-daemon: running [Valentine.local]
+avahi       623  0.0  0.0  32172   476 ?        S    08:07   0:00 avahi-daemon: chroot helper
+root        649  0.0  0.3 104088  3688 ?        Ss   08:07   0:00 /usr/sbin/cupsd -F
+root        669  0.0  0.6 174448  6604 ?        Ssl  08:07   0:00 NetworkManager
+root        760  0.0  0.0  15180   396 ?        S    08:07   0:00 upstart-socket-bridge --daemon
+root        788  0.0  0.3 203500  3876 ?        Sl   08:07   0:00 /usr/lib/policykit-1/polkitd --no-debug
+root        861  0.0  0.0      0     0 ?        S    08:07   0:00 [flush-8:0]
+root        862  0.0  0.3  92220  3968 ?        Ss   08:07   0:00 sshd: hype [priv]   
+root        919  0.0  0.2  49952  2860 ?        Ss   08:07   0:00 /usr/sbin/sshd -D
+root       1006  0.0  0.0  19976   972 tty4     Ss+  08:07   0:00 /sbin/getty -8 38400 tty4
+root       1017  0.0  0.0  19976   972 tty5     Ss+  08:07   0:00 /sbin/getty -8 38400 tty5
+root       1021  0.0  0.1  26416  1684 ?        Ss   08:07   0:00 /usr/bin/tmux -S /.devs/dev_sess
+root       1025  0.0  0.0  19976   972 tty2     Ss+  08:07   0:00 /sbin/getty -8 38400 tty2
+root       1029  0.0  0.4  20652  4576 pts/16   Ss+  08:07   0:00 -bash
+root       1030  0.0  0.0  19976   976 tty3     Ss+  08:07   0:00 /sbin/getty -8 38400 tty3
+root       1032  0.0  0.0  19976   976 tty6     Ss+  08:07   0:00 /sbin/getty -8 38400 tty6
+root       1049  0.0  0.0  12736   956 ?        Ss   08:07   0:00 anacron -s
+root       1050  0.0  0.0   4452   816 ?        Ss   08:07   0:00 acpid -c /etc/acpi/events -s /var/run/acpid.socket
+root       1051  0.0  0.1  19104  1044 ?        Ss   08:07   0:00 cron
+daemon     1052  0.0  0.0  16900   372 ?        Ss   08:07   0:00 atd
+whoopsie   1054  0.0  0.4 202556  4848 ?        Ssl  08:07   0:00 whoopsie
+root       1129  0.0  0.4 162284  4308 ?        Sl   08:07   0:01 /usr/bin/vmtoolsd
+root       1257  0.0  0.8 113040  8620 ?        Ss   08:07   0:00 /usr/sbin/apache2 -k start
+www-data   1301  0.0  0.8 113808  8136 ?        S    08:07   0:00 /usr/sbin/apache2 -k start
+www-data   1303  0.0  0.7 113780  7856 ?        S    08:07   0:00 /usr/sbin/apache2 -k start
+www-data   1304  0.0  0.8 113780  8080 ?        S    08:07   0:00 /usr/sbin/apache2 -k start
+www-data   1305  0.0  0.8 113804  8124 ?        S    08:07   0:00 /usr/sbin/apache2 -k start
+root       1461  0.0  0.0  19976   980 tty1     Ss+  08:07   0:00 /sbin/getty -8 38400 tty1
+root       1610  0.0  1.0  66916 10288 ?        S    08:07   0:00 /usr/lib/vmware-vgauth/VGAuthService -s
+root       1645  0.0  0.5 510124  5452 ?        Sl   08:07   0:00 //usr/lib/vmware-caf/pme/bin/ManagementAgentHost
+www-data   1659  0.0  0.8 113780  8164 ?        S    08:07   0:00 /usr/sbin/apache2 -k start
+root       1661  0.0  0.3 584296  3892 ?        Sl   08:07   0:00 /usr/sbin/console-kit-daemon --no-daemon
+hype       1869  0.0  0.1  92220  1668 ?        S    08:07   0:00 sshd: hype@pts/1    
+hype       1870  0.0  0.8  31604  8672 pts/1    Ss+  08:07   0:00 -bash
+root       1983  0.0  0.3  92220  3968 ?        Ss   08:08   0:00 sshd: hype [priv]   
+www-data   2000  0.0  0.8 113772  8108 ?        S    08:09   0:00 /usr/sbin/apache2 -k start
+hype       2141  0.0  0.1  92596  1820 ?        S    08:10   0:00 sshd: hype@pts/0    
+hype       2142  0.0  0.8  31652  8772 pts/0    Ss+  08:10   0:00 -bash
+www-data   2245  0.0  0.8 113780  8048 ?        S    08:10   0:00 /usr/sbin/apache2 -k start
+root       2291  0.0  0.0   4392   608 ?        S    08:12   0:00 /bin/sh -c nice run-parts --report /etc/cron.daily
+root       2292  0.0  0.0   4292   604 ?        SN   08:12   0:00 run-parts --report /etc/cron.daily
+root       2299  0.0  0.0   4392   720 ?        SN   08:12   0:00 /bin/sh /etc/cron.daily/apt
+root       2348  0.0  0.0   4300   348 ?        SN   08:12   0:00 sleep 1290
+root       2835  0.0  0.3  92220  3964 ?        Ss   08:17   0:00 sshd: hype [priv]   
+hype       2961  0.0  0.1  92220  1676 ?        S    08:18   0:00 sshd: hype@pts/2    
+hype       2962  0.1  0.8  31640  8764 pts/2    Ss   08:18   0:00 -bash
+www-data   3073  0.0  0.7 113764  7916 ?        S    08:19   0:00 /usr/sbin/apache2 -k start
+root       3083  0.0  0.0      0     0 ?        S    08:20   0:00 [kworker/0:2]
+www-data   3098  0.0  0.6 113268  6636 ?        S    08:23   0:00 /usr/sbin/apache2 -k start
+www-data   3099  0.0  0.6 113252  6392 ?        S    08:23   0:00 /usr/sbin/apache2 -k start
+www-data   3100  0.0  0.6 113268  6636 ?        S    08:23   0:00 /usr/sbin/apache2 -k start
+root       3137  0.0  0.0      0     0 ?        S    08:25   0:00 [kworker/0:1]
+hype       3182  0.1  0.1  16580  1540 pts/2    S+   08:27   0:00 /bin/bash ./LinEnum.sh -r output.txt
+hype       3499  0.0  0.0  16556   664 pts/2    S+   08:27   0:00 /bin/bash ./LinEnum.sh -r output.txt
+hype       3500  0.0  0.1  22352  1280 pts/2    R+   08:27   0:00 ps aux
+
+
+[00;31mProcess binaries & associated permissions (from above list):[00m
+936K -rwxr-xr-x 1 root root 933K Apr  3  2012 /bin/bash
+   0 lrwxrwxrwx 1 root root    4 Dec 11  2017 /bin/sh -> dash
+ 32K -rwxr-xr-x 1 root root  32K Mar 29  2012 /sbin/getty
+160K -rwxr-xr-x 1 root root 160K Apr 16  2012 /sbin/init
+136K -rwxr-xr-x 1 root root 135K Apr  5  2012 /sbin/udevd
+416K -rwxr-xr-x 1 root root 413K Feb 13  2012 /usr/bin/tmux
+ 44K -rwxr-xr-x 1 root root  44K Dec  2  2015 /usr/bin/vmtoolsd
+ 16K -rwxr-xr-x 1 root root  15K Jan  6  2012 /usr/lib/policykit-1/polkitd
+784K -rwxr-xr-x 4 root root 783K Dec 11  2017 //usr/lib/vmware-caf/pme/bin/ManagementAgentHost
+   0 lrwxrwxrwx 1 root root   37 Dec 11  2017 /usr/lib/vmware-vgauth/VGAuthService -> /usr/lib/vmware-tools/bin64/appLoader
+   0 lrwxrwxrwx 1 root root   34 Jul 15  2016 /usr/sbin/apache2 -> ../lib/apache2/mpm-prefork/apache2
+856K -rwxr-xr-x 1 root root 856K Mar 21  2012 /usr/sbin/bluetoothd
+144K -rwxr-xr-x 1 root root 141K Feb 25  2012 /usr/sbin/console-kit-daemon
+436K -rwxr-xr-x 1 root root 434K Apr  9  2012 /usr/sbin/cupsd
+388K -rwxr-xr-x 1 root root 388K Mar 24  2012 /usr/sbin/modem-manager
+508K -rwxr-xr-x 1 root root 505K Aug 11  2016 /usr/sbin/sshd
+
+
+[00;31m/etc/init.d/ binary permissions:[00m
+total 196
+drwxr-xr-x   2 root root  4096 Feb 16 14:41 .
+drwxr-xr-x 132 root root 12288 Jul 13 08:07 ..
+lrwxrwxrwx   1 root root    21 Dec 11  2017 acpid -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root   652 Jan  4  2010 acpi-support
+lrwxrwxrwx   1 root root    21 Dec 11  2017 alsa-restore -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 alsa-store -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 anacron -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root  7621 Feb  6  2012 apache2
+-rwxr-xr-x   1 root root  4596 Apr 12  2012 apparmor
+lrwxrwxrwx   1 root root    21 Dec 11  2017 apport -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 atd -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 avahi-daemon -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 bluetooth -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root  2444 Apr 14  2012 bootlogd
+-rwxr-xr-x   1 root root  2125 Mar  1  2011 brltty
+lrwxrwxrwx   1 root root    21 Dec 11  2017 console-setup -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 cron -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 cups -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 dbus -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 dmesg -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root  1242 Dec 13  2011 dns-clean
+lrwxrwxrwx   1 root root    21 Dec 11  2017 failsafe-x -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 friendly-recovery -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root  1105 Apr 17  2012 grub-common
+-rwxr-xr-x   1 root root  1329 Apr 14  2012 halt
+lrwxrwxrwx   1 root root    21 Dec 11  2017 hostname -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 hwclock -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 hwclock-save -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 irqbalance -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root  1893 Apr 18  2012 kerneloops
+-rwxr-xr-x   1 root root  1293 Apr 14  2012 killprocs
+-rw-r--r--   1 root root     0 Apr 25  2012 .legacy-bootordering
+lrwxrwxrwx   1 root root    21 Dec 11  2017 lightdm -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 modemmanager -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 module-init-tools -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root  2797 Feb 13  2012 networking
+lrwxrwxrwx   1 root root    21 Dec 11  2017 network-interface -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 network-interface-container -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 network-interface-security -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 network-manager -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root   882 Apr 14  2012 ondemand
+-rwxr-xr-x   1 root root  1685 Jan 24  2012 open-vm-tools
+lrwxrwxrwx   1 root root    21 Dec 11  2017 plymouth -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 plymouth-log -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 plymouth-splash -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 plymouth-stop -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 plymouth-upstart-bridge -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root   561 Feb  4  2011 pppd-dns
+lrwxrwxrwx   1 root root    21 Dec 11  2017 procps -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root  2180 Apr 11  2012 pulseaudio
+-rwxr-xr-x   1 root root  8635 Apr 14  2012 rc
+-rwxr-xr-x   1 root root   801 Apr 14  2012 rc.local
+-rwxr-xr-x   1 root root   117 Apr 14  2012 rcS
+-rw-r--r--   1 root root  2427 Apr 14  2012 README
+-rwxr-xr-x   1 root root   639 Apr 14  2012 reboot
+lrwxrwxrwx   1 root root    21 Dec 11  2017 resolvconf -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 rfkill-restore -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 rfkill-store -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root  4395 Nov  8  2011 rsync
+lrwxrwxrwx   1 root root    21 Dec 11  2017 rsyslog -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root  2344 Dec  4  2011 saned
+-rwxr-xr-x   1 root root  4321 Apr 14  2012 sendsigs
+lrwxrwxrwx   1 root root    21 Dec 11  2017 setvtrgb -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root   590 Apr 14  2012 single
+-rw-r--r--   1 root root  4304 Apr 14  2012 skeleton
+-rwxr-xr-x   1 root root  2107 May 15  2011 speech-dispatcher
+-rwxr-xr-x   1 root root  4371 Aug 11  2016 ssh
+-rwxr-xr-x   1 root root   567 Apr 14  2012 stop-bootlogd
+-rwxr-xr-x   1 root root  1143 Apr 14  2012 stop-bootlogd-single
+-rwxr-xr-x   1 root root   700 Oct 26  2011 sudo
+srw-rw----   1 root root     0 Dec 13  2017 test
+-rwxr-xr-x   1 root root   409 Dec 13  2017 tmuxer
+lrwxrwxrwx   1 root root    21 Dec 11  2017 udev -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 udev-fallback-graphics -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 udev-finish -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 udevmonitor -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 udevtrigger -> /lib/init/upstart-job
+lrwxrwxrwx   1 root root    21 Dec 11  2017 ufw -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root  2800 Apr 14  2012 umountfs
+-rwxr-xr-x   1 root root  2211 Apr 14  2012 umountnfs.sh
+-rwxr-xr-x   1 root root  2926 Apr 14  2012 umountroot
+-rwxr-xr-x   1 root root  1039 Nov  9  2011 unattended-upgrades
+-rwxr-xr-x   1 root root  1985 Apr 14  2012 urandom
+lrwxrwxrwx   1 root root    21 Dec 11  2017 whoopsie -> /lib/init/upstart-job
+-rwxr-xr-x   1 root root  2666 Mar 22  2012 x11-common
+
+
+[00;33m### SOFTWARE #############################################[00m
+[00;31mSudo version:[00m
+Sudo version 1.8.3p1
+
+
+[00;31mApache version:[00m
+Server version: Apache/2.2.22 (Ubuntu)
+Server built:   Jul 15 2016 15:32:34
+
+
+[00;31mApache user configuration:[00m
+APACHE_RUN_USER=www-data
+APACHE_RUN_GROUP=www-data
+
+
+[00;33m### INTERESTING FILES ####################################[00m
+[00;31mUseful file locations:[00m
+/bin/nc
+/bin/netcat
+/usr/bin/wget
+/usr/bin/gcc
+
+
+[00;31mInstalled compilers:[00m
+ii  gcc                                    4:4.6.3-1ubuntu5                        GNU C compiler
+ii  gcc-4.6                                4.6.3-1ubuntu5                          GNU C compiler
+ii  libprotoc7                             2.4.1-1ubuntu2                          protocol buffers compiler library
+ii  protobuf-compiler                      2.4.1-1ubuntu2                          compiler for protocol buffer definition files
+
+
+[00;31mCan we read/write sensitive files:[00m
+-rw-r--r-- 1 root root 1711 Dec 11  2017 /etc/passwd
+-rw-r--r-- 1 root root 850 Feb  6 11:31 /etc/group
+-rw-r----- 1 root shadow 1164 Feb  6 11:56 /etc/shadow
+
+
+Can't search *.conf files as no keyword was entered
+
+Can't search *.log files as no keyword was entered
+
+Can't search *.ini files as no keyword was entered
+
+[00;31mAll *.conf files in /etc (recursive 1 level):[00m
+-rw-r--r-- 1 root root 91 Dec 11  2017 /etc/kernel-img.conf
+-rw-r--r-- 1 root root 321 Mar 29  2012 /etc/blkid.conf
+-rw-r--r-- 1 root root 6961 Apr 25  2012 /etc/ca-certificates.conf
+-rw-r--r-- 1 root root 15752 Jul 25  2009 /etc/ltrace.conf
+-rw-r--r-- 1 root root 333 Dec 11  2017 /etc/updatedb.conf
+-rw-r--r-- 1 root root 34 Apr 25  2012 /etc/ld.so.conf
+-rw-r--r-- 1 root root 1260 May  2  2011 /etc/ucf.conf
+-rw-r--r-- 1 root root 624 May 16  2010 /etc/mtools.conf
+-rw-r--r-- 1 root root 956 Mar 30  2012 /etc/mke2fs.conf
+-rw-r--r-- 1 root root 112 Jun 22  2007 /etc/apg.conf
+-rw-r--r-- 1 root root 10333 Feb 21  2012 /etc/sensors3.conf
+-rw-r--r-- 1 root root 1309 Apr 18  2012 /etc/kerneloops.conf
+-rw-r--r-- 1 root root 7649 Apr 25  2012 /etc/pnm2ppa.conf
+-rw-r--r-- 1 root root 2064 Nov 23  2006 /etc/netscsid.conf
+-rw-r----- 1 root fuse 216 Oct 18  2011 /etc/fuse.conf
+-rw-r--r-- 1 root root 2083 Dec  5  2011 /etc/sysctl.conf
+-rw-r--r-- 1 root root 2969 Mar 15  2012 /etc/debconf.conf
+-rw-r--r-- 1 root root 350 Dec 11  2017 /etc/popularity-contest.conf
+-rw-r--r-- 1 root root 4728 Mar 24  2012 /etc/hdparm.conf
+-rw-r--r-- 1 root root 599 Oct  4  2011 /etc/logrotate.conf
+-rw-r--r-- 1 root root 19925 Apr 10  2012 /etc/brltty.conf
+-rw-r--r-- 1 root root 1343 Jan  9  2007 /etc/wodim.conf
+-rw-r--r-- 1 root root 699 Feb 13  2012 /etc/colord.conf
+-rw-r--r-- 1 root root 513 Apr 25  2012 /etc/nsswitch.conf
+-rw-r--r-- 1 root root 1309 Jul 13 08:07 /etc/tpvmlp.conf
+-rw-r--r-- 1 root root 1263 Mar 30  2012 /etc/rsyslog.conf
+-rw-r--r-- 1 root root 2981 Apr 25  2012 /etc/adduser.conf
+-rw-r--r-- 1 root root 572 Mar  7  2012 /etc/usb_modeswitch.conf
+-rw-r--r-- 1 root root 3343 Apr 19  2012 /etc/gai.conf
+-rw-r--r-- 1 root root 92 Apr 19  2012 /etc/host.conf
+-rw-r--r-- 1 root root 552 Feb  8  2012 /etc/pam.conf
+-rw-r--r-- 1 root root 839 Apr  9  2012 /etc/insserv.conf
+-rw-r--r-- 1 root root 604 Oct 19  2011 /etc/deluser.conf
+
+
+[00;31mCurrent user's history files:[00m
+-rw------- 1 hype hype 131 Feb 16 14:21 /home/hype/.bash_history
+
+
+[00;31mAny interesting mail in /var/mail:[00m
+total 8
+drwxrwsr-x  2 root mail 4096 Apr 25  2012 .
+drwxr-xr-x 14 root root 4096 Feb  6 12:01 ..
+
+
+[00;33m### SCAN COMPLETE ####################################[00m
