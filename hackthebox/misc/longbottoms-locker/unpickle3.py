@@ -1,4 +1,12 @@
-# Run Length Encoding functions
+#*****************************************************************************
+#* File:    unpickle1.py
+#* Purpose: read in and print out contents of Python pickle file using
+#*          Run Length Encoding to decode the data
+#* Date:    August 6, 2018
+#* Author:  fortyfunbobby
+#*****************************************************************************
+
+# Run Length Encoding functions from:
 # http://rosettacode.org/wiki/Run-length_encoding#Python
 
 def encode(input_string):
