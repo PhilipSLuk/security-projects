@@ -71,13 +71,18 @@ passphrase..
 
 ### DEBUGGER
 
-Loading our executable into a debugger to see what we can discover. We
-located an interesting section of the program that references our strings
-"Good Job. Congratulations" and "Wrong Password!" at instructions `00454138`.
+Loading our executable into a debugger to see what we can discover. Let's
+search for the strings we found in our previous analysis..
 
 <img src="ollydbg_01.jpg" width=500px/>
 
-In particular, the `CALL EasyPass.00404628` at `00454131` followed by
+Here we see references to the strings "Good Job. Congratulations" and
+"Wrong Password!" at instructions `00454138` and `00454144` respectively. Let's
+go take a look at that section of code..
+
+<img src="ollydbg_02.jpg" width=500px/>
+
+Of particular interest, the `CALL EasyPass.00404628` at `00454131` followed by
 `JNZ SHORT EasyPass.00454144` is interesting as the return value from the
 function call determines whether the program proceeds to to "Good Job" (if
 the return value is non-zero) or "Wrong Password" (for return value of zero).
@@ -87,7 +92,7 @@ Stepping into that function call, we eventually come across the code
 `CMP EAX, EDX` that does the compare of the string we provided (in register
 EAX) with the secret passphrase in register EDX).
 
-<img src="ollydbg_01.jpg" width=500px/>
+<img src="ollydbg_03.jpg" width=500px/>
 
 We can see from the register content of EDX that the string it is expecting
 is "fortran!".
