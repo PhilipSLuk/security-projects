@@ -1,4 +1,4 @@
-# CRYPTO CHALLENGE: WEAK RSA
+# CRYPTO CHALLENGE: BRAINY'S CIPHER
 
 ## Challenge Description
 Brainy likes playing around with esoteric programming. He also likes math and
