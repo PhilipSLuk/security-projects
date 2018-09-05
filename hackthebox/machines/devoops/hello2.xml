@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xml>
+  <msg>hello world</msg>
+  <Author>hello author</Author>
+  <Subject>hello subject</Subject>
+  <Content>hello content</Content>
+</xml>

