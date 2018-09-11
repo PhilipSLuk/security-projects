@@ -1,0 +1,382 @@
+
+[00;31m#########################################################[00m
+[00;31m#[00m [00;33mLocal Linux Enumeration & Privilege Escalation Script[00m [00;31m#[00m
+[00;31m#########################################################[00m
+[00;33m# www.rebootuser.com[00m
+[00;33m# [00m
+
+Debug Info
+report name = report-10-09-18
+thorough tests = disabled
+
+
+Mon Sep 10 16:18:50 IST 2018
+[00m
+
+[00;33m### SYSTEM ##############################################[00m
+[00;31mKernel information:[00m
+SunOS sunday 5.11 snv_111b i86pc i386 i86pc Solaris
+
+
+[00;31mHostname:[00m
+sunday
+
+
+[00;33m### USER/GROUP ##########################################[00m
+[00;31mCurrent user/group info:[00m
+uid=65535(sunny) gid=1(other) groups=1(other)
+
+
+[00;31mAll users and uid/gid info:[00m
+root:x:0:0
+daemon:x:1:1
+bin:x:2:2
+sys:x:3:3
+adm:x:4:4
+lp:x:71:8
+uucp:x:5:5
+nuucp:x:9:9
+dladm:x:15:3
+smmsp:x:25:25
+listen:x:37:4
+gdm:x:50:50
+zfssnap:x:51:12
+xvm:x:60:60
+mysql:x:70:70
+openldap:x:75:75
+webservd:x:80:80
+postgres:x:90:90
+svctag:x:95:12
+nobody:x:60001:60001
+noaccess:x:60002:60002
+nobody4:x:65534:65534
+sammy:x:101:10
+sunny:x:65535:1
+
+
+[00;31mGroup memberships:[00m
+uid=0(root) gid=0(root) groups=0(root),1(other),2(bin),3(sys),4(adm),5(uucp),6(mail),7(tty),8(lp),9(nuucp),12(daemon)
+uid=1(daemon) gid=1(other) groups=1(other),2(bin),4(adm)
+uid=2(bin) gid=2(bin) groups=2(bin),3(sys)
+uid=3(sys) gid=3(sys) groups=3(sys)
+uid=4(adm) gid=4(adm) groups=4(adm),3(sys),7(tty),8(lp)
+uid=71(lp) gid=8(lp) groups=8(lp)
+uid=5(uucp) gid=5(uucp) groups=5(uucp)
+uid=9(nuucp) gid=9(nuucp) groups=9(nuucp)
+uid=15(dladm) gid=3(sys) groups=3(sys)
+uid=25(smmsp) gid=25(smmsp) groups=25(smmsp)
+uid=37(listen) gid=4(adm) groups=4(adm)
+uid=50(gdm) gid=50(gdm) groups=50(gdm)
+uid=51(zfssnap) gid=12(daemon) groups=12(daemon)
+uid=60(xvm) gid=60(xvm) groups=60(xvm)
+uid=70(mysql) gid=70(mysql) groups=70(mysql)
+uid=75(openldap) gid=75(openldap) groups=75(openldap)
+uid=80(webservd) gid=80(webservd) groups=80(webservd)
+uid=90(postgres) gid=90(postgres) groups=90(postgres)
+uid=95(svctag) gid=12(daemon) groups=12(daemon)
+uid=60001(nobody) gid=60001(nobody) groups=60001(nobody)
+uid=60002(noaccess) gid=60002(noaccess) groups=60002(noaccess)
+uid=65534(nobody4) gid=65534(nogroup) groups=65534(nogroup)
+uid=101(sammy) gid=10(staff) groups=10(staff)
+uid=65535(sunny) gid=1(other) groups=1(other)
+
+
+[00;31mSample entires from /etc/passwd (searching for uid values 0, 500, 501, 502, 1000, 1001, 1002, 2000, 2001, 2002):[00m
+root:x:0:0:Super-User:/root:/usr/bin/bash
+
+
+[00;31mSuper user account(s):[00m
+root
+
+
+[00;33mWe can sudo without supplying a password![00m
+User sunny may run the following commands on this host:
+    (root) NOPASSWD: /root/troll
+
+
+[00;31mAre permissions on /home directories lax:[00m
+total 2.0K
+dr-xr-xr-x  1 root root  1 2018-09-10 15:26 .
+drwxr-xr-x 26 root root 27 2018-04-24 12:57 ..
+
+
+[00;33m### ENVIRONMENTAL #######################################[00m
+[00;31mPath information:[00m
+/usr/gnu/bin:/usr/bin:/usr/X11/bin:/usr/sbin:/sbin
+
+
+[00;31mCurrent umask value:[00m
+u=rwx,g=rx,o=rx
+0022
+
+
+[00;33m### JOBS/TASKS ##########################################[00m
+[00;31mCron jobs:[00m
+lrwxrwxrwx 1 root root 16 2018-04-15 19:52 /etc/cron -> ../usr/sbin/cron
+
+/etc/cron.d:
+total 14
+drwxr-xr-x  2 root sys    7 2018-09-10 15:25 .
+drwxr-xr-x 77 root sys  224 2018-09-10 15:53 ..
+-rw-r--r--  1 root sys   17 2009-05-14 21:18 at.deny
+-rw-r--r--  1 root sys   17 2009-05-14 21:18 cron.deny
+prw-------  1 root root   0 2018-09-10 15:26 FIFO
+-rwxr--r--  1 root sys  982 2009-05-14 21:18 .proto
+-rw-r--r--  1 root sys   17 2009-05-14 21:18 queuedefs
+
+
+[00;33m***World-writable cron jobs and file contents:[00m
+lrwxrwxrwx 1 root root 16 2018-04-15 19:52 /etc/cron -> ../usr/sbin/cron
+
+
+[00;31mAnything interesting in /var/spool/cron/crontabs:[00m
+total 11
+drwxr-xr-x 2 root sys     6 2018-09-10 15:26 .
+drwxr-xr-x 4 root sys     4 2009-05-14 21:18 ..
+-rw------- 1 root sys  1004 2009-05-14 21:18 adm
+-r-------- 1 root root 1365 2009-05-14 21:21 lp
+-rw------- 1 root root 1069 2018-09-10 15:26 root
+-rw------- 1 root sys  1122 2009-05-14 21:22 sys
+
+
+[00;33m### NETWORKING  ##########################################[00m
+[00;31mNetwork & IP info:[00m
+lo0: flags=2001000849<UP,LOOPBACK,RUNNING,MULTICAST,IPv4,VIRTUAL> mtu 8232 index 1
+	inet 127.0.0.1 netmask ff000000 
+pcn0: flags=1000843<UP,BROADCAST,RUNNING,MULTICAST,IPv4> mtu 1500 index 2
+	inet 10.10.10.76 netmask ffffff00 broadcast 10.10.10.255
+lo0: flags=2002000849<UP,LOOPBACK,RUNNING,MULTICAST,IPv6,VIRTUAL> mtu 8252 index 1
+	inet6 ::1/128 
+
+
+[00;31mNameserver(s):[00m
+nameserver 10.10.10.2
+
+
+[00;33m### SERVICES #############################################[00m
+[00;31mRunning processes:[00m
+USER       PID %CPU %MEM   SZ  RSS TT       S    START  TIME COMMAND
+sunny    12156  0.7  0.2 6108 2412 pts/5    S 16:18:48  0:00 /bin/bash ./filo.s
+root       145  0.3  0.2 8792 3696 ?        S 15:25:48  0:01 /usr/sbin/nscd
+sunny     3070  0.2  0.310152 4948 ?        S 15:36:12  0:00 /usr/lib/ssh/sshd
+gdm        536  0.1  2.926669259484 ?        S 15:26:09  0:03 /usr/lib/gdmgreete
+sunny    12405  0.1  0.1 4736 1532 pts/5    O 16:18:52  0:00 ps aux
+root         3  0.1  0.0    0    0 ?        S 15:25:36  0:01 fsflush
+root       483  0.1  1.03962019956 ?        S 15:26:04  0:02 /usr/X11/bin/Xorg 
+sunny     3096  0.1  0.2 5888 2460 pts/5    S 15:36:19  0:00 -bash
+root       519  0.1  0.1 5856 2128 ?        S 15:26:07  0:01 /usr/bin/bash /roo
+root       420  0.1  0.2 8752 3580 ?        S 15:26:01  0:02 /usr/lib/inet/inet
+root     12155  0.1  0.1 4072 1080 ?        S 16:18:48  0:00 /usr/gnu/bin/sleep
+sunny    12404  0.0  0.1 6108 1060 pts/5    R 16:18:52  0:00 /bin/bash ./filo.s
+root         9  0.0  0.61279611340 ?        S 15:25:37  0:10 /lib/svc/bin/svc.c
+root        69  0.0  0.312772 5572 ?        S 15:25:45  0:00 devfsadmd
+sunny    11105  0.0  0.310208 5032 ?        S 16:07:51  0:00 /usr/lib/ssh/sshd
+sunny    11110  0.0  0.2 5876 2452 pts/4    S 16:07:57  0:00 -bash
+root         0  0.0  0.0    0    0 ?        T 15:25:35  0:00 sched
+root         1  0.0  0.1 2732 1348 ?        S 15:25:36  0:00 /sbin/init
+root         2  0.0  0.0    0    0 ?        S 15:25:36  0:00 pageout
+root         7  0.0  0.513848 9368 ?        S 15:25:37  0:03 /lib/svc/bin/svc.s
+dladm       16  0.0  0.1 3060 1704 ?        S 15:25:38  0:00 /sbin/dlmgmtd
+daemon      52  0.0  0.3 9496 4940 ?        S 15:25:45  0:30 /lib/crypto/kcfd
+root       115  0.0  0.2 7904 2632 ?        S 15:25:48  0:00 /usr/lib/sysevent/
+root       134  0.0  0.1 2132 1472 ?        S 15:25:48  0:00 /usr/lib/power/pow
+root       147  0.0  0.2 6492 2904 ?        S 15:25:48  0:00 /usr/lib/picl/picl
+root       273  0.0  0.1 4388 1264 ?        S 15:25:53  0:00 /usr/sbin/cron
+root       280  0.0  0.1 4804 1792 ?        S 15:25:54  0:00 /usr/lib/dbus-daem
+root       309  0.0  0.3 6676 5164 ?        S 15:25:55  0:00 /usr/lib/hal/hald 
+root       310  0.0  0.1 3856 2080 ?        S 15:25:55  0:00 hald-runner
+root       314  0.0  0.1 3960 2116 ?        S 15:25:55  0:00 /usr/lib/hal/hald-
+root       317  0.0  0.1 3972 2128 ?        S 15:25:56  0:00 /usr/lib/hal/hald-
+root       328  0.0  0.1 3728 2072 ?        S 15:25:56  0:00 /usr/lib/hal/hald-
+root       330  0.0  0.1 2760 1672 ?        S 15:25:57  0:00 /usr/lib/hal/hald-
+root       349  0.0  0.1 4196 2088 ?        S 15:25:59  0:00 /usr/lib/rmvolmgr 
+daemon     357  0.0  0.1 3588 1680 ?        S 15:25:59  0:00 /usr/sbin/rpcbind
+root       369  0.0  0.1 5140 1552 ?        S 15:26:00  0:00 /usr/lib/autofs/au
+root       370  0.0  0.1 5212 1468 ?        S 15:26:00  0:00 /usr/lib/autofs/au
+root       375  0.0  0.1 1640  872 ?        S 15:26:00  0:00 /usr/lib/utmpd
+root       376  0.0  0.1 2348 1240 ?        S 15:26:00  0:00 /usr/lib/saf/sac -
+root       377  0.0  0.1 2508 1336 ?        S 15:26:00  0:00 /usr/lib/saf/ttymo
+root       392  0.0  0.1 6660 2140 ?        S 15:26:00  0:00 /usr/sbin/syslogd
+root       396  0.0  0.1 2012 1424 console  S 15:26:01  0:00 /usr/lib/saf/ttymo
+root       413  0.0  0.1 6744 1824 ?        S 15:26:01  0:01 /usr/lib/ssh/sshd
+root       421  0.0  0.61947612036 ?        S 15:26:01  0:00 /usr/lib/fm/fmd/fm
+noaccess   427  0.0  0.1 2692 1500 ?        S 15:26:02  0:00 /usr/lib/inet/mdns
+root       430  0.0  0.1 2572  992 ?        S 15:26:02  0:00 /usr/lib/inet/in.n
+daemon     441  0.0  0.1 3072 1900 ?        S 15:26:02  0:00 /usr/sbin/avahi-da
+root       471  0.0  0.3 9268 5552 ?        S 15:26:04  0:00 /usr/perl5/bin/per
+root       477  0.0  0.1 8096 2060 ?        S 15:26:04  0:00 /usr/sbin/gdm-bina
+root       478  0.0  0.2 9448 3148 ?        S 15:26:04  0:00 /usr/sbin/gdm-bina
+root       533  0.0  0.1 3524 1432 ?        S 15:26:09  0:00 /usr/openwin/bin/f
+root       565  0.0  0.2 8120 3224 ?        S 15:26:16  0:00 /usr/lib/ssh/sshd
+sunny      566  0.0  0.310208 5024 ?        S 15:26:16  0:00 /usr/lib/ssh/sshd
+sunny      601  0.0  0.2 5872 2380 pts/2    S 15:26:24  0:00 -bash
+sunny      723  0.0  0.2 5872 2372 pts/2    S 15:26:49  0:00 /bin/bash
+sunny      747  0.0  0.2 5872 2372 pts/2    S 15:26:55  0:00 /bin/bash
+sunny      833  0.0  0.2 5876 2384 pts/2    S 15:27:14  0:00 /bin/bash
+root       880  0.0  0.2 8120 3236 ?        S 15:27:24  0:00 /usr/lib/ssh/sshd
+sunny      881  0.0  0.310208 5024 ?        S 15:27:24  0:00 /usr/lib/ssh/sshd
+sunny      905  0.0  0.2 5872 2380 pts/3    S 15:27:28  0:00 -bash
+root      1340  0.0  0.1 6140 2144 ?        S 15:29:02  0:00 /usr/lib/sendmail 
+smmsp     1346  0.0  0.1 6272 1752 ?        S 15:29:03  0:00 /usr/lib/sendmail 
+root      2095  0.0  0.1 5204 1996 ?        S 15:32:02  0:00 /usr/lib/smedia/rp
+root      3069  0.0  0.2 8120 3236 ?        S 15:36:12  0:00 /usr/lib/ssh/sshd
+sunny     3894  0.0  0.2 5888 2452 pts/2    S 15:41:55  0:00 bash
+root      3956  0.0  0.2 9580 4320 ?        S 15:43:19  0:00 /usr/lib/ssh/sshd
+root     11104  0.0  0.2 8120 3244 ?        S 16:07:51  0:00 /usr/lib/ssh/sshd
+sunny    11170  0.0  0.1 4196 1264 pts/2    T 16:09:16  0:00 man man
+sunny    11176  0.0  0.1 4432 1440 pts/2    T 16:09:16  0:00 /usr/bin/less -ins
+
+
+[00;31mProcess binaries & associated permissions (from above list):[00m
+771K -r-xr-xr-x 1 root bin    719K 2009-05-14 21:21 /bin/bash
+ 24K -r-xr-xr-x 1 root bin     24K 2009-05-14 21:18 /lib/crypto/kcfd
+ 44K -r-xr-xr-x 1 root bin     44K 2009-05-14 21:18 /sbin/dlmgmtd
+ 62K -r-xr-xr-x 1 root sys     61K 2009-05-14 21:18 /sbin/init
+771K -r-xr-xr-x 1 root bin    719K 2009-05-14 21:21 /usr/bin/bash
+259K -r-xr-xr-x 1 root bin    134K 2009-05-14 21:21 /usr/bin/less
+ 24K -r-xr-xr-x 1 root bin     23K 2009-05-14 21:22 /usr/gnu/bin/sleep
+259K -r-xr-xr-x 1 root bin    254K 2009-05-14 21:21 /usr/lib/hal/hald
+ 53K -r-xr-xr-x 1 root bin     53K 2009-05-14 21:22 /usr/lib/rmvolmgr
+ 33K -r-xr-xr-x 1 root sys     33K 2009-05-14 21:18 /usr/lib/saf/sac
+1.1M -r-xr-sr-x 1 root smmsp 1017K 2009-05-14 21:22 /usr/lib/sendmail
+515K -r-xr-xr-x 1 root bin    388K 2009-05-14 21:22 /usr/lib/ssh/sshd
+ 19K -r-xr-xr-x 1 root bin     19K 2009-05-14 21:18 /usr/lib/utmpd
+ 69K -r-xr-xr-x 1 root sys     69K 2009-05-14 21:18 /usr/sbin/cron
+259K -r-xr-xr-x 1 root bin    214K 2009-05-14 21:18 /usr/sbin/nscd
+ 62K -r-xr-xr-x 1 root bin     62K 2009-05-14 21:18 /usr/sbin/rpcbind
+ 87K -r-xr-xr-x 1 root sys     87K 2009-05-14 21:18 /usr/sbin/syslogd
+
+/usr/lib/sysevent/:
+total 99K
+1.5K drwxr-xr-x   3 root bin    5 2018-04-15 19:47 .
+ 37K drwxr-xr-x 134 root bin 1.4K 2018-04-15 19:51 ..
+1.5K drwxr-xr-x   2 root bin    8 2018-04-15 19:47 modules
+ 24K -r-xr-xr-x   1 root bin  23K 2009-05-14 21:18 syseventconfd
+ 36K -r-xr-xr-x   1 root bin  35K 2009-05-14 21:18 syseventd
+
+
+[00;31mContents of /etc/inetd.conf:[00m
+#
+# CDDL HEADER START
+#
+# The contents of this file are subject to the terms of the
+# Common Development and Distribution License, Version 1.0 only
+# (the "License").  You may not use this file except in compliance
+# with the License.
+#
+# You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+# or http://www.opensolaris.org/os/licensing.
+# See the License for the specific language governing permissions
+# and limitations under the License.
+#
+# When distributing Covered Code, include this CDDL HEADER in each
+# file and include the License file at usr/src/OPENSOLARIS.LICENSE.
+# If applicable, add the following below this CDDL HEADER, with the
+# fields enclosed by brackets "[]" replaced with your own identifying
+# information: Portions Copyright [yyyy] [name of copyright owner]
+#
+# CDDL HEADER END
+#
+#
+# Copyright 2004 Sun Microsystems, Inc.  All rights reserved.
+# Use is subject to license terms.
+#
+#ident	"%Z%%M%	%I%	%E% SMI"
+#
+# Legacy configuration file for inetd(1M).  See inetd.conf(4).
+#
+# This file is no longer directly used to configure inetd.
+# The Solaris services which were formerly configured using this file
+# are now configured in the Service Management Facility (see smf(5))
+# using inetadm(1M).
+#
+# Any records remaining in this file after installation or upgrade,
+# or later created by installing additional software, must be converted
+# to smf(5) services and imported into the smf repository using
+# inetconv(1M), otherwise the service will not be available.  Once
+# a service has been converted using inetconv, further changes made to
+# its entry here are not reflected in the service.
+#
+
+
+[00;31m/etc/init.d/ binary permissions:[00m
+total 52
+drwxr-xr-x  2 root sys     21 2018-04-24 11:02 .
+drwxr-xr-x 77 root sys    224 2018-09-10 15:53 ..
+-rwxr--r--  1 root sys   1276 2009-05-14 21:22 acct
+-rwxr-xr-x  2 root other 1558 2009-05-14 21:21 autoinstall
+-rwxr--r--  2 root sys   2065 2009-05-14 21:18 cachefs.daemon
+-rwxr--r--  2 root sys   1540 2009-05-14 21:18 deallocate
+-rwxr--r--  1 root sys   1355 2009-05-14 21:18 devlinks
+-rwxr--r--  2 root sys   1010 2009-05-14 21:22 dodatadm.udaplt
+-rwxr--r--  1 root sys   1118 2009-05-14 21:18 drvconfig
+-rwxr--r--  1 root sys   1384 2009-05-14 21:18 ldap.client
+-rwxr--r--  1 root sys   1301 2009-05-14 21:18 mkdtab
+-rwxr--r--  1 root sys   1300 2009-05-14 21:22 nfs.server
+-rwxr--r--  1 root sys   1382 2009-05-14 21:18 nscd
+-rwx------  1 root root   169 2018-04-24 11:23 overwrite
+-rwxr--r--  1 root sys   1209 2009-05-14 21:21 pcmcia
+-rwxr--r--  5 root sys   2546 2009-05-14 21:21 pppd
+-rwxr--r--  2 root sys   1065 2009-05-14 21:18 PRESERVE
+-rw-r--r--  1 root sys   3293 2009-05-14 21:18 README
+-rwxr--r--  1 root sys   1564 2009-05-14 21:22 sendmail
+-rwxr--r--  2 root sys   1614 2009-05-14 21:18 sysetup
+-rwxr--r--  1 root sys   1112 2009-05-14 21:18 ufs_quota
+
+
+[00;33m### SOFTWARE #############################################[00m
+[00;31mSudo version:[00m
+Sudo version 1.6.9p17
+
+
+[00;33m### INTERESTING FILES ####################################[00m
+[00;31mUseful file locations:[00m
+/usr/bin/wget
+
+
+[00;31mCan we read/write sensitive files:[00m
+-rw-r--r-- 1 root sys 976 2018-04-15 20:18 /etc/passwd
+-rw-r--r-- 1 root sys 347 2009-05-14 21:18 /etc/group
+-r-------- 1 root sys 634 2018-04-15 20:18 /etc/shadow
+
+
+Can't search *.conf files as no keyword was entered
+
+Can't search *.log files as no keyword was entered
+
+Can't search *.ini files as no keyword was entered
+
+[00;31mAll *.conf files in /etc (recursive 1 level):[00m
+-rw-r--r-- 1 root sys 954 2009-05-14 21:22 /etc/sdp.conf
+-rw-r--r-- 1 root root 362 2009-05-14 21:22 /etc/updatedb.conf
+-rw-r--r-- 1 root bin 1192 2009-05-14 21:21 /etc/hba.conf
+-rw-r--r-- 1 root sys 3788 2009-05-14 21:18 /etc/nscd.conf
+-rw-r--r-- 1 root sys 2210 2009-05-14 21:18 /etc/logadm.conf
+-rw-r--r-- 1 root sys 4222 2009-05-14 21:18 /etc/pam.conf
+-rw-r--r-- 1 root sys 1881 2009-05-14 21:22 /etc/nfssec.conf
+-rw-r--r-- 1 root bin 1193 2009-05-14 21:21 /etc/ima.conf
+-rw-r--r-- 1 root root 22 2018-04-24 12:51 /etc/resolv.conf
+-rw-r--r-- 1 root sys 1807 2009-05-14 21:18 /etc/syslog.conf
+-rw-r--r-- 1 root sys 411 2018-04-16 15:27 /etc/power.conf
+-rw-r--r-- 1 root root 2189 2018-04-23 15:12 /etc/nsswitch.conf
+-rw-r--r-- 1 root root 1355 2009-05-14 21:21 /etc/gksu.conf
+-rw-r--r-- 1 root sys 3011 2009-05-14 21:18 /etc/dacf.conf
+-rw-r--r-- 1 root sys 1111 2009-05-14 21:21 /etc/printers.conf
+-rw-r--r-- 1 root bin 1139 2009-05-14 21:21 /etc/mpapi.conf
+-rw-r--r-- 1 root sys 368 2009-05-14 21:21 /etc/esd.conf
+-rw-r--r-- 1 root other 250 2018-09-10 15:26 /etc/dumpadm.conf
+
+
+[00;31mCurrent user's history files:[00m
+-rw------- 1 root root 0 2018-04-24 09:10 /export/home/sunny/.bash_history
+
+
+[00;31mAny interesting mail in /var/mail:[00m
+total 8
+drwxrwxrwt  3 root mail    4 2018-04-24 11:05 .
+drwxr-xr-x 35 root sys    35 2018-04-15 20:26 ..
+-rw-rw----  1 root mail 2234 2018-04-24 11:05 root
+drwxrwxr-x  2 root mail    2 2009-05-14 21:18 :saved
+
+
+[00;33m### SCAN COMPLETE ####################################[00m
