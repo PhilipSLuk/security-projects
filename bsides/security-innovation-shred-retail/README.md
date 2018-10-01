@@ -10,10 +10,10 @@ Code:
 Skulking around the HTML source for the site, we come across this comment
 in the code..
 
-'''
+```
 <h2>Return Customers</h2>
 <!--  TODO: Remember to remove the test/test account once we release. We don't want hackers breaking in! -->
-'''
+```
 
 Using the credentials `test/test`, we gain access to the site!
 
