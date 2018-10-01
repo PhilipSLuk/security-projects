@@ -1,0 +1,190 @@
+Scanning dependencies of target yara
+[  7%] Creating directories for 'yara'
+[ 14%] Performing download step (download, verify and extract) for 'yara'
+-- Downloading...
+   dst='/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/yara/src/yara.zip'
+   timeout='none'
+-- Using src='https://github.com/avast-tl/yara/archive/ea101c5856941f39cad2db3012f2660d1d5c8b65.zip'
+-- verifying file...
+       file='/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/yara/src/yara.zip'
+-- Downloading... done
+-- extracting...
+     src='/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/yara/src/yara.zip'
+     dst='/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/yara/src/yara'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[ 21%] No patch step for 'yara'
+[ 28%] No update step for 'yara'
+[ 35%] No configure step for 'yara'
+[ 42%] Performing configure-linux step for 'yara'
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for style of include used by make... GNU
+checking for gcc... /usr/bin/cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /usr/bin/cc accepts -g... yes
+checking for /usr/bin/cc option to accept ISO C89... none needed
+checking whether /usr/bin/cc understands -c and -o together... yes
+checking dependency style of /usr/bin/cc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking for gcc... (cached) /usr/bin/cc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether /usr/bin/cc accepts -g... (cached) yes
+checking for /usr/bin/cc option to accept ISO C89... (cached) none needed
+checking whether /usr/bin/cc understands -c and -o together... (cached) yes
+checking dependency style of /usr/bin/cc... (cached) gcc3
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... -lfl
+checking whether yytext is a pointer... yes
+checking for bison... bison -y
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by /usr/bin/cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... no, using cp -pR
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from /usr/bin/cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... /usr/bin/cc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if /usr/bin/cc supports -fno-rtti -fno-exceptions... no
+checking for /usr/bin/cc option to produce PIC... -fPIC -DPIC
+checking if /usr/bin/cc PIC flag -fPIC -DPIC works... yes
+checking if /usr/bin/cc static flag -static works... yes
+checking if /usr/bin/cc supports -c -o file.o... yes
+checking if /usr/bin/cc supports -c -o file.o... (cached) yes
+checking whether the /usr/bin/cc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking whether byte ordering is bigendian... no
+checking for the pthreads library -lpthreads... no
+checking whether pthreads work without any flags... no
+checking whether pthreads work with -Kthread... no
+checking whether pthreads work with -kthread... no
+checking for the pthreads library -llthread... no
+checking whether pthreads work with -pthread... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking if more special flags are required for pthreads... no
+checking whether to check for GCC pthread/shared inconsistencies... yes
+checking whether -pthread is sufficient with -shared... yes
+checking for isnan in -lm... yes
+checking for log2 in -lm... yes
+checking for strlcpy... no
+checking for strlcat... no
+checking for memmem... yes
+checking for timegm... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libyara/Makefile
+config.status: executing depfiles commands
+config.status: executing libtool commands
+[ 50%] Performing build step for 'yara'
+Making all in libyara
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT modules/tests.lo -MD -MP -MF modules/.deps/tests.Tpo -c modules/tests.c -o modules/tests.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT modules/pe.lo -MD -MP -MF modules/.deps/pe.Tpo -c modules/pe.c -o modules/pe.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT modules/elf.lo -MD -MP -MF modules/.deps/elf.Tpo -c modules/elf.c -o modules/elf.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT modules/macho.lo -MD -MP -MF modules/.deps/macho.Tpo -c modules/macho.c -o modules/macho.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT modules/math.lo -MD -MP -MF modules/.deps/math.Tpo -c modules/math.c -o modules/math.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT modules/pe_utils.lo -MD -MP -MF modules/.deps/pe_utils.Tpo -c modules/pe_utils.c -o modules/pe_utils.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT grammar.lo -MD -MP -MF .deps/grammar.Tpo -c grammar.c -o grammar.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT ahocorasick.lo -MD -MP -MF .deps/ahocorasick.Tpo -c ahocorasick.c -o ahocorasick.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT arena.lo -MD -MP -MF .deps/arena.Tpo -c arena.c -o arena.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT atoms.lo -MD -MP -MF .deps/atoms.Tpo -c atoms.c -o atoms.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT compiler.lo -MD -MP -MF .deps/compiler.Tpo -c compiler.c -o compiler.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT endian.lo -MD -MP -MF .deps/endian.Tpo -c endian.c -o endian.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT exec.lo -MD -MP -MF .deps/exec.Tpo -c exec.c -o exec.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT exefiles.lo -MD -MP -MF .deps/exefiles.Tpo -c exefiles.c -o exefiles.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT filemap.lo -MD -MP -MF .deps/filemap.Tpo -c filemap.c -o filemap.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT hash.lo -MD -MP -MF .deps/hash.Tpo -c hash.c -o hash.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT hex_grammar.lo -MD -MP -MF .deps/hex_grammar.Tpo -c hex_grammar.c -o hex_grammar.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT hex_lexer.lo -MD -MP -MF .deps/hex_lexer.Tpo -c hex_lexer.c -o hex_lexer.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT lexer.lo -MD -MP -MF .deps/lexer.Tpo -c lexer.c -o lexer.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT libyara.lo -MD -MP -MF .deps/libyara.Tpo -c libyara.c -o libyara.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT mem.lo -MD -MP -MF .deps/mem.Tpo -c mem.c -o mem.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT modules.lo -MD -MP -MF .deps/modules.Tpo -c modules.c -o modules.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT object.lo -MD -MP -MF .deps/object.Tpo -c object.c -o object.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT parser.lo -MD -MP -MF .deps/parser.Tpo -c parser.c -o parser.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT proc.lo -MD -MP -MF .deps/proc.Tpo -c proc.c -o proc.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT re.lo -MD -MP -MF .deps/re.Tpo -c re.c -o re.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT re_grammar.lo -MD -MP -MF .deps/re_grammar.Tpo -c re_grammar.c -o re_grammar.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT re_lexer.lo -MD -MP -MF .deps/re_lexer.Tpo -c re_lexer.c -o re_lexer.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT rules.lo -MD -MP -MF .deps/rules.Tpo -c rules.c -o rules.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT scan.lo -MD -MP -MF .deps/scan.Tpo -c scan.c -o scan.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT sizedstr.lo -MD -MP -MF .deps/sizedstr.Tpo -c sizedstr.c -o sizedstr.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT strutils.lo -MD -MP -MF .deps/strutils.Tpo -c strutils.c -o strutils.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT stream.lo -MD -MP -MF .deps/stream.Tpo -c stream.c -o stream.o
+libtool: compile:  /usr/bin/cc -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.6.3\" "-DPACKAGE_STRING=\"yara 3.6.3\"" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.6.3\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -I. -Wall -Wno-deprecated-declarations -std=gnu99 -I./include -O3 -fvisibility=hidden -pthread -MT threading.lo -MD -MP -MF .deps/threading.Tpo -c threading.c -o threading.o
+libtool: link: ar cru .libs/libyara.a  modules/tests.o modules/pe.o modules/elf.o modules/macho.o modules/math.o modules/pe_utils.o grammar.o ahocorasick.o arena.o atoms.o compiler.o endian.o exec.o exefiles.o filemap.o hash.o hex_grammar.o hex_lexer.o lexer.o libyara.o mem.o modules.o object.o parser.o proc.o re.o re_grammar.o re_lexer.o rules.o scan.o sizedstr.o strutils.o stream.o threading.o
+libtool: link: ranlib .libs/libyara.a
+libtool: link: ( cd ".libs" && rm -f "libyara.la" && cp -pR "../libyara.la" "libyara.la" )
+libtool: link: /usr/bin/cc -std=gnu99 -Wall -I./libyara/include -O3 -pthread -o yara args.o threading.o yara.o  libyara/.libs/libyara.a -lm -pthread
+libtool: link: /usr/bin/cc -std=gnu99 -Wall -I./libyara/include -O3 -pthread -o yarac args.o yarac.o  libyara/.libs/libyara.a -lm -pthread
+[ 57%] No install step for 'yara'
+[ 64%] Completed 'yara'
+[ 64%] Built target yara
+Scanning dependencies of target yaracpp
+[ 71%] Building CXX object src/CMakeFiles/yaracpp.dir/types/yara_match.cpp.o
+[ 78%] Building CXX object src/CMakeFiles/yaracpp.dir/types/yara_meta.cpp.o
+[ 85%] Building CXX object src/CMakeFiles/yaracpp.dir/types/yara_rule.cpp.o
+[ 92%] Building CXX object src/CMakeFiles/yaracpp.dir/yara_detector/yara_detector.cpp.o
+[100%] Linking CXX static library libyaracpp.a
+[100%] Built target yaracpp

@@ -1,0 +1,15 @@
+-- Downloading...
+   dst='/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaramod.zip'
+   timeout='none'
+-- Using src='https://github.com/avast-tl/yaramod/archive/v2.1.2.zip'
+-- verifying file...
+       file='/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaramod.zip'
+-- Downloading... done
+-- extracting...
+     src='/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaramod.zip'
+     dst='/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaramod-project'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done

@@ -1,0 +1,27 @@
+Scanning dependencies of target capstone-static
+[  4%] Building C object CMakeFiles/capstone-static.dir/cs.c.o
+[  8%] Building C object CMakeFiles/capstone-static.dir/MCInst.c.o
+[ 12%] Building C object CMakeFiles/capstone-static.dir/MCInstrDesc.c.o
+[ 16%] Building C object CMakeFiles/capstone-static.dir/MCRegisterInfo.c.o
+[ 20%] Building C object CMakeFiles/capstone-static.dir/SStream.c.o
+[ 24%] Building C object CMakeFiles/capstone-static.dir/utils.c.o
+[ 28%] Building C object CMakeFiles/capstone-static.dir/arch/ARM/ARMDisassembler.c.o
+[ 32%] Building C object CMakeFiles/capstone-static.dir/arch/ARM/ARMInstPrinter.c.o
+[ 36%] Building C object CMakeFiles/capstone-static.dir/arch/ARM/ARMMapping.c.o
+[ 40%] Building C object CMakeFiles/capstone-static.dir/arch/ARM/ARMModule.c.o
+[ 44%] Building C object CMakeFiles/capstone-static.dir/arch/Mips/MipsDisassembler.c.o
+[ 48%] Building C object CMakeFiles/capstone-static.dir/arch/Mips/MipsInstPrinter.c.o
+[ 52%] Building C object CMakeFiles/capstone-static.dir/arch/Mips/MipsMapping.c.o
+[ 56%] Building C object CMakeFiles/capstone-static.dir/arch/Mips/MipsModule.c.o
+[ 60%] Building C object CMakeFiles/capstone-static.dir/arch/PowerPC/PPCDisassembler.c.o
+[ 64%] Building C object CMakeFiles/capstone-static.dir/arch/PowerPC/PPCInstPrinter.c.o
+[ 68%] Building C object CMakeFiles/capstone-static.dir/arch/PowerPC/PPCMapping.c.o
+[ 72%] Building C object CMakeFiles/capstone-static.dir/arch/PowerPC/PPCModule.c.o
+[ 76%] Building C object CMakeFiles/capstone-static.dir/arch/X86/X86Disassembler.c.o
+[ 80%] Building C object CMakeFiles/capstone-static.dir/arch/X86/X86DisassemblerDecoder.c.o
+[ 84%] Building C object CMakeFiles/capstone-static.dir/arch/X86/X86IntelInstPrinter.c.o
+[ 88%] Building C object CMakeFiles/capstone-static.dir/arch/X86/X86Mapping.c.o
+[ 92%] Building C object CMakeFiles/capstone-static.dir/arch/X86/X86Module.c.o
+[ 96%] Building C object CMakeFiles/capstone-static.dir/arch/X86/X86ATTInstPrinter.c.o
+[100%] Linking C static library libcapstone.a
+[100%] Built target capstone-static

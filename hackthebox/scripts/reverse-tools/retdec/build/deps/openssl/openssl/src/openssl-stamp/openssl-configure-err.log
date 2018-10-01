@@ -1,0 +1,1 @@
+File::Glob::glob() will disappear in perl 5.30. Use File::Glob::bsd_glob() instead. at /home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/openssl/openssl/src/openssl/Configure line 272.

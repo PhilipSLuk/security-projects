@@ -1,0 +1,13 @@
+# Target labels
+ elfio-project
+# Source files and their labels
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/elfio/CMakeFiles/elfio-project
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/elfio/CMakeFiles/elfio-project.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/elfio/CMakeFiles/elfio-project-complete.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/elfio-project-stamp/elfio-project-install.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/elfio-project-stamp/elfio-project-mkdir.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/elfio-project-stamp/elfio-project-download.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/elfio-project-stamp/elfio-project-update.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/elfio-project-stamp/elfio-project-patch.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/elfio-project-stamp/elfio-project-configure.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/elfio-project-stamp/elfio-project-build.rule

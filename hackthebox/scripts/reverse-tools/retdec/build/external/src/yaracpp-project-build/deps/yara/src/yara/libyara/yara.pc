@@ -1,0 +1,11 @@
+prefix=
+exec_prefix=
+includedir=/include
+libdir=/lib
+
+Name: yara
+Description: YARA library
+URL: http://plusvic.github.io/yara/
+Version: 3.6.3
+Cflags: -I${includedir}
+Libs: -L${libdir} -lyara

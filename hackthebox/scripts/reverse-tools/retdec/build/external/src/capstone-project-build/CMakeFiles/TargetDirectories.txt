@@ -1,0 +1,8 @@
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-build/CMakeFiles/install/strip.dir
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-build/CMakeFiles/install/local.dir
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-build/CMakeFiles/test.dir
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-build/CMakeFiles/list_install_components.dir
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-build/CMakeFiles/capstone-static.dir
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-build/CMakeFiles/edit_cache.dir
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-build/CMakeFiles/rebuild_cache.dir
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-build/CMakeFiles/install.dir

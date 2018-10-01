@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/CMakeFiles/yara"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/CMakeFiles/yara.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/CMakeFiles/yara-complete.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/yara/src/yara-stamp/yara-install.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/yara/src/yara-stamp/yara-mkdir.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/yara/src/yara-stamp/yara-download.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/yara/src/yara-stamp/yara-update.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/yara/src/yara-stamp/yara-patch.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/yara/src/yara-stamp/yara-configure.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/yara/src/yara-stamp/yara-build.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/deps/yara/src/yara-stamp/yara-configure-linux.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"yara"
+		],
+		"name" : "yara"
+	}
+}

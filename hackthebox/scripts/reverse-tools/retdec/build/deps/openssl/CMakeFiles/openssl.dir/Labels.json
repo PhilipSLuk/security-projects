@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/openssl/CMakeFiles/openssl"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/openssl/CMakeFiles/openssl.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/openssl/CMakeFiles/openssl-complete.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/openssl/openssl/src/openssl-stamp/openssl-install.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/openssl/openssl/src/openssl-stamp/openssl-mkdir.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/openssl/openssl/src/openssl-stamp/openssl-download.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/openssl/openssl/src/openssl-stamp/openssl-update.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/openssl/openssl/src/openssl-stamp/openssl-patch.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/openssl/openssl/src/openssl-stamp/openssl-configure.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/openssl/openssl/src/openssl-stamp/openssl-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"openssl"
+		],
+		"name" : "openssl"
+	}
+}

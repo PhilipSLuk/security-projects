@@ -1,0 +1,15 @@
+-- Downloading...
+   dst='/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/jsoncpp.zip'
+   timeout='none'
+-- Using src='https://github.com/open-source-parsers/jsoncpp/archive/1.8.4.zip'
+-- verifying file...
+       file='/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/jsoncpp.zip'
+-- Downloading... done
+-- extracting...
+     src='/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/jsoncpp.zip'
+     dst='/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/jsoncpp-project'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done

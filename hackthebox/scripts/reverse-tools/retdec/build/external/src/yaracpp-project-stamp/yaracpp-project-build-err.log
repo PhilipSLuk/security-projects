@@ -1,0 +1,50 @@
+configure.ac:15: installing './ar-lib'
+configure.ac:15: installing './compile'
+configure.ac:22: installing './config.guess'
+configure.ac:22: installing './config.sub'
+configure.ac:5: installing './install-sh'
+configure.ac:5: installing './missing'
+Makefile.am: installing './depcomp'
+parallel-tests: installing './test-driver'
+configure.ac: installing './ylwrap'
+configure: WARNING:
+*******************************************************************************
+  Could not find OpenSSL library. The "hash" module and some features in "pe"
+  module have been disabled. If you want to enable all features please install
+  it and run this script again.
+*******************************************************************************
+        
+lexer.c: In function ‘yara_yylex’:
+lexer.l:284:16: warning: ‘%s’ directive output may be truncated writing up to 65535 bytes into a region of size 999 [-Wformat-truncation=]
+       snprintf(buffer, sizeof(buffer),
+                ^~~~~~~~~~~~~~~~~~~~~~~      
+lexer.l:283:7: note: ‘snprintf’ output between 26 and 65561 bytes into a destination of size 1024
+     {
+       ^
+       snprintf(buffer, sizeof(buffer),
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                         
+parser.c: In function ‘yr_parser_reduce_string_declaration’:
+parser.c:537:31: warning: ‘%s’ directive output may be truncated writing up to 511 bytes into a region of size between 481 and 489 [-Wformat-truncation=]
+           "invalid %s \"%s\": %s",
+                               ^~
+parser.c:541:11:
+           re_error.message);
+           ~~~~~~~~~~~~~~~~     
+parser.c:534:7: note: ‘snprintf’ output 24 or more bytes (assuming 543) into a destination of size 512
+       snprintf(
+       ^~~~~~~~~
+           message,
+           ~~~~~~~~
+           sizeof(message),
+           ~~~~~~~~~~~~~~~~
+           "invalid %s \"%s\": %s",
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+           (string_flags & STRING_GFLAGS_HEXADECIMAL) ?
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+               "hex string" : "regular expression",
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           identifier,
+           ~~~~~~~~~~~
+           re_error.message);
+           ~~~~~~~~~~~~~~~~~
+ar: `u' modifier ignored since `D' is the default (see `U')

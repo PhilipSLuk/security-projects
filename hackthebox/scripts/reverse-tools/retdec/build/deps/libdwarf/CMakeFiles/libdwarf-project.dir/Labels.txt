@@ -1,0 +1,13 @@
+# Target labels
+ libdwarf-project
+# Source files and their labels
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/libdwarf/CMakeFiles/libdwarf-project
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/libdwarf/CMakeFiles/libdwarf-project.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/libdwarf/CMakeFiles/libdwarf-project-complete.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/libdwarf-project-stamp/libdwarf-project-install.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/libdwarf-project-stamp/libdwarf-project-mkdir.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/libdwarf-project-stamp/libdwarf-project-download.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/libdwarf-project-stamp/libdwarf-project-update.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/libdwarf-project-stamp/libdwarf-project-patch.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/libdwarf-project-stamp/libdwarf-project-configure.rule
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/libdwarf-project-stamp/libdwarf-project-build.rule

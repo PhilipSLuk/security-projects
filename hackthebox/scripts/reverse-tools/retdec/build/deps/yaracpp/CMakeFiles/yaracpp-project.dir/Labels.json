@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/yaracpp/CMakeFiles/yaracpp-project"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/yaracpp/CMakeFiles/yaracpp-project.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/yaracpp/CMakeFiles/yaracpp-project-complete.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-stamp/yaracpp-project-install.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-stamp/yaracpp-project-mkdir.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-stamp/yaracpp-project-download.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-stamp/yaracpp-project-update.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-stamp/yaracpp-project-patch.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-stamp/yaracpp-project-configure.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-stamp/yaracpp-project-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"yaracpp-project"
+		],
+		"name" : "yaracpp-project"
+	}
+}

@@ -1,0 +1,2 @@
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/libdwarf-project-install/lib/libretdec-libdwarf.so
+/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/libdwarf-project-install/lib/libretdec-libelf.so

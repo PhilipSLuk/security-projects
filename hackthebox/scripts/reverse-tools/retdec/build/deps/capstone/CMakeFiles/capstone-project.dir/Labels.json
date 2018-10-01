@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/capstone/CMakeFiles/capstone-project"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/capstone/CMakeFiles/capstone-project.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/deps/capstone/CMakeFiles/capstone-project-complete.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-stamp/capstone-project-install.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-stamp/capstone-project-mkdir.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-stamp/capstone-project-download.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-stamp/capstone-project-update.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-stamp/capstone-project-patch.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-stamp/capstone-project-configure.rule"
+		},
+		{
+			"file" : "/home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/capstone-project-stamp/capstone-project-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"capstone-project"
+		],
+		"name" : "capstone-project"
+	}
+}

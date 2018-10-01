@@ -1,0 +1,59 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e4ed2/fast"
+make[3]: Entering directory '/mnt/host/Development/security-projects/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_e4ed2.dir/build.make CMakeFiles/cmTC_e4ed2.dir/build
+make[4]: Entering directory '/mnt/host/Development/security-projects/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e4ed2.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e4ed2.dir/CheckSymbolExists.c.o   -c /home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_e4ed2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4ed2.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_e4ed2.dir/CheckSymbolExists.c.o  -o cmTC_e4ed2 
+/usr/bin/ld: CMakeFiles/cmTC_e4ed2.dir/CheckSymbolExists.c.o: in function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e4ed2.dir/build.make:86: recipe for target 'cmTC_e4ed2' failed
+make[4]: *** [cmTC_e4ed2] Error 1
+make[4]: Leaving directory '/mnt/host/Development/security-projects/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e4ed2/fast' failed
+make[3]: *** [cmTC_e4ed2/fast] Error 2
+make[3]: Leaving directory '/mnt/host/Development/security-projects/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/CMakeFiles/CMakeTmp'
+
+File /home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/fortyfunbobby/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f0f87/fast"
+make[3]: Entering directory '/mnt/host/Development/security-projects/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_f0f87.dir/build.make CMakeFiles/cmTC_f0f87.dir/build
+make[4]: Entering directory '/mnt/host/Development/security-projects/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f0f87.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f0f87.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.11/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f0f87
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f0f87.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_f0f87.dir/CheckFunctionExists.c.o  -o cmTC_f0f87 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_f0f87.dir/build.make:86: recipe for target 'cmTC_f0f87' failed
+make[4]: *** [cmTC_f0f87] Error 1
+make[4]: Leaving directory '/mnt/host/Development/security-projects/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f0f87/fast' failed
+make[3]: *** [cmTC_f0f87/fast] Error 2
+make[3]: Leaving directory '/mnt/host/Development/security-projects/hackthebox/scripts/reverse-tools/retdec/retdec-master/build/external/src/yaracpp-project-build/CMakeFiles/CMakeTmp'
+
+

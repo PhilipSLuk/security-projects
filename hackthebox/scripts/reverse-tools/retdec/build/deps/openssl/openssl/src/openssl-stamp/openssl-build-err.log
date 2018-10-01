@@ -1,0 +1,11 @@
+In function 'slg_write.constprop',
+    inlined from 'slg_puts' at crypto/bio/bss_log.c:231:11:
+crypto/bio/bss_log.c:198:5: warning: 'strncpy' output truncated before terminating nul copying as many bytes from a string as its length [-Wstringop-truncation]
+     strncpy(buf, in, inl);
+     ^~~~~~~~~~~~~~~~~~~~~
+crypto/bio/bss_log.c: In function 'slg_puts':
+crypto/bio/bss_log.c:230:9: note: length computed here
+     n = strlen(str);
+         ^~~~~~~~~~~
+ar: creating libcrypto.a
+ar: creating libssl.a

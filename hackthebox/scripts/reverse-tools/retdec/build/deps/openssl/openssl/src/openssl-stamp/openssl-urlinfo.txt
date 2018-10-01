@@ -1,0 +1,3 @@
+repository='external project URL'
+module='https://www.openssl.org/source/openssl-1.1.0f.tar.gz'
+tag='SHA256=12f746f3f2493b2f39da7ecf63d7ee19c6ac9ec6a4fcd8c229da8a522cb12765'

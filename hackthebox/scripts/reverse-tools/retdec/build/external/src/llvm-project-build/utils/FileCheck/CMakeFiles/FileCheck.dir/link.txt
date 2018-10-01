@@ -1,0 +1,1 @@
+/usr/bin/c++   -fPIC -fvisibility-inlines-hidden -Werror=date-time -std=c++11 -ffunction-sections -fdata-sections -O3 -DNDEBUG   -Wl,-allow-shlib-undefined  -Wl,-O3 -Wl,--gc-sections CMakeFiles/FileCheck.dir/FileCheck.cpp.o  -o ../../bin/FileCheck -Wl,-rpath,"\$ORIGIN/../lib" -lpthread ../../lib/libLLVMSupport.a -lrt -ldl -ltinfo -lpthread -lz -lm 

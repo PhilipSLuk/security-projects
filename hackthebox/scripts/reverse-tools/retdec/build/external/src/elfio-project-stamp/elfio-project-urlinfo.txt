@@ -1,0 +1,3 @@
+repository='external project URL'
+module='https://github.com/avast-tl/elfio/archive/998374baace397ea98f3b1d768e81c978b4fba41.zip'
+tag='SHA256=3617770aac77d3bde428c84e8e80bf1da85f37a6741589ece7a84ac7e5a45fb9'

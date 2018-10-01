@@ -1,0 +1,2 @@
+/usr/bin/ar qc libretdec-demangler.a  CMakeFiles/retdec-demangler.dir/demangler.cpp.o CMakeFiles/retdec-demangler.dir/demtools.cpp.o CMakeFiles/retdec-demangler.dir/gparser.cpp.o CMakeFiles/retdec-demangler.dir/igrams.cpp.o CMakeFiles/retdec-demangler.dir/stgrammars/borlandll.cpp.o CMakeFiles/retdec-demangler.dir/stgrammars/gccll.cpp.o CMakeFiles/retdec-demangler.dir/stgrammars/msll.cpp.o
+/usr/bin/ranlib libretdec-demangler.a

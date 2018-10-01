@@ -1,0 +1,60 @@
+Configuring OpenSSL version 1.1.0f (0x1010006fL)
+    no-asan         [default]  OPENSSL_NO_ASAN
+    no-asm          [option]   OPENSSL_NO_ASM
+    no-crypto-mdebug [default]  OPENSSL_NO_CRYPTO_MDEBUG
+    no-crypto-mdebug-backtrace [default]  OPENSSL_NO_CRYPTO_MDEBUG_BACKTRACE
+    no-dynamic-engine [forced]  
+    no-ec_nistp_64_gcc_128 [default]  OPENSSL_NO_EC_NISTP_64_GCC_128
+    no-egd          [default]  OPENSSL_NO_EGD
+    no-fuzz-afl     [default]  OPENSSL_NO_FUZZ_AFL
+    no-fuzz-libfuzzer [default]  OPENSSL_NO_FUZZ_LIBFUZZER
+    no-heartbeats   [default]  OPENSSL_NO_HEARTBEATS
+    no-md2          [default]  OPENSSL_NO_MD2 (skip dir)
+    no-msan         [default]  OPENSSL_NO_MSAN
+    no-rc5          [default]  OPENSSL_NO_RC5 (skip dir)
+    no-sctp         [default]  OPENSSL_NO_SCTP
+    no-shared       [option]  
+    no-ssl-trace    [default]  OPENSSL_NO_SSL_TRACE
+    no-ssl3         [default]  OPENSSL_NO_SSL3
+    no-ssl3-method  [default]  OPENSSL_NO_SSL3_METHOD
+    no-ubsan        [default]  OPENSSL_NO_UBSAN
+    no-unit-test    [default]  OPENSSL_NO_UNIT_TEST
+    no-weak-ssl-ciphers [default]  OPENSSL_NO_WEAK_SSL_CIPHERS
+    no-zlib         [default] 
+    no-zlib-dynamic [default] 
+Configuring for linux-x86_64
+CC            =gcc
+CFLAG         =-Wall -O3 -pthread -m64 -DL_ENDIAN 
+SHARED_CFLAG  =-fPIC -DOPENSSL_USE_NODELETE
+DEFINES       =DSO_DLFCN HAVE_DLFCN_H NDEBUG OPENSSL_THREADS OPENSSL_NO_DYNAMIC_ENGINE OPENSSL_PIC
+LFLAG         =
+PLIB_LFLAG    =
+EX_LIBS       =-ldl 
+APPS_OBJ      =
+CPUID_OBJ     =mem_clr.o
+UPLINK_OBJ    =
+BN_ASM        =bn_asm.o
+EC_ASM        =
+DES_ENC       =des_enc.o fcrypt_b.o
+AES_ENC       =aes_core.o aes_cbc.o
+BF_ENC        =bf_enc.o
+CAST_ENC      =c_enc.o
+RC4_ENC       =rc4_enc.o rc4_skey.o
+RC5_ENC       =rc5_enc.o
+MD5_OBJ_ASM   =
+SHA1_OBJ_ASM  =
+RMD160_OBJ_ASM=
+CMLL_ENC      =camellia.o cmll_misc.o cmll_cbc.o
+MODES_OBJ     =
+PADLOCK_OBJ   =
+CHACHA_ENC    =chacha_enc.o
+POLY1305_OBJ  =
+BLAKE2_OBJ    =
+PROCESSOR     =
+RANLIB        =ranlib
+ARFLAGS       =
+PERL          =/usr/bin/perl
+
+SIXTY_FOUR_BIT_LONG mode
+
+Configured for linux-x86_64.
