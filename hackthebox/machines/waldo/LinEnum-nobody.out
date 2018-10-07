@@ -1,0 +1,278 @@
+
+[00;31m#########################################################[00m
+[00;31m#[00m [00;33mLocal Linux Enumeration & Privilege Escalation Script[00m [00;31m#[00m
+[00;31m#########################################################[00m
+[00;33m# www.rebootuser.com[00m
+[00;33m# [00m
+
+Debug Info
+report name = out-07-10-18
+thorough tests = disabled
+
+
+Sun Oct  7 07:09:36 UTC 2018
+[00m
+
+[00;33m### SYSTEM ##############################################[00m
+[00;31mKernel information:[00m
+Linux waldo 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1 (2018-04-29) x86_64 Linux
+
+
+[00;31mKernel information (continued):[00m
+Linux version 4.9.0-6-amd64 (debian-kernel@lists.debian.org) (gcc version 6.3.0 20170516 (Debian 6.3.0-18+deb9u1) ) #1 SMP Debian 4.9.88-1 (2018-04-29)
+
+
+[00;31mSpecific release information:[00m
+3.6.2
+NAME="Alpine Linux"
+ID=alpine
+VERSION_ID=3.6.2
+PRETTY_NAME="Alpine Linux v3.6"
+HOME_URL="http://alpinelinux.org"
+BUG_REPORT_URL="http://bugs.alpinelinux.org"
+
+
+[00;31mHostname:[00m
+waldo
+
+
+[00;33m### USER/GROUP ##########################################[00m
+[00;31mCurrent user/group info:[00m
+uid=65534(nobody) gid=65534(nobody) groups=65534(nobody)
+
+
+[00;31mAll users and uid/gid info:[00m
+root:x:0:0
+bin:x:1:1
+daemon:x:2:2
+adm:x:3:4
+lp:x:4:7
+sync:x:5:0
+shutdown:x:6:0
+halt:x:7:0
+mail:x:8:12
+news:x:9:13
+uucp:x:10:14
+operator:x:11:0
+man:x:13:15
+postmaster:x:14:12
+cron:x:16:16
+ftp:x:21:21
+sshd:x:22:22
+at:x:25:25
+squid:x:31:31
+xfs:x:33:33
+games:x:35:35
+postgres:x:70:70
+cyrus:x:85:12
+vpopmail:x:89:89
+ntp:x:123:123
+smmsp:x:209:209
+guest:x:405:100
+nobody:x:65534:65534
+nginx:x:100:101
+
+
+[00;31mGroup memberships:[00m
+uid=0(root) gid=0(root) groups=0(root),0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),11(floppy),20(dialout),26(tape),27(video)
+uid=1(bin) gid=1(bin) groups=1(bin),1(bin),2(daemon),3(sys)
+uid=2(daemon) gid=2(daemon) groups=2(daemon),1(bin),2(daemon),4(adm)
+uid=3(adm) gid=4(adm) groups=4(adm),3(sys),4(adm),6(disk)
+uid=4(lp) gid=7(lp) groups=7(lp),7(lp)
+uid=5(sync) gid=0(root) groups=0(root)
+uid=6(shutdown) gid=0(root) groups=0(root)
+uid=7(halt) gid=0(root) groups=0(root)
+uid=8(mail) gid=12(mail) groups=12(mail),12(mail)
+uid=9(news) gid=13(news) groups=13(news),13(news)
+uid=10(uucp) gid=14(uucp) groups=14(uucp),14(uucp)
+uid=11(operator) gid=0(root) groups=0(root)
+uid=13(man) gid=15(man) groups=15(man),15(man)
+uid=14(postmaster) gid=12(mail) groups=12(mail)
+uid=16(cron) gid=16(cron) groups=16(cron),16(cron)
+uid=21(ftp) gid=21(ftp) groups=21(ftp)
+uid=22(sshd) gid=22(sshd) groups=22(sshd)
+uid=25(at) gid=25(at) groups=25(at),25(at)
+uid=31(squid) gid=31(squid) groups=31(squid),31(squid)
+uid=33(xfs) gid=33(xfs) groups=33(xfs),33(xfs)
+uid=35(games) gid=35(games) groups=35(games),100(users)
+uid=70(postgres) gid=70(postgres) groups=70(postgres)
+uid=85(cyrus) gid=12(mail) groups=12(mail)
+uid=89(vpopmail) gid=89(vpopmail) groups=89(vpopmail)
+uid=123(ntp) gid=123(ntp) groups=123(ntp)
+uid=209(smmsp) gid=209(smmsp) groups=209(smmsp),209(smmsp)
+uid=405(guest) gid=100(users) groups=100(users)
+uid=65534(nobody) gid=65534(nobody) groups=65534(nobody)
+uid=100(nginx) gid=101(nginx) groups=101(nginx),82(www-data),101(nginx)
+
+
+[00;31mSample entires from /etc/passwd (searching for uid values 0, 500, 501, 502, 1000, 1001, 1002, 2000, 2001, 2002):[00m
+root:x:0:0:root:/root:/bin/ash
+
+
+[00;31mSuper user account(s):[00m
+root
+
+
+[00;33m***We can read root's home directory![00m
+total 0
+
+
+[00;31mAre permissions on /home directories lax:[00m
+total 12
+drwxr-xr-x    1 root     root        4.0K May  3 20:50 .
+drwxr-xr-x    1 root     root        4.0K May  3 20:50 ..
+drwxr-xr-x    1 nobody   nobody      4.0K Oct  7 04:06 nobody
+
+
+[00;33m### ENVIRONMENTAL #######################################[00m
+[00;31mPath information:[00m
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+
+[00;31mAvailable shells:[00m
+# valid login shells
+/bin/sh
+/bin/ash
+
+
+[00;31mCurrent umask value:[00m
+0022
+u=rwx,g=rx,o=rx
+
+
+[00;33m### JOBS/TASKS ##########################################[00m
+[00;31mCron jobs:[00m
+total 12
+drwxr-xr-x    2 root     root          4096 Jan  9  2018 .
+drwxr-xr-x    1 root     root          4096 May  3 20:50 ..
+-rw-------    1 root     root           283 Apr 24  2017 root
+
+
+[00;31mAnything interesting in /var/spool/cron/crontabs:[00m
+lrwxrwxrwx    1 root     root            13 Jan  9  2018 /var/spool/cron/crontabs -> /etc/crontabs
+
+
+[00;33m### NETWORKING  ##########################################[00m
+[00;31mNetwork & IP info:[00m
+docker0   Link encap:Ethernet  HWaddr 02:42:1A:03:A0:D9  
+          inet addr:172.17.0.1  Bcast:172.17.255.255  Mask:255.255.0.0
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+ens33     Link encap:Ethernet  HWaddr 00:50:56:B9:4D:2C  
+          inet addr:10.10.10.87  Bcast:10.10.10.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1286932 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:555385 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:201918704 (192.5 MiB)  TX bytes:194684969 (185.6 MiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:2134742 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2134742 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:285351612 (272.1 MiB)  TX bytes:285351612 (272.1 MiB)
+
+
+[00;31mNameserver(s):[00m
+nameserver 10.10.10.2
+
+
+[00;31mDefault route:[00m
+default         10.10.10.2      0.0.0.0         UG    0      0        0 ens33
+
+
+[00;31mListening TCP:[00m
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:8888            0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:9000          0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:22            127.0.0.1:51520         ESTABLISHED -
+tcp        0      0 127.0.0.1:60040         127.0.0.1:22            ESTABLISHED 233/ssh
+tcp        0      0 127.0.0.1:22            127.0.0.1:60040         ESTABLISHED -
+tcp        0    328 10.10.10.87:8888        10.10.16.46:59632       ESTABLISHED -
+tcp        0      0 127.0.0.1:51520         127.0.0.1:22            ESTABLISHED 55/ssh
+tcp        0      0 10.10.10.87:8888        10.10.15.213:44208      ESTABLISHED -
+tcp        0      0 10.10.10.87:8888        10.10.14.101:51786      ESTABLISHED -
+tcp        0      0 :::80                   :::*                    LISTEN      -
+tcp        0      0 :::22                   :::*                    LISTEN      -
+tcp        0      0 :::8888                 :::*                    LISTEN      -
+
+
+[00;31mListening UDP:[00m
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+udp        0      0 10.10.10.87:38523       10.10.10.2:53           ESTABLISHED -
+
+
+[00;33m### SERVICES #############################################[00m
+[00;31mRunning processes:[00m
+PID   USER     TIME   COMMAND
+    1 root       2:33 {supervisord} /usr/bin/python2 /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+    7 root       0:00 nginx: master process nginx -g daemon off;
+    8 root       0:00 /usr/sbin/sshd -D -e
+    9 root       0:10 {php-fpm7} php-fpm: master process (/etc/php7/php-fpm.conf)
+   10 nginx      2:30 nginx: worker process
+   11 root       0:00 sshd: nobody [priv]
+   13 nobody     0:02 sshd: nobody@pts/1
+   14 nobody     0:00 -sh
+   55 nobody     0:02 ssh -i .monitor monitor@localhost -t bash -norc
+   72 root       0:00 sshd: nobody [priv]
+   74 nobody     0:05 sshd: nobody@pts/4
+   75 nobody     0:00 -sh
+  233 nobody     0:03 ssh -i .monitor monitor@localhost -t bash -norc
+  708 root       0:00 sshd: nobody [priv]
+  710 nobody     0:00 sshd: nobody@pts/2
+  711 nobody     0:00 -sh
+ 1010 nobody     0:00 ps aux
+
+
+[00;31m/etc/init.d/ binary permissions:[00m
+total 24
+drwxr-xr-x    1 root     root          4096 May  3 20:50 .
+drwxr-xr-x    1 root     root          4096 May  3 20:50 ..
+-rwxr-xr-x    1 root     root          1364 Nov 24  2017 nginx
+-rwxr-xr-x    1 root     root          2431 Mar 31  2018 php-fpm7
+-rwxr-xr-x    1 root     root          2614 Dec 29  2017 sshd
+-rwxr-xr-x    1 root     root           273 Aug 17  2017 supervisord
+
+
+[00;33m### SOFTWARE #############################################[00m
+[00;33m### INTERESTING FILES ####################################[00m
+[00;31mUseful file locations:[00m
+/usr/bin/nc
+/usr/bin/wget
+
+
+[00;31mCan we read/write sensitive files:[00m
+-rw-r--r--    1 root     root          1280 May  3 20:50 /etc/passwd
+-rw-r--r--    1 root     root           735 May  3 20:50 /etc/group
+-rw-r-----    1 root     shadow         672 May  3 20:50 /etc/shadow
+
+
+Can't search *.conf files as no keyword was entered
+
+Can't search *.log files as no keyword was entered
+
+Can't search *.ini files as no keyword was entered
+
+[00;31mAll *.conf files in /etc (recursive 1 level):[00m
+-rw-r--r--    1 root     root            53 Apr 24  2017 /etc/sysctl.conf
+-rw-r--r--    1 root     root          4138 Nov 23  2017 /etc/udhcpd.conf
+-rw-r--r--    1 root     root            60 Oct  7 01:14 /etc/resolv.conf
+-rw-r--r--    1 root     root          7319 Apr 20  2017 /etc/ca-certificates.conf
+-rw-------    1 root     root          8084 Aug 17  2017 /etc/supervisord.conf
+
+
+[00;31mCurrent user's history files:[00m
+lrwxrwxrwx    1 root     root             9 Jul 24 11:57 /home/nobody/.ash_history -> /dev/null
+
+
+[00;33m### SCAN COMPLETE ####################################[00m
