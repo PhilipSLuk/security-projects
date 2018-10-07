@@ -235,38 +235,9 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 31.13 seconds
 ```
 
+### RETIRED
 
-### HINTS
-
-To everyone stuck at their pickled payload not working when submitted to the site: try using a popular http library for the submission of your pickled code. Copy & pasting the payload from the terminal + bad url encoding fucks up the payload, with the mentioned library it worked flawlessly.
-
-Hint on getting foothold: 1) yes it does require research, 2) common public approaches probably won't work 3) but yes there is a public example out there 4) don't copy and paste. If you need to copy and paste, base64 if your friend. 5) probably want to test locally 6) need to be able to read and understand the code
-
-Hey, Can Anyone help me with the intial foothold. I've been able to get a low privileged shell as www-data user but can't seem to find a way to do privilege escalation as Homer user. Any nudges in the right direction would be appreciated!
-
-I have a shell on www-data, found a hash and got admin access to the couchdb but stuck 
-
-python -c 'import pty;pty.spawn("/bin/bash")'
-
-i found nmap useful at the beggining , do your scan with OS detection, there is a single action that needs to be done, dont ignore the results from nmap
-
-Seems I was lucky with the reverse shell - it worked right away and as very stable, so I did not try to work around the 'remaining expected error'. My advice is to 1) build up a non-malicious p****e gradually, so that you can be sure that the server unp****s it nicely. 2) Then add a payload and keep it as simple as possible.
-
-As others have said, create your own scripts to replicate what the server does. If you review the code see how you can 'activate' / 'deactivate' a payload so that you might tell issues with encoding etc. from issues with the actual payload.
-
-For escalating to user: Don't be too aggressive with published exploits, just look around :-) Escalation to root - no surprises: Follow the standard procedure, google a bit.
-
-Nice weekend at the beach, some head-clearing was necessary. Just wondering if I should 'check' the 'id' to get at something...
-
-Enumerate more and then revisit the form. You'll see the light and understand how to check it
-
- I could recreate the page locally, I can see the history and what seems to be a vulnerable URL. I can get it do the 'correct' thing but I am stuck on that.
-
-a bit of time with the DB manpages and I've to usernames and passwords out of the DB
-
-it seems like it must be possible to "login" with that password as the user h***r but usign the typical commands "su", "sudo", ... no way !
-
-For initial foothold, enumerate the machine. May help if you can dump the whole set using some tool by internetwache and try to create a script to exploit against it.
-For getting the user after the initial foothold, reach a bit on the db administration on how to add admin users.
-For getting the root shell - this is ironically the easiest part, just google.
-
+So the machine was retired before I could make any further progress, but I assume
+the next steps would have been to analyze the webapp source code we had just
+pulled and likely that would have allowed us to find some way to get a foothold
+into the machine (probably something to do with couchdb).
