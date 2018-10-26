@@ -172,5 +172,6 @@ Linux bandit 4.18.12 x86_64 GNU/Linux
 
 bandit17@bandit:~$ whoami
 bandit17
-bandit17@bandit:~$
+bandit17@bandit:~$ cat /etc/bandit_pass/bandit17
+xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
 ```
