@@ -48,9 +48,10 @@ bandit23@bandit:~$ ls -l /var/spool/bandit24/
 ls: cannot open directory '/var/spool/bandit24/': Permission denied
 ```
 
-Okay, so we see that there is a cron job that will execute all scriptsi within
-`/var/spool/bandit24` every minute and then delete them. We ultimately want to dump the
-contents of `/etc/bandit_pass/bandit24` which we don't have permission to do as ourselves..
+Okay, so we see that there is a cron job that will execute all scripts within
+`/var/spool/bandit24` every minute and then delete them. We ultimately want to dump
+the contents of `/etc/bandit_pass/bandit24` which we don't have permission to do as
+ourselves..
 
 ```
 bandit23@bandit:~$ mkdir /tmp/mytemp
