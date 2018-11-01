@@ -1,3 +1,5 @@
 #! /bin/bash
 
-curl 'http://natas6.natas.labs.overthewire.org/' -H 'Connection: keep-alive' -H 'Cache-Control: max-age=0' -H 'Authorization: Basic bmF0YXM2OmFHb1k0cTJEYzZNZ0RxNG9MNFl0b0t0eUFnOVBlSGEx' -H 'Origin: http://natas6.natas.labs.overthewire.org' -H 'Upgrade-Insecure-Requests: 1' -H 'DNT: 1' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' -H 'Referer: http://natas6.natas.labs.overthewire.org/' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: en-US,en;q=0.9' -H 'Cookie: __cfduid=d773051550db82f7a8a4d2154d95cf23b1539528567; __utma=176859643.380347011.1539528564.1540653662.1540658153.12; __utmc=176859643; __utmz=176859643.1540523077.10.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided)' --data 'secret=FOEIUWGHFEEUHOFUOIU&submit=Submit' --compressed
+curl 'http://natas6.natas.labs.overthewire.org/' \
+  -H 'Authorization: Basic bmF0YXM2OmFHb1k0cTJEYzZNZ0RxNG9MNFl0b0t0eUFnOVBlSGEx'  \
+  --data 'secret=FOEIUWGHFEEUHOFUOIU&submit=Submit'

