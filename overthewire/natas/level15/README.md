@@ -110,6 +110,8 @@ Executing query: SELECT * from users where username="natas16"<br>This user exist
 
 So we confirm that `natas16` exists in the database.
 
+#### BLIND SQL INJECTION
+
 If we perform a SQL injection that sneaks a password test into the query, we
 can keep sending requests to the webapp to see if the username/passwd combo
 we supplied returns "The user exists" string (which means a successful SQL
@@ -132,6 +134,8 @@ USERNAME='natas16" AND password LIKE BINARY "$PW%'
 ```
 SELECT * from users where username="natas16" AND password LIKE BINARY "$PW%"
 ```
+
+#### BRUTE FORCE
 
 Wrote the following script to help with the process..
 

