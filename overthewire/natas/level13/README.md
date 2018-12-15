@@ -1,4 +1,4 @@
-# BANDIT LEVEL 13
+# NATAS LEVEL 13
 
 ```
 http://overthewire.org/wargames/natas/natas13.html

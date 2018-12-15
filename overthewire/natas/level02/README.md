@@ -1,4 +1,4 @@
-# BANDIT LEVEL 2
+# NATAS LEVEL 2
 
 ```
 http://overthewire.org/wargames/natas/natas2.html

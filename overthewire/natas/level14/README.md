@@ -1,4 +1,4 @@
-# BANDIT LEVEL 14
+# NATAS LEVEL 14
 
 ```
 http://overthewire.org/wargames/natas/natas14.html

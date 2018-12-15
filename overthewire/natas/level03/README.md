@@ -1,4 +1,4 @@
-# BANDIT LEVEL 3
+# NATAS LEVEL 3
 
 ```
 http://overthewire.org/wargames/natas/natas3.html

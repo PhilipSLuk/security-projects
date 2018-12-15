@@ -1,4 +1,4 @@
-# BANDIT LEVEL 8
+# NATAS LEVEL 8
 
 ```
 http://overthewire.org/wargames/natas/natas8.html

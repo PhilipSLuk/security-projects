@@ -1,4 +1,4 @@
-# BANDIT LEVEL 17
+# NATAS LEVEL 17
 
 ```
 http://overthewire.org/wargames/natas/natas17.html
