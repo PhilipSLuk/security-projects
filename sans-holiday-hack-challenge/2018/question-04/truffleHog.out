@@ -1,0 +1,698 @@
+~~~~~~~~~~~~~~~~~~~~~
+[92mReason: High Entropy[0m
+[92mDate: 2018-12-11 03:29:03[0m
+[92mHash: 6e754d3b0746a8e980512d010fc253cbb7c23f52[0m
+[92mFilepath: schematics/files/dot/ssh/key.rsa[0m
+[92mBranch: origin/master[0m
+[92mCommit: cleaning files[0m
+@@ -0,0 +1,27 @@
++-----BEGIN RSA PRIVATE KEY-----
+[93m+MIIEowIBAAKCAQEAsvB0ov2pCU0zr9olk0P2CZw9ZDgQVcsM9t37tK+ddah7pe3z[0m
+[93m+11wLQG9EWSCLKfFdQgaMlo+x6wRSjpzODqIAjLfvDwr3TFlCv93oYoTzwmwdHIWB[0m
+[93m+60FxGSryDK+CPRuCcrYfQDrbpAyB/i8JrNNQHwrJsh0aF66irexFAKNIwH4a3Bzv[0m
+[93m+tX+5Oh7zR5zwBXFT08ijP2wEfz6DPkoK0P0zHm+vmGajZ3lOZQ6wufbRBaAJYp5Y[0m
+[93m+XnAIMwYGI1y6hiIGTSPpa4LT6j325z6jGfUqCLox2uFPByPo+HGKMvFd+MV/OE+G[0m
+[93m+4iM6lp1HZmcZcd3ZPxEqw1VrBp/CRv0U676K9QIDAQABAoIBAF56fWsNubGSlKbV[0m
+[93m+7J8L9B1w5C1FOMLDui2iWWM2klHsSpT6xZPBIqO72/+fIjtcGFxjLtnUNyGan6hy[0m
+[93m+/I1XVij2eP+dT6N9QbQii69w+W9/PAOyLj2zyO578V9nT8HKA59jr65vJUdB32UB[0m
+[93m+Gv+odxZc0M/9c6hrabOhG3HRxPj0+k29qPm4+U4bFoufaNT1a1p4Zq1ZQy0KAWuE[0m
+[93m+WsoeXVBu5e+J2lGcTEWSNScGKkjkHtHIvQmtPOeoa6dyDjANN8nOIrCnHwY5GxKk[0m
+[93m+eeGpffyQ3EnM7uGW09IHN6Kt3M7RVGzQPAzTt7L+Ez+dW27+nnKcSxiW6N15jW7s[0m
+[93m+w+QmFCUCgYEA23OeCUa58xnYs/RVpfqBkRlMs/9nKJ2+55fWa1eTOl4sXTDOe3EV[0m
+[93m+ptR48se1ynVSww3zFl8ksh1GCD3ecPawHG3WAb4MU66UDtLYYPcr5IrX6tZfsiPi[0m
+[93m+MaXmiUjcXSZZc/+smz6Bg1C5lGA3/+mI/Rgern2LF2mEZYolOMdDyp8CgYEA0L2V[0m
+[93m+K7qVEkSNYjelgmZF3bP/ahHJvk7ZlsVbCVTnFj3j6XU7Fng86x5lxEUiO2a2q/Id[0m
+[93m+B1daYUHL5Kef0ZcdKTNirOwxkwHUu4l27DCgIBBVGyJMFtX4wIMW9xrp9PUl78mi[0m
+[93m+5FJolyq9XhDELjkD1OKp6UdSXISurQqn8XFLlesCgYEArTjXDzVvxC+ruWhtTuWs[0m
+[93m+7m7M9+vrbskNjttwmix3f4Qkeq7y3ceGsrhWfDUeDyCK4oKZVhhl695lkE3dzsc6[0m
+[93m+fkZIvflY25kbL5RIzklssSrTgoAS65edjVkJ32XO5AxIYeL4SVaOfqvywOcubOfX[0m
+[93m+hQhL96oLZ8CXjFr+RJIttbsCgYAc9kDtOU0XpMVNHFVte000TpYgnGk2a3BLOATC[0m
+[93m+jbImZt3pdWeGXZZuNOB/0+vE/CJaRxR6AUe7+MoWZp+JEANuxP9q6LaUJAvlHVSP[0m
+[93m+vstox3tXcXHHNVb3NvkHvgc6Ao2J8JsWPMzgNIDjvUXK+AQtFGnowQmPZqVpwvG8[0m
+[93m+UTDgkwKBgEZ/OIhjkXHltomC8HMjFxSZ7/YF94aTEdgo3GNb44VlLgz4SJD4ztcz[0m
+[93m+d2M+rIaGtrXPylHdoHrGHyDMhc8Lnh8fNNKbMFLL8Zd8sKRt92bDHR9/JO+k/PKr[0m
+[93m+ZWwI1hlAs8o9z81481/mKgA417dFRDTT1LgRdaKiiL/H/trWepgl[0m
++-----END RSA PRIVATE KEY-----
+\ No newline at end of file
+
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+[92mReason: RSA private key[0m
+[92mDate: 2018-12-11 03:29:03[0m
+[92mHash: 6e754d3b0746a8e980512d010fc253cbb7c23f52[0m
+[92mFilepath: schematics/files/dot/ssh/key.rsa[0m
+[92mBranch: origin/master[0m
+[92mCommit: cleaning files[0m
+[93m-----BEGIN RSA PRIVATE KEY-----[0m
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+[92mReason: High Entropy[0m
+[92mDate: 2018-12-11 03:25:45[0m
+[92mHash: 7f46bd5f88d0d5ac9f68ef50bebb7c52cfa67442[0m
+[92mFilepath: schematics/for_elf_eyes_only.md[0m
+[92mBranch: origin/master[0m
+[92mCommit: removing file[0m
+@@ -0,0 +1,15 @@
++Our Lead InfoSec Engineer Bushy Evergreen has been noticing an increase of brute force attacks in our logs. Furthermore, Albaster discovered and published a vulnerability with our password length at the last Hacker Conference.
++
++Bushy directed our elves to change the password used to lock down our sensitive files to something stronger. Good thing he caught it before those dastardly villians did!
++
++ 
++Hopefully this is the last time we have to change our password again until next Christmas. 
++
++
++
++
++Password = 'Yippee-ki-yay'
++
++
++Change ID = '[93m9ed54617547cfca783e0f81f8dc5c927e3d1e3[0m'
++
+
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+[92mReason: High Entropy[0m
+[92mDate: 2018-12-11 02:25:21[0m
+[92mHash: c376f995b44caf502992ddb617a34e7d38d7bbc1[0m
+[92mFilepath: schematics/files/dot/ssh/key.rsa[0m
+[92mBranch: origin/master[0m
+[92mCommit: support files for Santa's drone functions
+[0m
+@@ -1,27 +0,0 @@
+------BEGIN RSA PRIVATE KEY-----
+-[93mMIIEowIBAAKCAQEAsvB0ov2pCU0zr9olk0P2CZw9ZDgQVcsM9t37tK+ddah7pe3z[0m
+-[93m11wLQG9EWSCLKfFdQgaMlo+x6wRSjpzODqIAjLfvDwr3TFlCv93oYoTzwmwdHIWB[0m
+-[93m60FxGSryDK+CPRuCcrYfQDrbpAyB/i8JrNNQHwrJsh0aF66irexFAKNIwH4a3Bzv[0m
+-[93mtX+5Oh7zR5zwBXFT08ijP2wEfz6DPkoK0P0zHm+vmGajZ3lOZQ6wufbRBaAJYp5Y[0m
+-[93mXnAIMwYGI1y6hiIGTSPpa4LT6j325z6jGfUqCLox2uFPByPo+HGKMvFd+MV/OE+G[0m
+-[93m4iM6lp1HZmcZcd3ZPxEqw1VrBp/CRv0U676K9QIDAQABAoIBAF56fWsNubGSlKbV[0m
+-[93m7J8L9B1w5C1FOMLDui2iWWM2klHsSpT6xZPBIqO72/+fIjtcGFxjLtnUNyGan6hy[0m
+-[93m/I1XVij2eP+dT6N9QbQii69w+W9/PAOyLj2zyO578V9nT8HKA59jr65vJUdB32UB[0m
+-[93mGv+odxZc0M/9c6hrabOhG3HRxPj0+k29qPm4+U4bFoufaNT1a1p4Zq1ZQy0KAWuE[0m
+-[93mWsoeXVBu5e+J2lGcTEWSNScGKkjkHtHIvQmtPOeoa6dyDjANN8nOIrCnHwY5GxKk[0m
+-[93meeGpffyQ3EnM7uGW09IHN6Kt3M7RVGzQPAzTt7L+Ez+dW27+nnKcSxiW6N15jW7s[0m
+-[93mw+QmFCUCgYEA23OeCUa58xnYs/RVpfqBkRlMs/9nKJ2+55fWa1eTOl4sXTDOe3EV[0m
+-[93mptR48se1ynVSww3zFl8ksh1GCD3ecPawHG3WAb4MU66UDtLYYPcr5IrX6tZfsiPi[0m
+-[93mMaXmiUjcXSZZc/+smz6Bg1C5lGA3/+mI/Rgern2LF2mEZYolOMdDyp8CgYEA0L2V[0m
+-[93mK7qVEkSNYjelgmZF3bP/ahHJvk7ZlsVbCVTnFj3j6XU7Fng86x5lxEUiO2a2q/Id[0m
+-[93mB1daYUHL5Kef0ZcdKTNirOwxkwHUu4l27DCgIBBVGyJMFtX4wIMW9xrp9PUl78mi[0m
+-[93m5FJolyq9XhDELjkD1OKp6UdSXISurQqn8XFLlesCgYEArTjXDzVvxC+ruWhtTuWs[0m
+-[93m7m7M9+vrbskNjttwmix3f4Qkeq7y3ceGsrhWfDUeDyCK4oKZVhhl695lkE3dzsc6[0m
+-[93mfkZIvflY25kbL5RIzklssSrTgoAS65edjVkJ32XO5AxIYeL4SVaOfqvywOcubOfX[0m
+-[93mhQhL96oLZ8CXjFr+RJIttbsCgYAc9kDtOU0XpMVNHFVte000TpYgnGk2a3BLOATC[0m
+-[93mjbImZt3pdWeGXZZuNOB/0+vE/CJaRxR6AUe7+MoWZp+JEANuxP9q6LaUJAvlHVSP[0m
+-[93mvstox3tXcXHHNVb3NvkHvgc6Ao2J8JsWPMzgNIDjvUXK+AQtFGnowQmPZqVpwvG8[0m
+-[93mUTDgkwKBgEZ/OIhjkXHltomC8HMjFxSZ7/YF94aTEdgo3GNb44VlLgz4SJD4ztcz[0m
+-[93md2M+rIaGtrXPylHdoHrGHyDMhc8Lnh8fNNKbMFLL8Zd8sKRt92bDHR9/JO+k/PKr[0m
+-[93mZWwI1hlAs8o9z81481/mKgA417dFRDTT1LgRdaKiiL/H/trWepgl[0m
+------END RSA PRIVATE KEY-----
+\ No newline at end of file
+
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+[92mReason: RSA private key[0m
+[92mDate: 2018-12-11 02:25:21[0m
+[92mHash: c376f995b44caf502992ddb617a34e7d38d7bbc1[0m
+[92mFilepath: schematics/files/dot/ssh/key.rsa[0m
+[92mBranch: origin/master[0m
+[92mCommit: support files for Santa's drone functions
+[0m
+[93m-----BEGIN RSA PRIVATE KEY-----[0m
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+[92mReason: High Entropy[0m
+[92mDate: 2018-12-11 02:25:21[0m
+[92mHash: c376f995b44caf502992ddb617a34e7d38d7bbc1[0m
+[92mFilepath: support_files/README.GIT.markdown[0m
+[92mBranch: origin/master[0m
+[92mCommit: support files for Santa's drone functions
+[0m
+@@ -1,95 +0,0 @@
+-Using vcsrepo with Git
+-======================
+-
+-To create a blank repository
+-----------------------------
+-
+-Define a `vcsrepo` without a `source` or `revision`:
+-
+-    vcsrepo { "/path/to/repo":
+-      ensure => present,
+-      provider => git
+-    }
+-
+-If you're defining this for a central/"official" repository, you'll
+-probably want to make it a "bare" repository.  Do this by setting
+-`ensure` to `bare` instead of `present`:
+-
+-    vcsrepo { "/path/to/repo":
+-        ensure => bare,
+-        provider => git
+-    }
+-
+-To clone/pull a repository
+-----------------------------
+-
+-To get the current [master] HEAD:
+-
+-    vcsrepo { "/path/to/repo":
+-        ensure => present,
+-        provider => git,
+-        source => "git://example.com/repo.git"
+-    }
+-
+-For a specific revision or branch (can be a commit SHA, tag or branch name):
+-
+-    vcsrepo { "/path/to/repo":
+-        ensure => present,
+-        provider => git,
+-        source => 'git://example.com/repo.git',
+-        revision => '[93m[93m0c466b8a5a45f6cd7de82c08df2fb4ce1e920a31[0m[0m'
+-    }
+-
+-    vcsrepo { "/path/to/repo":
+-        ensure => present,
+-        provider => git,
+-        source => 'git://example.com/repo.git',
+-        revision => '1.1.2rc1'
+-    }
+-
+-    vcsrepo { "/path/to/repo":
+-        ensure => present,
+-        provider => git,
+-        source => 'git://example.com/repo.git',
+-        revision => 'development'
+-    }
+-
+-Check out as a user:
+-
+-    vcsrepo { "/path/to/repo":
+-        ensure => present,
+-        provider => git,
+-        source => 'git://example.com/repo.git',
+-        revision => '[93m[93m0c466b8a5a45f6cd7de82c08df2fb4ce1e920a31[0m[0m',
+-        user => 'someUser'
+-    }
+-
+-Keep the repository at the latest revision (note: this will always overwrite local changes to the repository):
+-
+-    vcsrepo { "/path/to/repo":
+-        ensure => latest,
+-        provider => git,
+-        source => 'git://example.com/repo.git',
+-        revision => 'master',
+-    }
+-
+-For sources that use SSH (eg, `username@server:...`)
+-----------------------------------------------------
+-
+-If your SSH key is associated with a user, simply fill the `user` parameter to use his keys.
+-
+-Example:
+-
+-    user => 'toto'  # will use toto's $HOME/.ssh setup
+-
+-
+-Otherwise, manage your SSH keys with Puppet and use `require` in your `vcsrepo` to ensure they are present.
+-For more information, see the `require` metaparameter documentation[1].
+-
+-More Examples
+--------------
+-
+-For examples you can run, see `examples/git/`
+-
+-[1]: http://docs.puppetlabs.com/references/stable/metaparameter.html#require
+-
+
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+[92mReason: High Entropy[0m
+[92mDate: 2018-12-11 02:25:21[0m
+[92mHash: c376f995b44caf502992ddb617a34e7d38d7bbc1[0m
+[92mFilepath: support_files/lib/puppet/provider/vcsrepo/git.rb[0m
+[92mBranch: origin/master[0m
+[92mCommit: support files for Santa's drone functions
+[0m
+@@ -1,323 +0,0 @@
+-require File.join(File.dirname(__FILE__), '..', 'vcsrepo')
+-
+-Puppet::Type.type(:vcsrepo).provide(:git, :parent => Puppet::Provider::Vcsrepo) do
+-  desc "Supports Git repositories"
+-
+-  ##TODO modify the commands below so that the su - is included
+-  optional_commands :git => 'git',
+-                    :su  => 'su'
+-  has_features :bare_repositories, :reference_tracking, :ssh_identity, :multiple_remotes, :user
+-
+-  def create
+-    if !@resource.value(:source)
+-      init_repository(@resource.value(:path))
+-    else
+-      clone_repository(@resource.value(:source), @resource.value(:path))
+-      if @resource.value(:revision)
+-        if @resource.value(:ensure) == :bare
+-          notice "Ignoring revision for bare repository"
+-        else
+-          checkout
+-        end
+-      end
+-      if @resource.value(:ensure) != :bare
+-        update_submodules
+-      end
+-    end
+-    update_owner_and_excludes
+-  end
+-
+-  def destroy
+-    FileUtils.rm_rf(@resource.value(:path))
+-  end
+-
+-  def latest?
+-    at_path do
+-      return self.revision == self.latest
+-    end
+-  end
+-
+-  def latest
+-    branch = on_branch?
+-    if branch == 'master'
+-      return get_revision("#{@resource.value(:remote)}/HEAD")
+-    elsif branch == '(no branch)'
+-      return get_revision('HEAD')
+-    else
+-      return get_revision("#{@resource.value(:remote)}/%s" % branch)
+-    end
+-  end
+-
+-  def revision
+-    update_references
+-    current = at_path { git_with_identity('rev-parse', 'HEAD').chomp }
+-    return current unless @resource.value(:revision)
+-
+-    if tag_revision?(@resource.value(:revision))
+-      canonical = at_path { git_with_identity('show', @resource.value(:revision)).scan(/^commit (.*)/).to_s }
+-    else
+-      # if it's not a tag, look for it as a local ref
+-      canonical = at_path { git_with_identity('rev-parse', '--revs-only', @resource.value(:revision)).chomp }
+-      if canonical.empty?
+-        # git rev-parse executed properly but didn't find the ref;
+-        # look for it in the remote
+-        remote_ref = at_path { git_with_identity('ls-remote', '--heads', '--tags', @resource.value(:remote), @resource.value(:revision)).chomp }
+-        if remote_ref.empty?
+-          fail("#{@resource.value(:revision)} is not a local or remote ref")
+-        end
+-
+-        # $ git ls-remote --heads --tags origin feature/cvs
+-        # [93m7d4244b35e72904e30130cad6d2258f901c16f1a[0m	refs/heads/feature/cvs
+-        canonical = remote_ref.split.first
+-      end
+-    end
+-
+-    if current == canonical
+-      @resource.value(:revision)
+-    else
+-      current
+-    end
+-  end
+-
+-  def revision=(desired)
+-    checkout(desired)
+-    if local_branch_revision?(desired)
+-      # reset instead of pull to avoid merge conflicts. assuming remote is
+-      # authoritative.
+-      # might be worthwhile to have an allow_local_changes param to decide
+-      # whether to reset or pull when we're ensuring latest.
+-      at_path { git_with_identity('reset', '--hard', "#{@resource.value(:remote)}/#{desired}") }
+-    end
+-    if @resource.value(:ensure) != :bare
+-      update_submodules
+-    end
+-    update_owner_and_excludes
+-  end
+-
+-  def bare_exists?
+-    bare_git_config_exists? && !working_copy_exists?
+-  end
+-
+-  def working_copy_exists?
+-    File.directory?(File.join(@resource.value(:path), '.git'))
+-  end
+-
+-  def exists?
+-    working_copy_exists? || bare_exists?
+-  end
+-
+-  def update_remote_origin_url
+-    current = git_with_identity('config', 'remote.origin.url')
+-    unless @resource.value(:source).nil?
+-      if current.nil? or current.strip != @resource.value(:source)
+-        git_with_identity('config', 'remote.origin.url', @resource.value(:source))
+-      end
+-    end
+-  end
+-
+-  def update_references
+-    at_path do
+-      update_remote_origin_url
+-      git_with_identity('fetch', @resource.value(:remote))
+-      git_with_identity('fetch', '--tags', @resource.value(:remote))
+-      update_owner_and_excludes
+-    end
+-  end
+-
+-  private
+-
+-  def bare_git_config_exists?
+-    File.exist?(File.join(@resource.value(:path), 'config'))
+-  end
+-
+-  def clone_repository(source, path)
+-    check_force
+-    args = ['clone']
+-    if @resource.value(:ensure) == :bare
+-      args << '--bare'
+-    end
+-    if !File.exist?(File.join(@resource.value(:path), '.git'))
+-      args.push(source, path)
+-      Dir.chdir("/") do
+-        git_with_identity(*args)
+-      end
+-    else
+-      notice "Repo has already been cloned"
+-    end
+-  end
+-
+-  def check_force
+-    if path_exists? and not path_empty?
+-      if @resource.value(:force)
+-        notice "Removing %s to replace with vcsrepo." % @resource.value(:path)
+-        destroy
+-      else
+-        raise Puppet::Error, "Could not create repository (non-repository at path)"
+-      end
+-    end
+-  end
+-
+-  def init_repository(path)
+-    check_force
+-    if @resource.value(:ensure) == :bare && working_copy_exists?
+-      convert_working_copy_to_bare
+-    elsif @resource.value(:ensure) == :present && bare_exists?
+-      convert_bare_to_working_copy
+-    else
+-      # normal init
+-      FileUtils.mkdir(@resource.value(:path))
+-      FileUtils.chown(@resource.value(:user), nil, @resource.value(:path)) if @resource.value(:user)
+-      args = ['init']
+-      if @resource.value(:ensure) == :bare
+-        args << '--bare'
+-      end
+-      at_path do
+-        git_with_identity(*args)
+-      end
+-    end
+-  end
+-
+-  # Convert working copy to bare
+-  #
+-  # Moves:
+-  #   <path>/.git
+-  # to:
+-  #   <path>/
+-  def convert_working_copy_to_bare
+-    notice "Converting working copy repository to bare repository"
+-    FileUtils.mv(File.join(@resource.value(:path), '.git'), tempdir)
+-    FileUtils.rm_rf(@resource.value(:path))
+-    FileUtils.mv(tempdir, @resource.value(:path))
+-  end
+-
+-  # Convert bare to working copy
+-  #
+-  # Moves:
+-  #   <path>/
+-  # to:
+-  #   <path>/.git
+-  def convert_bare_to_working_copy
+-    notice "Converting bare repository to working copy repository"
+-    FileUtils.mv(@resource.value(:path), tempdir)
+-    FileUtils.mkdir(@resource.value(:path))
+-    FileUtils.mv(tempdir, File.join(@resource.value(:path), '.git'))
+-    if commits_in?(File.join(@resource.value(:path), '.git'))
+-      reset('HEAD')
+-      git_with_identity('checkout', '--force')
+-      update_owner_and_excludes
+-    end
+-  end
+-
+-  def commits_in?(dot_git)
+-    Dir.glob(File.join(dot_git, 'objects/info/*'), File::FNM_DOTMATCH) do |e|
+-      return true unless %w(. ..).include?(File::basename(e))
+-    end
+-    false
+-  end
+-
+-  def checkout(revision = @resource.value(:revision))
+-    if !local_branch_revision? && remote_branch_revision?
+-      at_path { git_with_identity('checkout', '-b', revision, '--track', "#{@resource.value(:remote)}/#{revision}") }
+-    else
+-      at_path { git_with_identity('checkout', '--force', revision) }
+-    end
+-  end
+-
+-  def reset(desired)
+-    at_path do
+-      git_with_identity('reset', '--hard', desired)
+-    end
+-  end
+-
+-  def update_submodules
+-    at_path do
+-      git_with_identity('submodule', 'update', '--init', '--recursive')
+-    end
+-  end
+-
+-  def remote_branch_revision?(revision = @resource.value(:revision))
+-    # git < 1.6 returns '#{@resource.value(:remote)}/#{revision}'
+-    # git 1.6+ returns 'remotes/#{@resource.value(:remote)}/#{revision}'
+-    branch = at_path { branches.grep /(remotes\/)?#{@resource.value(:remote)}\/#{revision}/ }
+-    branch unless branch.empty?
+-  end
+-
+-  def local_branch_revision?(revision = @resource.value(:revision))
+-    at_path { branches.include?(revision) }
+-  end
+-
+-  def tag_revision?(revision = @resource.value(:revision))
+-    at_path { tags.include?(revision) }
+-  end
+-
+-  def branches
+-    at_path { git_with_identity('branch', '-a') }.gsub('*', ' ').split(/\n/).map { |line| line.strip }
+-  end
+-
+-  def on_branch?
+-    at_path { git_with_identity('branch', '-a') }.split(/\n/).grep(/\*/).first.to_s.gsub('*', '').strip
+-  end
+-
+-  def tags
+-    at_path { git_with_identity('tag', '-l') }.split(/\n/).map { |line| line.strip }
+-  end
+-
+-  def set_excludes
+-    at_path { open('.git/info/exclude', 'w') { |f| @resource.value(:excludes).each { |ex| f.write(ex + "\n") }}}
+-  end
+-
+-  def get_revision(rev)
+-    if !working_copy_exists?
+-      create
+-    end
+-    at_path do
+-      update_remote_origin_url
+-      git_with_identity('fetch', @resource.value(:remote))
+-      git_with_identity('fetch', '--tags', @resource.value(:remote))
+-    end
+-    current = at_path { git_with_identity('rev-parse', rev).strip }
+-    if @resource.value(:revision)
+-      if local_branch_revision?
+-        canonical = at_path { git_with_identity('rev-parse', @resource.value(:revision)).strip }
+-      elsif remote_branch_revision?
+-        canonical = at_path { git_with_identity('rev-parse', "#{@resource.value(:remote)}/" + @resource.value(:revision)).strip }
+-      end
+-      current = @resource.value(:revision) if current == canonical
+-    end
+-    update_owner_and_excludes
+-    return current
+-  end
+-
+-  def update_owner_and_excludes
+-    if @resource.value(:owner) or @resource.value(:group)
+-      set_ownership
+-    end
+-    if @resource.value(:excludes)
+-      set_excludes
+-    end
+-  end
+-
+-  def git_with_identity(*args)
+-    if @resource.value(:identity)
+-      Tempfile.open('git-helper') do |f|
+-        f.puts '#!/bin/sh'
+-        f.puts "exec ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -oKbdInteractiveAuthentication=no -oChallengeResponseAuthentication=no -oConnectTimeout=120 -i #{@resource.value(:identity)} $*"
+-        f.close
+-
+-        FileUtils.chmod(0755, f.path)
+-        env_save = ENV['GIT_SSH']
+-        ENV['GIT_SSH'] = f.path
+-
+-        ret = git(*args)
+-
+-        ENV['GIT_SSH'] = env_save
+-
+-        return ret
+-      end
+-    elsif @resource.value(:user)
+-      su(@resource.value(:user), '-c', "git #{args.join(' ')}" )
+-    else
+-      git(*args)
+-    end
+-  end
+-end
+
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+[92mReason: High Entropy[0m
+[92mDate: 2018-12-11 02:25:21[0m
+[92mHash: c376f995b44caf502992ddb617a34e7d38d7bbc1[0m
+[92mFilepath: support_files/spec/support/Mstrctr.js[0m
+[92mBranch: origin/master[0m
+[92mCommit: support files for Santa's drone functions
+[0m
+@@ -1,5 +0,0 @@
+-
+-module.export.addNote = function () {
+-      console.log('Secret Key');
+-      return '[93mwPu4Ry8FBhckXWjCfjx5QlkRR8vcAqLBf6sgmrcjwFv0c1xjMUw1Qh+rWVQZTTRP[0m';
+- };
+
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+[92mReason: High Entropy[0m
+[92mDate: 2018-12-11 02:23:36[0m
+[92mHash: 714ba109e573f37a6538beeeb7d11c9391e92a72[0m
+[92mFilepath: schematics/files/dot/PW/for_elf_eyes_only.md[0m
+[92mBranch: origin/master[0m
+[92mCommit: removing accidental commit[0m
+@@ -0,0 +1,15 @@
++Our Lead InfoSec Engineer Bushy Evergreen has been noticing an increase of brute force attacks in our logs. Furthermore, Albaster discovered and published a vulnerability with our password length at the last Hacker Conference.
++
++Bushy directed our elves to change the password used to lock down our sensitive files to something stronger. Good thing he caught it before those dastardly villians did!
++
++ 
++Hopefully this is the last time we have to change our password again until next Christmas. 
++
++
++
++
++Password = 'Yippee-ki-yay'
++
++
++Change ID = '[93m9ed54617547cfca783e0f81f8dc5c927e3d1e3[0m'
++
+
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+[92mReason: High Entropy[0m
+[92mDate: 2018-12-11 02:16:57[0m
+[92mHash: 0dfdc124b43a4e7e1233599c429c0328ec8b01ef[0m
+[92mFilepath: schematics/files/dot/PW/for_elf_eyes_only.md[0m
+[92mBranch: origin/master[0m
+[92mCommit: important update
+[0m
+@@ -1,15 +0,0 @@
+-Our Lead InfoSec Engineer Bushy Evergreen has been noticing an increase of brute force attacks in our logs. Furthermore, Albaster discovered and published a vulnerability with our password length at the last Hacker Conference.
+-
+-Bushy directed our elves to change the password used to lock down our sensitive files to something stronger. Good thing he caught it before those dastardly villians did!
+-
+- 
+-Hopefully this is the last time we have to change our password again until next Christmas. 
+-
+-
+-
+-
+-Password = 'Yippee-ki-yay'
+-
+-
+-Change ID = '[93m9ed54617547cfca783e0f81f8dc5c927e3d1e3[0m'
+-
+
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+[92mReason: High Entropy[0m
+[92mDate: 2018-12-11 02:16:57[0m
+[92mHash: 0dfdc124b43a4e7e1233599c429c0328ec8b01ef[0m
+[92mFilepath: schematics/for_elf_eyes_only.md[0m
+[92mBranch: origin/master[0m
+[92mCommit: important update
+[0m
+@@ -1,15 +0,0 @@
+-Our Lead InfoSec Engineer Bushy Evergreen has been noticing an increase of brute force attacks in our logs. Furthermore, Albaster discovered and published a vulnerability with our password length at the last Hacker Conference.
+-
+-Bushy directed our elves to change the password used to lock down our sensitive files to something stronger. Good thing he caught it before those dastardly villians did!
+-
+- 
+-Hopefully this is the last time we have to change our password again until next Christmas. 
+-
+-
+-
+-
+-Password = 'Yippee-ki-yay'
+-
+-
+-Change ID = '[93m9ed54617547cfca783e0f81f8dc5c927e3d1e3[0m'
+-
+
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+[92mReason: High Entropy[0m
+[92mDate: 2018-12-11 02:14:41[0m
+[92mHash: c61af60810e77c8b91c8d29c1303da4bfefde66b[0m
+[92mFilepath: sysctl/metadata.json[0m
+[92mBranch: origin/master[0m
+[92mCommit: Santa's Castle ICS
+[0m
+@@ -1,32 +0,0 @@
+-{
+-  "project_page": "https://github.com/thias/puppet-sysctl",
+-  "version": "0.3.0",
+-  "license": "Apache 2.0",
+-  "description": "Manage sysctl variable values.",
+-  "dependencies": [
+-
+-  ],
+-  "types": [
+-
+-  ],
+-  "name": "thias-sysctl",
+-  "author": "Matthias Saou",
+-  "summary": "Sysctl module",
+-  "source": "git://github.com/thias/puppet-sysctl",
+-  "checksums": {
+-    "tests/init.pp": "[93me70e5327b9840b44699bb7fae71d47cd[0m",
+-    "spec/spec_helper.rb": "[93m3ea886dd135e120afa31e0aab12e85b0[0m",
+-    "ChangeLog": "[93med8052eb5cb46b92eaa03b882c11779e[0m",
+-    "LICENSE": "[93m99219472697a01561e7630d63aaecdc1[0m",
+-    "Modulefile": "[93m3b8a6a0dfff841a31118a5f46fde59da[0m",
+-    "spec/defines/sysctl_init_spec.rb": "[93m21d524df70961750cb22f6b83349093e[0m",
+-    "manifests/init.pp": "[93m0f7dd893b08ebbbec8994d14eca6701b[0m",
+-    "README.md": "[93med4837849a1c4790b7178cd99824a204[0m",
+-    "spec/classes/sysctl_base_spec.rb": "[93m6241cf3e290871c00b1bb3bbd5490108[0m",
+-    "templates/sysctl.d-file.erb": "[93m0212783df32c499b3e9e343993f608da[0m",
+-    "manifests/base.pp": "[93m9508015ce74b5ce1420ad8c8ebc7d3af[0m",
+-    "tests/base.pp": "[93m1ba89838432dbc94339097327c19ae3d[0m",
+-    "Gemfile": "[93m3ad486d60d90bfe4395b368b95481e01[0m",
+-    "Rakefile": "[93mab253b919e7093c2a5eb7adf0e39ffbc[0m"
+-  }
+-}
+\ No newline at end of file
+
+~~~~~~~~~~~~~~~~~~~~~
